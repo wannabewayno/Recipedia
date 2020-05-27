@@ -1,0 +1,19 @@
+#time-bar-container{
+    position: relative;
+}
+.mask {
+    position:absolute;
+}
+.mask > p{
+
+}
+
+.timeBar {
+    position: absolute;
+
+}
+
+
+
+
+
