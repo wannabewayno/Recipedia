@@ -16,20 +16,23 @@
     <!--  MDC icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- custom css -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/popups.css" />
+    <link rel="stylesheet" href="./public/assets/css/index.css" />
+    <link rel="stylesheet" href="./public/assets/css/popups.css" />
+    <link rel="stylesheet" href="./public/assets/css/tabs.css">
   </head>
   <body>
     <!-- NavBar -->
-    <header>
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">
-            <img src="assets/images/logo-01.png" width="115px"/>
-          </a>
-        </div>
-      </nav>
-    </header>
+    <nav>
+      <h3>
+        Recipedia
+      </h3>
+
+      <div class="mask"></div>
+
+      <button id="btn-floating btn-medium sign-in-button waves-effect waves-light">
+        <i class="medium material-icons">person</i>
+      </button>
+    </nav>
 
     <main>
       <div class="container">
@@ -52,7 +55,7 @@
                         <input type="text" id="search-query" placeholder="search food here!">
                         <i class="fa fa-search"></i>
                     </form>
-                    <!-- ADVANCED SEARCh BUTTON -->
+                    <!-- ADVANCED SEARCH BUTTON -->
                     <button id="advanced-search-button" class="waves-effect waves-light btn" value="false">advanced</button>
                     <form id="advanced-search">
                         <!-- dropdown box for cuisine type possibly a search bar and dropdown in one, to search for all dropdowns-->
@@ -98,7 +101,7 @@
         </div>
         <div class="row">
           <!--This is where the cards will be displayed sequentially-->
-          <div class="col s12 m8 push-m4 l9 push-l3">
+          <div class="col s12">
             <div class="card blue-grey darken-1">
               <div class="card-content white-text">
                 
@@ -113,16 +116,7 @@
               </div>
             </div>
           </div>
-           <!--Favourites Bar-->
-          <div class="col s12 m4 pull-m8 l3 pull-l9">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <aside id="favourites">
-                  <h6 id="fav-title">Favourites</h6>
-                </aside>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
 
@@ -131,27 +125,23 @@
     </main>
 
     <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Recepedia</h5>
-            <p class="grey-text text-lighten-4">
-            </p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Shopping Cart</h5>
-            <button id="cart-container">
-              
-              <i class="fa fa-cart-plus" id="open-cart"></i>
-              </button>
-          </div>
-        </div>
+
+      <button>
+        <i class="material-icons">format_list_bulleted</i>
+      </button>
+
+      <button>
+        <i class="material-icons">favorite</i>
+      </button>
+
+      <button>
+        <i class="material-icons">dashboard</i>
+      </button>
+
+      <div>
+        Made with zest by  Reuben, Nick, Sam, Ken and Vasavi
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2020 Wayne, Vasavi & Ken
-        </div>
-      </div>
+
     </footer>
    
     <!-- Jquery -->
@@ -159,12 +149,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- custom js -->
-    <script src="./assets/javascript/favourites.js"></script>
-    <script src="./assets/javascript/search-types.js"></script>
-    <script src="./assets/javascript/search-engine.js"></script>
-    <script src="./assets/javascript/display-results.js"></script>
-    <script src="./assets/javascript/popups.js"></script>
-    <script src="./assets/javascript/shopping-list.js"></script>
+    <script src="./public/assets/javascript/activateTabs.js"></script>   
 </body>
 
 </html>
