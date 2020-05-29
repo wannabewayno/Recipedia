@@ -1,0 +1,67 @@
+.visual-info-container, #recipe-img, #timer-icon {
+    position: relative;
+}
+
+.image-container, .time-bar-container, .mask, .timeBar, #prepTime, #cookTime, #timer-icon-container {
+ position: absolute;
+}
+
+.image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0 0 15px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#recipe-img {
+    width:100px;
+    height:auto;
+    margin-top: 28px;
+}
+
+.timeBar {
+    left:0;
+}
+
+#timer-icon-container{
+    text-align: center;
+    margin: auto;
+}
+#timer-icon{
+    background-color: azure;
+    border-radius: 50%;
+    padding:2px;
+    margin-top:-7px;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    #recipe-img {
+        width:150px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #recipe-img {
+        width:200px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #recipe-img {
+        width:250px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #recipe-img {
+        width:300px;
+    }
+}
