@@ -91,9 +91,34 @@ const renderTimeBar = (cookTime,prepTime) => {
     $('.image-container').css({'width':min,'height':min})
     $('#prepPath').attr("d",describeArc(centerX, centerY, radius, 0, intersectionAngle ));
     $('#cookPath').attr("d",describeArc(centerX, centerY, radius, intersectionAngle, 270 ));
+
+    updateTimerIcon(intersectionAngle,frameLength);
+}
+/**
+ * @param {Number} intersectionAngle -  the angle to position the timer icon
+ * @param {Number} frameLength 
+ */
+const updateTimerIcon = (intersectionAngle,frameLength) => {
+    const iconCSS = {};
+    const containerCSS = {};
+
+    // this keeps the timer upright at any rotation angle
+    iconCSS['transform'] = `rotateZ(${Math.abs(360-intersectionAngle)+135}deg)`
+
+    // sets the width of the container to be the same size as the time-bar graphic
+    // css as default rotates from a center position, this will now rotate from the center of the graphic
+    containerCSS['width'] = `${frameLength}px`
+    containerCSS['height'] = `${frameLength}px`
+    // this puts the timer icon on the intersection
+    containerCSS['transform'] = `rotateZ(${intersectionAngle-135}deg)`
+
+    $('#timer-icon').css(iconCSS);
+    $('#timer-icon-container').css(containerCSS);
 }
 
-//calls the function
-renderTimeBar(15,10);
+$(window).resize(function(){
+    renderTimeBar(60,20);
+});
+
 
 
