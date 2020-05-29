@@ -1,0 +1,332 @@
+/* --------------------------------------------------------------------------- */
+/* ----------------------- Modal CSS ----------------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+.modal-container {
+    background-color: rgba(0,0,0,0.4);
+    overflow: auto;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: block;
+    position: fixed;
+    width: 100%;
+    height:100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.modal-body {
+    padding:20px;
+    width: 80%;
+    border: 2px solid teal;
+    background-color: wheat;
+    margin:auto;
+    border-radius: 5px;
+
+}
+/*----------------------- button container -----------------------*/
+.close-button{
+    padding-top: 10px;
+    padding-right: 10px;
+    color: teal;
+}
+.button-container{
+    margin-top: -30px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.add-favourite-button {
+    border:none;
+    padding:10px;
+    margin:5px;
+    border-radius: 5px;
+    background-color: orange;
+    color: #C1382A;
+
+}
+:hover.add-favourite-button, :focus.add-favourite-button {
+    background-color: #db8f02;
+    color: #C1382A;
+
+}
+.remove-favourite-button{
+    border:none;
+    padding:10px;
+    margin:5px;
+    border-radius: 5px;
+    background-color: #C1382A;
+    color: orange;
+}
+:hover.remove-favourite-button, :focus.remove-favourite-button{
+    background-color: #a13226;
+    color: orange;
+}
+
+.add-cart-button {
+    border:none;
+    padding:10px;
+    margin:5px;
+    border-radius: 5px;
+    background-color: #C1382A;
+    color: white;
+
+}
+
+:hover.add-cart-button, :focus.add-cart-button {
+    background-color: #a13226;
+}
+
+.remove-cart-button {
+    border:none;
+    padding:10px;
+    margin:5px;
+    border-radius: 5px;
+    background-color: white;
+    color: #C1382A;
+}
+
+:hover.remove-cart-button, :focus.remove-cart-button {
+    background-color: #bbbbbb;
+}
+
+
+.close-button{
+    font-size: 15px;
+    border: none;
+    position: relative;
+    display: inline;
+    left:99%;
+    top:-20px;
+    background-color: transparent;
+}
+.close-button:active, .close-button:focus,.close-button:hover{
+    background-color: transparent;
+    background-color: transparent;
+    color: #C1382A;
+    cursor: pointer;
+}
+.close-button:active{
+    color: transparent;
+}
+
+/*------------- responsive image and header formatting -----------------------*/
+.recipe-image{
+    width:300px;
+    height:auto;
+    border-radius: 10px;
+    border:3px solid sandybrown;
+}
+.sub-head-container{/* this controls how the img and the head-info-container(title, serving,time) sits to each other */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: space-between;
+    align-items:stretch
+}
+/*--------------------------- diet tags -----------------------------*/
+
+.diet-tag-container {
+    width:100%;
+    height:30px;
+    padding:10px;
+}
+
+.diet-tag{
+    margin-right: 20px;
+    padding: 5px 10px;
+    color: sandybrown;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 50px;
+    background-color: teal;
+}
+/*-----------------------some global settings -----------------------------*/
+
+.time-container,.serving-container,.head-info-container,.time-info-container{
+    width:fit-content;
+    padding:0;
+    margin:0;
+}
+/*-----------------------info-head-container-----------------------*/
+.head-info-container{
+    margin-left:10px;
+}
+.header-title{
+    font-family: 'Fugaz One', cursive;
+    font-size: 25px;
+
+}
+
+/*----------------------serving container---------------------------------*/
+.serving-container{
+    width: fit-content;
+    display: flex;
+    align-items: baseline;
+    margin-bottom:10px;
+}
+.fa-user-plus{
+    margin-left:10px;
+    font-size: 18px;
+}
+/*----------------------Time Bar---------------------------------*/
+
+.time-info-container{
+    display: flex;
+    margin-bottom:5px;
+}
+
+.prep-time,.total-time {
+    font-size: 15px;
+    margin:0;
+}
+
+.fa-stopwatch{
+    font-size: 20px;
+    margin:0 20px;
+
+}
+
+.total-bar{
+    width: 100%;
+    height:20px;
+    background-color: forestgreen;
+}
+.prep-bar{
+    background-color: tomato;
+    width:0px;
+    height:20px;
+    z-index: 1;
+}
+/*----------------------- CONTENT BODY ----------------------------------*/
+
+.content-body{
+    display: flex;
+    justify-content: space-between;
+}
+.list-body{
+ padding: 0;
+}
+.list-group{
+    margin: 15px 10px 0 10px;
+}
+.method-container{
+    width:60%;
+    padding-left:15px;
+    height: 100%;
+    flex-shrink: 1;
+
+}
+.ingredient-container{
+    padding-right:10px;
+    height: 100%;
+    flex-shrink: 12;
+    border-right:2px solid sandybrown
+}
+.list-title{
+    text-align: left;
+    margin-left:0;
+    padding-left:0;
+}
+.nutri-info:hover {
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------- */
+/* -------------------- result Cards CSS ------------------------------------- */
+/* --------------------------------------------------------------------------- */
+.result-card{
+    margin:10px;
+    width:fit-content;
+    height:auto;
+    border: 2px solid teal;
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.2s;
+    transform: scale(1.0);
+}
+.result-card:hover{
+    cursor: pointer;
+}
+
+#fav-title{
+    color: white;
+}
+.banner {
+    margin-top: 33%;
+    font-family: 'Fugaz One', cursive;
+    font-size: 25px;
+    display:inherit;
+    position: absolute;
+    max-width: 100%;
+    font-size: 15px;
+    padding:10px;
+    background-color: rgba(0,128,128,0.7);
+}
+
+.image-card{
+    display:block;
+    padding:0;
+    margin:0;
+    max-width:200px;
+    height:auto;
+  }
+
+.time-card{
+    font-size: 15px;
+    background-color: teal;
+    padding:15px;
+    margin:0;
+
+}
+
+/* --------------------------------------------------------------------------- */
+/* -------------------- Shopping Cart CSS ------------------------------------ */
+/* --------------------------------------------------------------------------- */
+.shopping-body {
+    padding:20px 40px;
+    width: 80%;
+    border: 2px solid teal;
+    background-color: #ffff88;
+    margin:auto;
+    border-radius: 5px;
+    color:black
+}
+
+.shopping-title,.aisle-title,.list-item{
+    font-family: 'Patrick Hand', cursive;
+}
+
+#fav-title{
+    padding:10px;
+    font-weight: bold;
+}
+
+#favourites{
+    margin:10px -20px;
+    padding:20px;
+    background-color: rgb(84,110,122);
+    width:fit-content;
+    height:auto;
+}
+
+.shopping-title{
+    text-align: center;
+    margin-top: -40px;
+}
+
+.aisle-title{
+    font-size: x-large;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.list-item{
+    font: large;
+    font-weight: 600;
+    letter-spacing: 1px;
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+/* --------------------------------------------------------------------------- */
+/* -------------------- END Shopping Cart ------------------------------------ */
+/* --------------------------------------------------------------------------- */
