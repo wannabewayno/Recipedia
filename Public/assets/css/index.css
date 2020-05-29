@@ -5,7 +5,7 @@ body {
 .Welcome{
   text-align: center;
   font-size: xx-large;
-  color: teal;
+  color: #ce1823;
 }
 
 .Explore{
@@ -23,15 +23,15 @@ fieldset {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-width: 3px;
-  border-color: teal;
-  color: grey;
+  border-color: #94ab36;
+  color: #ce1823;
 }
 ::-webkit-input-placeholder {
-  color: teal !important;
+  color: #ce1823 !important;
 }
 
 input[type="text"] {
-  color: teal;
+  color: #ce1823;
 }
 
 
@@ -40,10 +40,6 @@ input[type="text"] {
   justify-content: start;
   align-content: center;
   align-items: center;
-}
-
-#recipename:hover {
-  color: brown;
 }
 
 .row, .search {
@@ -55,7 +51,7 @@ button,
   margin:10px 10px 0px 0px;
   padding:0px 3px 0px 0px;
   object-position: center;
-  background-color: #c1382a;
+  background-color: #94ab36;
 }
 
 .fa-search{
@@ -65,7 +61,7 @@ button,
 }
 .fa-search:hover, .fa-search:focus{
     transform: scale(1.05);
-    color: teal;
+    color: #94ab36;
 }
 .spinner{
     transform: rotate3d(1,1,0,180deg);

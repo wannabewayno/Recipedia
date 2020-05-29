@@ -1,10 +1,11 @@
 /* ------------------------ nav -------------------------------------- */
-nav{
+nav {
+    height:65px;
     position: relative;
     background-color: #bca990;
 }
 
-nav>h3{
+nav>h3 {
     font-family: 'Playball', cursive;
     padding:10px 30px;
     margin: 0;
@@ -13,7 +14,7 @@ nav>h3{
 
 }
 
-.divider{
+.divider {
     overflow: visible;
     background-color: transparent;
     width:0px;
@@ -23,39 +24,52 @@ nav>h3{
     z-index: 1;
 }
 
-.divider>img{
+.divider>img {
     z-index:1;
     left:0px;
     position: absolute;
     height:100%;
 }
 
-.divider-bottom{
+.divider-bottom {
     left:20px;
     width: 0;
     height: 0;
-    border-bottom: 64px solid #ce1823;
+    border-bottom: 65px solid #ce1823;
     border-left: 70px solid transparent;
     position: absolute;
    
 }
+.divider-container {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+}
 
-.divider-top{
+.divider-top {
     left:38px;
     width: 0;
     height: 0;
-    border-bottom: 64px solid #ce1823;
+    border-bottom: 65px solid #ce1823;
     border-left: 40px solid transparent;
     position: absolute;
 }
 
-.coloured-section{
+.divider-filler {
+    left:78px;
+    width: 1000px;
+    height: 65px;
+    background-color: #ce1823;
+    position: absolute;
+}
+
+/* .coloured-section {
     height:100%;
-    width:44.8vw;
+    width:40vw;
     right:0;
     position: absolute;
     background-color: #ce1823;
-}
+} */
 
 
 #sign-in-button{
