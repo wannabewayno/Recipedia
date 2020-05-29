@@ -1,3 +1,7 @@
+:root{
+    --background-colour:#8f4623
+}
+
 .tabs{
     overflow: hidden;
     color:teal;
@@ -8,29 +12,29 @@
   }
   
   .a-tab-left{
-    border-left:3px groove #94ab36;
-    border-right:1.5px groove #94ab36;
+    border-left:3px groove var(--background-colour);
+    border-right:1.5px groove var(--background-colour);
   }
   .a-tab-right{
-    border-left:1.5px inset #94ab36;
-    border-right:3px groove #94ab36;
+    border-left:1.5px inset var(--background-colour);
+    border-right:3px groove var(--background-colour);
   
   }
   .a-tab-right, .a-tab-left{
     color:teal;
-    background-color: hsl(39, 50%, 75%);
+    background-color: hsl(0, 0, 80%);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    border-top:3px groove #94ab36;
-    border-bottom:2px groove #94ab36;
+    border-top:3px groove var(--background-colour);
+    border-bottom:2px groove var(--background-colour);
   }
   
   .tabs .indicator{
     color:teal;
     margin-left:0%;
     margin-right:0%;
-    border-left:3px groove teal;
-    border-right:1.5px groove teal;
+    border-left:3px groove var(--background-colour);
+    border-right:1.5px groove var(--background-colour);
     background-color: white;
   }
   
@@ -44,11 +48,11 @@
   }
   
   .tabs .tab a{
-    color: grey;
+    color:#ce1823;
   }
 
   label {
-      color:red;
+      color:#ce1823;
   }
   
   /* ----------------------------------- fridge tab ------------------------------------------------------------------- */

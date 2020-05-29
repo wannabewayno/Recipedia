@@ -1,5 +1,6 @@
 /* ------------------------ nav -------------------------------------- */
 nav {
+    overflow: hidden;
     height:65px;
     position: relative;
     background-color: #bca990;
@@ -7,7 +8,7 @@ nav {
 
 nav>h3 {
     font-family: 'Playball', cursive;
-    padding:10px 30px;
+    padding:10px 5%;
     margin: 0;
     position: absolute;
     color: #E32227;
@@ -19,7 +20,7 @@ nav>h3 {
     background-color: transparent;
     width:0px;
     height: 100%;
-    right:55%;
+    right:50%;
     position: absolute;
     z-index: 1;
 }
@@ -57,19 +58,11 @@ nav>h3 {
 
 .divider-filler {
     left:78px;
-    width: 1000px;
+    width: 1000vw;
     height: 65px;
     background-color: #ce1823;
     position: absolute;
 }
-
-/* .coloured-section {
-    height:100%;
-    width:40vw;
-    right:0;
-    position: absolute;
-    background-color: #ce1823;
-} */
 
 
 #sign-in-button{
@@ -84,17 +77,30 @@ nav>h3 {
 
 /* ---------------------- sticky footer ----------------------------- */
 .footer {
-    display: flex;
-    justify-content: space-evenly;
+    z-index:1;
     position:fixed;
     left:0px;
     bottom:0px;
     height:60px;
     width:100%;
-    background-color:#999;
+    background-color:#bca990;
 }
 
-footer > button{
-    position: relative;
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
 
+.footer-button {
+    background-color: #94ab36;
+    position: relative;
+}
+.footnote{
+    text-align: center;
+    width:100%;
+    margin:auto;
+}
+.footnote>p{
+    margin: 0;
+    padding: 0;
 }
