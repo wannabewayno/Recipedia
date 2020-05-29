@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./public/assets/css/index.css" />
     <link rel="stylesheet" href="./public/assets/css/popups.css" />
     <link rel="stylesheet" href="./public/assets/css/tabs.css">
+    <link rel="stylesheet" href="./public/assets/css/buttons.css">
   </head>
   <body>
     <!-- NavBar -->
@@ -29,8 +30,8 @@
 
       <div class="mask"></div>
 
-      <button id="btn-floating btn-medium sign-in-button waves-effect waves-light">
-        <i class="medium material-icons">person</i>
+      <button id="sign-in-button" class="waves-effect waves-light">
+        <i class="large material-icons">person</i>
       </button>
     </nav>
 
@@ -41,7 +42,9 @@
         <!--Main Body Container w/Grids-->
         <div class="row">
             <div class="col s12">
-              <div class="row">
+              <div class="row z-depth-5">
+
+                <!-- Tabbed headers -->
                 <ul class="tabs">
                   <li class="tab col s6">
                     <a class="a-tab-left"href="#search-bar" class="class text-darken-4">Recipe Search</a>
@@ -50,34 +53,40 @@
                     <a class="a-tab-right" href="#fridge-search" class="class text-darken-4">What's in my fridge</a>
                   </li>
                 </ul>
+
+                <!-- search bar -->
                 <fieldset class="col s12" id="search-bar">
-                    <form class="main-search-bar">
-                        <input type="text" id="search-query" placeholder="search food here!">
-                        <i class="fa fa-search"></i>
+
+                    <form class="row">
+                        <div class="input-field main-search-bar">
+                          <input type="text" id="search-query">
+                          <label for="search-query">Search recipes here!</label>
+                          <i class="fa fa-search"></i>
+                        </div>
                     </form>
                     <!-- ADVANCED SEARCH BUTTON -->
                     <button id="advanced-search-button" class="waves-effect waves-light btn" value="false">advanced</button>
                     <form id="advanced-search">
-                        <!-- dropdown box for cuisine type possibly a search bar and dropdown in one, to search for all dropdowns-->
-                      <div>
-                          <input type="text" id="cuisine" placeholder="filter by cuisine....Italian?">
+                        <!-- dropdown box for advanced search-->
+                      <div class="input-field">
+                        <input type="text" id="cuisine">
                         <label for="cuisine">cuisine</label>
-                    </div>
-                      <div>
-                          <input type="text" id="diet" placeholder="Particular Diet?" style="color:teal">
-                        <label for="diet">Diet</label>
-                    </div>
-                      <div>
-                          <input type="text" id="exclude-ingredients" placeholder="exclude any ingredients?">
-                        <label for="exclude-ingredients">excluding ingredients</label>
-                    </div>
-                      <div>
-                          <input type="text" id=intolerences placeholder="have any intolerences?">
-                        <label for="intolerences"> intolerences</label>
                       </div>
+                      <div class="input-field">
+                        <input type="text" id="diet">
+                        <label for="diet">Diet</label>
+                      </div>
+                      <div class="input-field">
+                        <input type="text" id="exclude-ingredients">
+                        <label for="exclude-ingredients">excluding ingredients</label>
+                      </div>
+
                     </form>
+
                 </fieldset>
+                <!-- what's in my fridge -->
                 <fieldset class="col s12" id="fridge-search">
+
                   <h5>
                     What's in your fridge?
                   </h5>
@@ -95,6 +104,7 @@
                         <div class="chips"></div>
                     </div>
                   </ul>
+
                 </fieldset>
               </div>
             </div>
@@ -102,19 +112,9 @@
         <div class="row">
           <!--This is where the cards will be displayed sequentially-->
           <div class="col s12">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                
-                <p>
-                  Search for recipe ideas in the search bar! you can search for steak, pasta, burgers.... what ever you fancy.
-                  Need some more control?
-                  Click the advanced search button and you filter what results you get back by a heap of different options!
-                </p>
                 <!--This is where the search results are displayed-->
                 <div id="search-results"></div>
                 <button class="btn waves-effect">Show more Results</button>
-              </div>
-            </div>
           </div>
           
         </div>
