@@ -1,5 +1,5 @@
 body {
-  background-color: wheat;
+  background-color: #fff;
 }
 
 .Welcome{
@@ -15,10 +15,6 @@ body {
 
 h4, .list-title {
   font-weight: bold;
-}
-
-.nav-wrapper {
-  background-color: teal;
 }
 
 
@@ -74,11 +70,6 @@ button,
 .spinner{
     transform: rotate3d(1,1,0,180deg);
     transition:cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.5s;
-}
-
-
-footer.page-footer{
-  background-color: grey;
 }
 
 
