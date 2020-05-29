@@ -1,19 +1,27 @@
-#time-bar-container{
+.visual-info-container, #recipe-img {
     position: relative;
 }
-.mask {
-    position:absolute;
-}
-.mask > p{
 
+.image-container, .time-bar-container, .mask, .timeBar, #prepTime, #cookTime {
+ position: absolute;
+}
+
+.image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0 0 15px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#recipe-img {
+    max-width:300px;
+    height:auto;
+    margin-top: 28px;
 }
 
 .timeBar {
-    position: absolute;
-
+    left:0;
 }
-
-
-
-
-
