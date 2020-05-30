@@ -20,6 +20,11 @@
         display:block;
     }
 
+    .dow {
+        padding:0;
+        padding-bottom: 10px;
+    }
+
     .dow-cards {
         display: flex;
         justify-content: space-around;
@@ -28,6 +33,7 @@
 
     .meal-type {
         display: block;
+        text-align: center;
     }
 
     .lunch {
@@ -42,8 +48,8 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        width:200px;
-        height:200px;
+        width:calc(25vw - 100px);
+        height:calc(25vw - 100px);
         border-radius: 25px;
         transition: all 400ms ease-in-out;
         /* transition bg-colour */
