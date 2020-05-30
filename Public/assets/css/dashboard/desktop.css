@@ -1,0 +1,48 @@
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* Here we change everything to a desktop design */
+    .mobile-name{
+        display: none;
+    }
+    
+    .bullet-point{
+        display: none;
+    }
+
+    body{
+        background-color: white;
+    }
+
+    .mobile-layout {
+        margin:0;
+        height:fit-content;
+        width:fit-content;
+        display:block;
+    }
+    .recipe-card {
+        border: 5px solid black;
+    }
+    .dow-cards {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .meal-type {
+        display: block;
+    }
+
+    .lunch {
+        flex-direction: row-reverse;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
