@@ -8,7 +8,7 @@ main {
 
 .dow {
     height: fit-content;
-    padding:0 10px 30px 10px;
+    padding:0 8% 30px 8%;
     margin-bottom: 30px;
     border-radius: 10px;
     background-color: #cb4745;
@@ -16,7 +16,7 @@ main {
 
 /* this is all mobile stuff!!! */
 .mobile-name {
-    width:65%;
+    width: calc(60vw - 50px);
     margin: 0;
     margin-bottom:20px;
     padding-left:30px;
@@ -41,13 +41,7 @@ main {
 }
 
 .recipe-card {
-    padding-top: 10px;
-    text-align:center;
-    border-radius: 50%;
-    width:50px;
-    height:50px;
-    background-color: transparent;
-    border:2px solid #94ab36
+   border: 5px solid black;
 }
 
 
@@ -72,14 +66,33 @@ body {
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    body{
-        background-color: white;
+    .recipe-card {
+        padding-top: 10px;
+        text-align:center;
+        border-radius: 50%;
+        width:50px;
+        height:50px;
+        background-color: transparent;
+        border:2px solid #94ab36
     }
+    
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    .mobile-name{
+        display: none;
+    }
+    .bullet-point{
+        display: none;
+    }
 
+    body{
+        background-color: white;
+    }
+    /* .recipe-card{
+        border:none;
+    } */
 }
 
 /* Large devices (desktops, 992px and up) */
