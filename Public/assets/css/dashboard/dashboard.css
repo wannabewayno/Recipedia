@@ -1,3 +1,69 @@
+.dow-title{
+    text-align: center;
+}
+
+main {
+    margin-bottom: 100px;
+}
+
+.dow {
+    height: fit-content;
+    padding:0 10px 30px 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+/* this is all mobile stuff!!! */
+.mobile-name {
+    width:65%;
+    margin: 0;
+    margin-bottom:20px;
+    padding-left:30px;
+    border-bottom: 2px solid black;
+    /* cuts off long text with ellipsis */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.add-btn{
+    color:green
+}
+
+.bullet-point {
+    margin: 0;
+    display: block;
+    border-radius: 50%;
+    width:10px;
+    height:10px;
+    background-color: transparent;
+    border: 1.5px solid black;
+}
+
+.recipe-card {
+    padding-top: 10px;
+    text-align:center;
+    border-radius: 50%;
+    width:50px;
+    height:50px;
+    background-color: transparent;
+    border:2px solid #94ab36
+}
+
+
+.mobile-layout {
+    margin-bottom:-15px;
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.lunch {
+    flex-direction: row;
+}
+.meal-type {
+    display: none;
+}
 
 
 /* Small devices (landscape phones, 576px and up) */

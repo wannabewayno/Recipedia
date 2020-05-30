@@ -17,10 +17,10 @@
     <!--  MDC icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- custom css -->
-    <link rel="stylesheet" href="./public/assets/css/tabs.css"/>
-    <link rel="stylesheet" href="./public/assets/css/buttons.css"/>
-    <link rel="stylesheet" href="./public/assets/css/nav.css"/>
-    <link rel="stylesheet" href="./public/assets/css/dashboard/dashboard.css"/>
+    <link rel="stylesheet" href="./assets/css/tabs.css"/>
+    <link rel="stylesheet" href="./assets/css/buttons.css"/>
+    <link rel="stylesheet" href="./assets/css/nav.css"/>
+    <link rel="stylesheet" href="./assets/css/dashboard/dashboard.css"/>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         <h3>Recipedia</h3>
         <div class="divider-container">
           <div class="divider">
-            <img src="Public/assets/images/green-chilli.png" alt=""/>
+            <img src="./assets/images/green-chilli.png" alt="green-chilli"/>
             <div class="divider-bottom"></div>
             <div class="divider-top"></div>
             <div class="divider-filler"></div>
@@ -41,22 +41,155 @@
       </nav>
         <!--  -->
     <main>
-        <div class="Monday">
-            <h4>Monday</h4>
-            <div class="dow-cards">
-                <div class="breakfast">
-                    <h5>Breakfast</h5>
-                    <div class="recipe-card"></div>
-                </div>
-                <div class="lunch">
-                    <h5>Lunch</h5>
-                    <div class="recipe-card"></div>
-                </div>
-                <div class="dinner">
-                    <h5>Dinner</h5>
-                    <div class="recipe-card"></div>
+        <div class="container">
+
+            <div class="Monday dow z-depth-2">
+                <h5 class="dow-title">Monday</h5>
+                <div class="dow-cards">
+                    <div class="breakfast mobile-layout">
+                        <h6 class="meal-type">Breakfast</h6>
+                        <div class="recipe-card"><i class="material-icons add-btn">add_circle_outline</i></div>
+                        <p class="mobile-name">cereal</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="lunch mobile-layout">
+                        <h6 class="meal-type">Lunch</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">-</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="dinner mobile-layout">
+                        <h6 class="meal-type">Dinner</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">Coq au vin</p><span class="bullet-point"></span>
+                    </div>
                 </div>
             </div>
+
+            <div class="Tuesday dow z-depth-2">
+                <h5 class="dow-title">Tuesday</h5>
+                <div class="dow-cards">
+                    <div class="breakfast mobile-layout">
+                        <h6 class="meal-type">Breakfast</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">bacon and eggs</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="lunch mobile-layout">
+                        <h6 class="meal-type">Lunch</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">grilled chicken sandwich with capers</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="dinner mobile-layout">
+                        <h6 class="meal-type">Dinner</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">chicken teriyaki</p><span class="bullet-point"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Wednesday dow z-depth-2">
+                <h5 class="dow-title">Wednesday</h5>
+                <div class="dow-cards">
+                    <div class="breakfast mobile-layout">
+                        <h6 class="meal-type">Breakfast</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">bacon and eggs</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="lunch mobile-layout">
+                        <h6 class="meal-type">Lunch</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">grilled chicken sandwich with capers</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="dinner mobile-layout">
+                        <h6 class="meal-type">Dinner</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">chicken teriyaki</p><span class="bullet-point"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Thursday dow z-depth-2">
+                <h5 class="dow-title">Thursday</h5>
+                <div class="dow-cards">
+                    <div class="breakfast mobile-layout">
+                        <h6 class="meal-type">Breakfast</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">bacon and eggs</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="lunch mobile-layout">
+                        <h6 class="meal-type">Lunch</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">grilled chicken sandwich with capers</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="dinner mobile-layout">
+                        <h6 class="meal-type">Dinner</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">chicken teriyaki</p><span class="bullet-point"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Friday dow z-depth-2">
+                <h5 class="dow-title">Friday</h5>
+                <div class="dow-cards">
+                    <div class="breakfast mobile-layout">
+                        <h6 class="meal-type">Breakfast</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">bacon and eggs</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="lunch mobile-layout">
+                        <h6 class="meal-type">Lunch</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">grilled chicken sandwich with capers</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="dinner mobile-layout">
+                        <h6 class="meal-type">Dinner</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">chicken teriyaki</p><span class="bullet-point"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Satruday dow z-depth-2">
+                <h5 class="dow-title">Satruday</h5>
+                <div class="dow-cards">
+                    <div class="breakfast mobile-layout">
+                        <h6 class="meal-type">Breakfast</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">bacon and eggs</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="lunch mobile-layout">
+                        <h6 class="meal-type">Lunch</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">grilled chicken sandwich with capers</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="dinner mobile-layout">
+                        <h6 class="meal-type">Dinner</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">chicken teriyaki</p><span class="bullet-point"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Sunday dow z-depth-2">
+                <h5 class="dow-title">Sunday</h5>
+                <div class="dow-cards">
+                    <div class="breakfast mobile-layout">
+                        <h6 class="meal-type">Breakfast</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">bacon and eggs</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="lunch mobile-layout">
+                        <h6 class="meal-type">Lunch</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">grilled chicken sandwich with capers</p><span class="bullet-point"></span>
+                    </div>
+                    <div class="dinner mobile-layout">
+                        <h6 class="meal-type">Dinner</h6>
+                        <div class="recipe-card"></div>
+                        <p class="mobile-name">chicken teriyaki</p><span class="bullet-point"></span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
