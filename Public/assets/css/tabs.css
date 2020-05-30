@@ -1,0 +1,63 @@
+.tabs{
+    overflow: hidden;
+    color:teal;
+    padding-bottom: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius:5px;
+    background-color: transparent;
+  }
+  
+  .a-tab-left{
+    border-left:3px groove #94ab36;
+    border-right:1.5px groove #94ab36;
+  }
+  .a-tab-right{
+    border-left:1.5px inset #94ab36;
+    border-right:3px groove #94ab36;
+  
+  }
+  .a-tab-right, .a-tab-left{
+    color:teal;
+    background-color: hsl(39, 50%, 75%);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top:3px groove #94ab36;
+    border-bottom:2px groove #94ab36;
+  }
+  
+  .tabs .indicator{
+    color:teal;
+    margin-left:0%;
+    margin-right:0%;
+    border-left:3px groove teal;
+    border-right:1.5px groove teal;
+    background-color: white;
+  }
+  
+  .tabs .tab a:focus, .tabs .tab a:focus.active{
+    background-color: white;
+    color: teal;
+  }
+  
+  .tabs .tab a:hover, .tabs .tab a.active{
+    color:teal;
+  }
+  
+  .tabs .tab a{
+    color: grey;
+  }
+
+  label {
+      color:red;
+  }
+  
+  /* ----------------------------------- fridge tab ------------------------------------------------------------------- */
+  
+  .fridge-input-wrapper{
+    width:100%;
+    padding:10px;
+  }
+  
+  .chips{
+    width:100%;
+  } 
