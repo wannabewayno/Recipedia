@@ -27,10 +27,28 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    // image: {
-    // don't know how to add this to the model...
-    //   type: DataTypes.IMAGE
-    // }
+    image: {
+      type: DataTypes.BINARY,
+      allowNull: true
+    }
   });
+
+  Recipe.associate = function(models) {
+    // We're saying that a Favourite should belong to a Recipe
+    // A Post can't be created without an Author due to the foreign key constraint
+    Recipe.hasMany(models.Favourite, {
+      foreignKey: {
+        name: "recipe_id",
+        allowNull: false
+      }
+    });
+    Recipe.belongsTo(models.Recipe, {
+      foreignKey: {
+        name: "created_by",
+        allowNull: false
+      }
+    });
+  };
+
   return Recipe;
 };
