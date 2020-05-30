@@ -17,12 +17,21 @@
     <!--  MDC icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- custom css -->
+<<<<<<< HEAD:Public/index.html
+    <link rel="stylesheet" href="./assets/css/index.css"/>
+    <link rel="stylesheet" href="./assets/css/popups.css"/>
+    <link rel="stylesheet" href="./assets/css/tabs.css"/>
+    <link rel="stylesheet" href="./assets/css/buttons.css"/>
+    <link rel="stylesheet" href="./assets/css/nav.css"/>
+  </head>
+=======
     <link rel="stylesheet" href="./assets/css/index.css"/> 
     <link rel="stylesheet" href="./assets/css/popups.css"/>
     <link rel="stylesheet" href="./assets/css/tabs.css"/> 
     <link rel="stylesheet" href="./assets/css/buttons.css"/> 
     <link rel="stylesheet" href="./assets/css/nav.css"/> 
   </head> 
+>>>>>>> b19d75f0909b2997e1998a79f6ef1f4fd144c70b:index.html
   <body>
     <!-- NavBar -->
     <nav>
@@ -44,9 +53,11 @@
     </nav>
 
     <main>
+    
       <div class="container">
-        <p class="Welcome">Welcome to Recepedia</p>
-        <p class="Explore">Explore the world's recipes in a click... feeling hungry?</p>
+
+        <p class="Welcome">Explore, create and inspire</p>
+
         <!--Main Body Container w/Grids-->
         <div class="row">
             <div class="col s12">
@@ -58,7 +69,7 @@
                     <a class="a-tab-left"href="#search-bar" class="class text-darken-4">Recipe Search</a>
                   </li>
                   <li class="tab col s6">
-                    <a class="a-tab-right" href="#fridge-search" class="class text-darken-4">What's in my fridge</a>
+                    <a class="a-tab-right" href="#fridge-search" class="class text-darken-4">In the fridge?</a>
                   </li>
                 </ul>
 
@@ -108,7 +119,7 @@
                     <li>
                       How many of those items you can be bothered typing in.
                     </li>
-                    <div class="fridge-input-wrapper card blue-grey darken-1">
+                    <div class="fridge-input-wrapper">
                         <div class="chips"></div>
                     </div>
                   </ul>
@@ -134,20 +145,18 @@
 
     <footer class="footer">
 
-      <button class="footer-button">
-        <i class="material-icons">format_list_bulleted</i>
-      </button>
-
-      <button class="footer-button">
-        <i class="material-icons">favorite</i>
-      </button>
-
-      <button class="footer-button">
-        <i class="material-icons">dashboard</i>
-      </button>
-
-      <div>
-        Made with zest by  Reuben, Nick, Sam, Ken and Vasavi
+      <div class="button-container">
+        <button class="footer-button btn-floating">
+          <i class="material-icons">format_list_bulleted</i>
+        </button>
+  
+        <button class="footer-button btn-floating">
+          <i class="material-icons">favorite</i>
+        </button>
+  
+        <button class="footer-button btn-floating">
+          <i class="material-icons">dashboard</i>
+        </button>
       </div>
 
     </footer>
