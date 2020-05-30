@@ -26,7 +26,61 @@ main {
     /* color: #94ab36; */
 }
 
-/* Mobile first design */
+/* ----------------- Mobile first design --------------------------- */
+
+.recipe-card {
+    border:none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width:200px;
+    height:200px;
+    border-radius: 25px;
+    transition: all 400ms ease-in-out;
+    /* transition bg-colour */
+    background-color: #bca990;
+}
+
+.recipe-title {
+    text-align: center;
+    font-size: 1.2rem;
+    position:absolute;
+    color:white;
+    bottom:0;
+    background-color: hsla(0,0%,0%,0.3);
+    transition: inherit;
+}
+
+.recipe-card > img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    transition: inherit;
+}
+
+.overlay {
+    opacity: 0;
+    color: #cb4745;
+    position:absolute;
+    transition: inherit;
+}
+
+/*  transition effects */
+.recipe-card:hover > .overlay {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.recipe-card:hover > img, .recipe-card:hover .recipe-title {
+    opacity: 0;
+    cursor: pointer;
+    transform: scale(2);
+}
+
+
 .mobile-name {
     width: calc(60vw - 50px);
     margin: 0;
@@ -76,6 +130,7 @@ main {
 .meal-type {
     display: none;
 }
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {

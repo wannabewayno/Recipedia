@@ -66,6 +66,7 @@ nav>h3 {
 
 
 #sign-in-button{
+    margin:8px 10px 0 0;
     position: absolute;
     right:0;
     width:50px;
