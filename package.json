@@ -1,7 +1,7 @@
 {
-  "name": "testing123",
+  "name": "recipedia",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "node server.js"
   },
