@@ -1,33 +1,3 @@
-/* css unaffected by size changes */
-
-body {
-    /* background-color: #8f4623; */
-    background-image: url(../../images/chopping-board-4k.jpg);
-    background-position: center;
-    background-size: contain;
-}
-
-.dow-title{
-    margin:0;
-    text-align: center;
-}
-
-main {
-    margin-bottom: 100px;
-}
-
-.dow {
-    height: fit-content;
-    padding:0 5% 40px 5%;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    /* background-color: #8f4623; */
-    /* background-color: #cb4745; */
-    background-color: #bca990;
-    color:#ce1823;
-    /* color: #94ab36; */
-}
-
 /* ----------------- Mobile first design --------------------------- */
 
 .recipe-card {

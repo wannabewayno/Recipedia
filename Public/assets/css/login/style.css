@@ -1,0 +1,33 @@
+/* Small screen sizes */
+.nav-sign-in {
+  font-size: 1.8rem;
+  font-weight: 500;
+  position: absolute;
+  margin:0 5px 0px 0px;
+  bottom:-8px;
+  right:0;
+  z-index: 1;
+  color:#94ab36;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  
+}
+/* anything above this */
+@media (min-width: 768px) {
+  .nav-sign-in {
+    font-size: 3rem;
+    bottom:0;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

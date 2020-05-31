@@ -2,45 +2,111 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Sign in</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <!-- Materialize css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+  <!--  MDC icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <!-- Google Fonts Link -->
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+  <!-- custom css -->
+  <link href="./assets/css/login/style.css" rel="stylesheet">
+  <link href="./assets/css/nav.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
+
+  <!-- NavBar -->
+  <nav>
+    <h3>Recipedia</h3>
+    <div class="divider-container">
+
+      <div class="divider">
+        <img src="./assets/images/green-chilli.png" alt=""/>
+        <div class="divider-bottom"></div>
+        <div class="divider-top"></div>
+        <div class="divider-filler"></div>
       </div>
+
+      <div class="coloured-section">
+        <p class="nav-sign-in">Sign in</p>
+      </div>
+
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Login Form</h2>
-        <form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
-        <br />
-        <p>Or sign up <a href="/signup.html">here</a></p>
-        <p>back to home <a href="/">page</a></p>
+
+  <!-- container -->
+  <div class="conatiner">
+
+    <!-- ================================= Log in =================================== -->
+    <form id="sign-in">
+
+      <!-- email -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
       </div>
-    </div>
+
+      <!-- password -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+      <!-- submit button -->
+      <button type="submit" class="btn">
+        <i class=" material-icons right">chevron_right</i>let's go
+      </button>
+
+    </form>
+
+    <!-- ================================= Sign up =================================== -->
+    <form id="sign-up" action="">
+
+      <!-- first name -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+      <!-- last name -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+      <!-- email -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+      <!-- password -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+      <!-- confirm password -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+    </form>
+
   </div>
-
+ 
+  <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- materialize js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- custom CSS -->
   <script type="text/javascript" src="js/login.js"></script>
-
 </body>
 
 </html>
