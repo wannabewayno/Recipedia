@@ -8,11 +8,6 @@ body {
   color: #ce1823;
 }
 
-.Explore{
-  text-align: center;
-  font-size: large;
-}
-
 h4, .list-title {
   font-weight: bold;
 }
@@ -23,7 +18,7 @@ fieldset {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-width: 3px;
-  border-color: #94ab36;
+  border-color: #8f4623;
   color: #ce1823;
 }
 ::-webkit-input-placeholder {
@@ -33,7 +28,11 @@ fieldset {
 input[type="text"] {
   color: #ce1823;
 }
+/* to clear the sticky footer */
+main {
+  margin-bottom: 100px;
 
+}
 
 .main-search-bar {
   display: flex;

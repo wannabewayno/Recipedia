@@ -1,0 +1,139 @@
+/* css unaffected by size changes */
+
+body {
+    /* background-color: #8f4623; */
+    background-image: url(../../images/chopping-board-4k.jpg);
+    background-position: center;
+}
+
+.dow-title{
+    text-align: center;
+}
+
+main {
+    margin-bottom: 100px;
+}
+
+.dow {
+    height: fit-content;
+    padding:0 8% 30px 8%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    /* background-color: #8f4623; */
+    /* background-color: #cb4745; */
+    background-color: #bca990;
+    color:#ce1823;
+    /* color: #94ab36; */
+}
+
+/* ----------------- Mobile first design --------------------------- */
+
+.recipe-card {
+    border:none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width:200px;
+    height:200px;
+    border-radius: 25px;
+    transition: all 400ms ease-in-out;
+    /* transition bg-colour */
+    background-color: #bca990;
+}
+
+.recipe-title {
+    text-align: center;
+    font-size: 1.2rem;
+    position:absolute;
+    color:white;
+    bottom:0;
+    background-color: hsla(0,0%,0%,0.3);
+    transition: inherit;
+}
+
+.recipe-card > img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    transition: inherit;
+}
+
+.overlay {
+    opacity: 0;
+    color: #cb4745;
+    position:absolute;
+    transition: inherit;
+}
+
+/*  transition effects */
+.recipe-card:hover > .overlay {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.recipe-card:hover > img, .recipe-card:hover .recipe-title {
+    opacity: 0;
+    cursor: pointer;
+    transform: scale(2);
+}
+
+
+.mobile-name {
+    width: calc(60vw - 50px);
+    margin: 0;
+    margin-bottom:20px;
+    padding-left:30px;
+    border-bottom: 2px solid #94ab36;
+    /* cuts off long text with ellipsis */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.add-btn{
+    color:green
+}
+
+.bullet-point {
+    margin: 0;
+    display: block;
+    border-radius: 50%;
+    width:10px;
+    height:10px;
+    background-color: transparent;
+    border: 1.5px solid black;
+}
+
+.recipe-card {
+    padding-top: 10px;
+    text-align:center;
+    border-radius: 50%;
+    width:50px;
+    height:50px;
+    background-color: transparent;
+    border:2px solid #94ab36
+}
+
+.mobile-layout {
+    margin-bottom:-15px;
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.lunch {
+    flex-direction: row;
+}
+.meal-type {
+    display: none;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    
+}
+
