@@ -15,6 +15,7 @@ $('#search-query').keypress(function(event) {
 });
 
 const search = query => {
+    //! Will have to trim() and lowerCase() all user input strings
     console.log(`running search function`);
     // starts loading spinner
     spinner();
