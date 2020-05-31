@@ -78,7 +78,6 @@ nav>h3 {
 
 /* ---------------------- sticky footer ----------------------------- */
 .footer {
-    padding:10px;
     z-index:1;
     position:fixed;
     left:0px;
@@ -89,6 +88,10 @@ nav>h3 {
 }
 
 .button-container {
+    margin-top:10px;
+    position: absolute;
+    left:0;
+    width:70vw;
     display: flex;
     justify-content: space-evenly;
 }
@@ -105,4 +108,23 @@ nav>h3 {
 .footnote>p{
     margin: 0;
     padding: 0;
+}
+
+#create-recipe-section {
+    text-align: center;
+    margin: auto;
+    position:absolute;
+    right:0;
+    background-color: #ce1823;
+    height: 100%;
+    width: 30vw;
+}
+
+#create-recipe {
+    border: none;
+    margin-top:10px;
+    position:relative;
+    background-color: #94ab36;
+    height: 60%;
+    width: fit-content;
 }

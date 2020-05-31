@@ -84,10 +84,10 @@ main {
 
 
 .mobile-name {
+    text-align: center;
     width: calc(60vw - 100px);
     margin: 0;
     margin-bottom:20px;
-    padding-left:30px;
     border-bottom: 2px solid #94ab36;
     /* cuts off long text with ellipsis */
     white-space: nowrap;

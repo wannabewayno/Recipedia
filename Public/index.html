@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- custom css -->
     <link rel="stylesheet" href="./assets/css/index.css"/> 
-    <link rel="stylesheet" href="./assets/css/popups.css"/>
     <link rel="stylesheet" href="./assets/css/tabs.css"/> 
     <link rel="stylesheet" href="./assets/css/buttons.css"/> 
     <link rel="stylesheet" href="./assets/css/nav.css"/> 
@@ -47,7 +46,7 @@
     
       <div class="container">
 
-        <p class="Welcome">Explore, create and inspire</p>
+        <p class="Welcome">Explore, Create, Inspire</p>
 
         <!--Main Body Container w/Grids-->
         <div class="row">
@@ -71,21 +70,24 @@
                         <div class="input-field main-search-bar">
                           <input type="text" id="search-query">
                           <label for="search-query">Search recipes here!</label>
-                          <i class="fa fa-search"></i>
+                          <i id="search-button" class="material-icons">search</i>
                         </div>
                     </form>
                     <!-- ADVANCED SEARCH BUTTON -->
                     <button id="advanced-search-button" class="waves-effect waves-light btn" value="false">advanced</button>
+                    <!-- dropdown box for advanced search-->
                     <form id="advanced-search">
-                        <!-- dropdown box for advanced search-->
+                      <!-- Cuisine filter -->
                       <div class="input-field">
                         <input type="text" id="cuisine">
                         <label for="cuisine">cuisine</label>
                       </div>
+                      <!-- Diet filter  -->
                       <div class="input-field">
                         <input type="text" id="diet">
                         <label for="diet">Diet</label>
                       </div>
+                      <!-- Exclude certain ingredients -->
                       <div class="input-field">
                         <input type="text" id="exclude-ingredients">
                         <label for="exclude-ingredients">excluding ingredients</label>
@@ -147,9 +149,9 @@
           <i class="material-icons">favorite</i>
         </button>
   
-        <button class="footer-button btn-floating">
+        <a class="footer-button btn-floating" href="/dashboard">
           <i class="material-icons">dashboard</i>
-        </button>
+        </a>
       </div>
 
     </footer>
@@ -160,7 +162,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- custom js -->
     <script src="./assets/javascript/activateTabs.js"></script>   
-    <script src="./assets/javascript/activateTabs.js"></script>   
+    <script src="./assets/javascript/spinner.js"></script>   
+    <script src="./assets/javascript/search.js"></script>   
+    <script src="./assets/javascript/openModal.js"></script>   
 </body>
 
 </html>
