@@ -4,7 +4,7 @@ body {
 
 .Welcome{
   text-align: center;
-  font-size: xx-large;
+  font-size: x-large;
   color: #ce1823;
 }
 
@@ -53,12 +53,12 @@ button,
   background-color: #94ab36;
 }
 
-.fa-search{
+#search-button {
     font-size: 20px;
     margin:10px;
     cursor: pointer;
 }
-.fa-search:hover, .fa-search:focus{
+#search-button:hover, #search-button:focus{
     transform: scale(1.05);
     color: #94ab36;
 }
