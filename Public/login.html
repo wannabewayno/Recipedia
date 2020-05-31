@@ -40,73 +40,91 @@
   </nav>
 
   <!-- container -->
-  <div class="conatiner">
-
+  <main class="container layout">
     <!-- ================================= Log in =================================== -->
-    <form id="sign-in">
+    <section class="sign-in">
+      <h4>Sign in</h4>
+      <form id="sign-in">
+  
+        <!-- email -->
+        <div class="input-field">
+          <input id="sign-in-email" type="text">
+          <label for="sign-in-email">email</label>
+        </div>
+  
+        <!-- password -->
+        <div class="input-field">
+          <input id="sign-in-password" type="password">
+          <label for="sign-in-password">password</label>
+        </div>
+  
+        <!-- submit button -->
+        <button id="sign-in-btn" type="submit" class="btn">
+          <i class=" material-icons right">chevron_right</i>let's go
+        </button>
+  
+      </form>
+    </section>
 
-      <!-- email -->
-      <div class="input-group">
-        <input type="">
-        <label for=""></label>
-      </div>
+    <div class="section-break"></div>
 
-      <!-- password -->
-      <div class="input-group">
-        <input type="">
-        <label for=""></label>
-      </div>
-
-      <!-- submit button -->
-      <button type="submit" class="btn">
-        <i class=" material-icons right">chevron_right</i>let's go
+    <section class="sign-up">
+      <!-- ================================= Sign up =================================== -->
+      <h4>Not a member?</h4>
+      <p></p>
+      <button id="join-btn" class="btn">
+        <i class="material-icons right">arrow_drop_down</i>Join right now
       </button>
+      <form id="sign-up">
 
-    </form>
+        <!-- email -->
+        <div class="input-field">
+          <input id="sign-up-email" type="text">
+          <label for="sign-up-email">email</label>
+        </div>
+  
+        <!-- password -->
+        <div class="input-field">
+          <input id="sign-up-password" type="password">
+          <label for="sign-up-password">password</label>
+        </div>
+  
+        <!-- confirm password -->
+        <div class="input-field">
+          <input id="sign-up-confirm-password" type="password">
+          <label for="sign-up-confirm-password">confirm password</label>
+        </div>
 
-    <!-- ================================= Sign up =================================== -->
-    <form id="sign-up" action="">
+        <!-- first name -->
+        <div class="input-field">
+          <input id="sign-up-first-name" type="text">
+          <label for="sign-up-first-name">first name</label>
+        </div>
+  
+        <!-- last name -->
+        <div class="input-field">
+          <input id="sign-up-last-name" type="text">
+          <label for="sign-up-last-name">last name</label>
+        </div>
 
-      <!-- first name -->
-      <div class="input-group">
-        <input type="">
-        <label for=""></label>
-      </div>
+        <small class="small-text">Your name is used to author any recipes you create!</small>
+  
+        <!-- submit button -->
+        <button id="sign-up-btn" type="submit" class="btn">
+          <i class=" material-icons right">chevron_right</i>sign me up!
+        </button>
+      </form>
+    </section>
 
-      <!-- last name -->
-      <div class="input-group">
-        <input type="">
-        <label for=""></label>
-      </div>
-
-      <!-- email -->
-      <div class="input-group">
-        <input type="">
-        <label for=""></label>
-      </div>
-
-      <!-- password -->
-      <div class="input-group">
-        <input type="">
-        <label for=""></label>
-      </div>
-
-      <!-- confirm password -->
-      <div class="input-group">
-        <input type="">
-        <label for=""></label>
-      </div>
-
-    </form>
-
-  </div>
+  </main>
  
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- materialize js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- custom CSS -->
-  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="./assets/javascript/login.js"></script>
+  <script type="text/javascript" src="./assets/javascript/login-logic.js"></script>
 </body>
 
 </html>

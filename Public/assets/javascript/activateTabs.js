@@ -8,10 +8,4 @@ $(document).ready(function(){
 //expands search bar when 'advanced' is clicked
 $('#advanced-search-button').click(function(){
   $('#advanced-search').toggle("slow");
-  
-  if ($('#advanced-search-button').attr("value")==="false"){
-    $('#advanced-search-button').attr("value","true")
-  } else {
-    $('#advanced-search-button').attr("value","false")
-  }
 });
