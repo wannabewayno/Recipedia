@@ -1,4 +1,5 @@
 /* ------------------------ nav -------------------------------------- */
+
 nav {
     overflow: hidden;
     height:65px;
@@ -12,7 +13,6 @@ nav>h3 {
     margin: 0;
     position: absolute;
     color: #ce1823;
-
 }
 
 .divider {
@@ -91,7 +91,7 @@ nav>h3 {
     margin-top:10px;
     position: absolute;
     left:0;
-    width:70vw;
+    width:100%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -100,31 +100,8 @@ nav>h3 {
     background-color: #94ab36;
     position: relative;
 }
-.footnote{
-    text-align: center;
-    width:100%;
-    margin:auto;
-}
-.footnote>p{
-    margin: 0;
-    padding: 0;
-}
 
-#create-recipe-section {
-    text-align: center;
-    margin: auto;
-    position:absolute;
-    right:0;
-    background-color: #ce1823;
-    height: 100%;
-    width: 30vw;
-}
-
-#create-recipe {
-    border: none;
-    margin-top:10px;
-    position:relative;
-    background-color: #94ab36;
-    height: 60%;
-    width: fit-content;
+button {
+    margin:0;
+    /* padding:0; */
 }
