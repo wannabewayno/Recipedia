@@ -2,32 +2,100 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Sign in</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Materialize css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+  <!--  MDC icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <!-- Google Fonts Link -->
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+  <!-- custom css -->
   <link href="./assets/css/login/style.css" rel="stylesheet">
+  <link href="./assets/css/nav.css" rel="stylesheet">
 </head>
 
 <body>
+
+  <!-- NavBar -->
+  <nav>
+    <h3>Recipedia</h3>
+    <div class="divider-container">
+
+      <div class="divider">
+        <img src="./assets/images/green-chilli.png" alt=""/>
+        <div class="divider-bottom"></div>
+        <div class="divider-top"></div>
+        <div class="divider-filler"></div>
+      </div>
+
+      <div class="coloured-section">
+        <p class="nav-sign-in">Sign in</p>
+      </div>
+
+    </div>
+  </nav>
+
   <!-- container -->
   <div class="conatiner">
-    <!-- Log in -->
-    <form action="">
+
+    <!-- ================================= Log in =================================== -->
+    <form id="sign-in">
+
+      <!-- email -->
       <div class="input-group">
         <input type="">
         <label for=""></label>
       </div>
-      <div class="input-group">
 
+      <!-- password -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
       </div>
-      <button>
-        <i class="material-icons"></i>
+
+      <!-- submit button -->
+      <button type="submit" class="btn">
+        <i class=" material-icons right">chevron_right</i>let's go
       </button>
+
     </form>
-    <!-- Sign up -->
-    <form action="">
-      
+
+    <!-- ================================= Sign up =================================== -->
+    <form id="sign-up" action="">
+
+      <!-- first name -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+      <!-- last name -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+      <!-- email -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+      <!-- password -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
+
+      <!-- confirm password -->
+      <div class="input-group">
+        <input type="">
+        <label for=""></label>
+      </div>
 
     </form>
 
