@@ -1,28 +1,51 @@
 :root {
-    --button-colour:#94ab36;
+    --button-colour:hsl(72, 52%, 44%);
+    --hover-colour:	hsl(72, 52%, 34%)
 }
 
-.delete-button{
-    width:fit-content;
-    height:auto;
-    border: none;
+button {
+    background-color: var(--button-colour);
+    border:none;
+    border-radius: 5px;
     cursor: pointer;
-    padding:0;
-    margin:0;
+    object-position: center;
+}
+
+button:hover, button:focus {
+    background-color: var(--hover-colour);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.nude-button {
+    display: block;
+    width: fit-content;
+    height: auto;
     background-color: transparent;
-    position: absolute;
-    top:0.5rem;
-    right:0.5rem;
     transition:all 200ms ease-in-out;
 }
 
-.delete-button:hover, .delete-button:focus, .delete-button:active {
+.nude-button:hover, .nude-button:focus, .nude-button:active {
     background-color: transparent;
     transform: scale(1.5);
 }
 
-.btn {
-    background-color:var(--button-colour);
-    cursor: pointer;
-    object-position: center;
+.top-right {
+    position: absolute;
+    top:0.5rem;
+    right:0.5rem;
+}
+
+.top-left {
+    position: absolute;
+    top:0.5rem;
+    left:0.5rem;
+}
+
+/* --------------- custom button properties ----------------------- */
+#add-to-list-btn {
+    margin-left: 10px;
+    margin-bottom: 13px;
 }
