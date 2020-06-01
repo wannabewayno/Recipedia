@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipedia</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/images/favicons/red-chilli-vector.png" >
+    <link rel="apple-touch-icon" href="./assets/images/favicons/red-chilli-vector.png">
+    <link rel="icon" href="./assets/images/favicons/red-chilli-vector.png">
     <!-- font-awesome CDN -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="crossorigin="anonymous"
@@ -65,87 +69,87 @@
 
             <!-- search bar -->
             <fieldset id="search-bar">
-                <!-- main search bar -->
-                <form>
-                  <div class="input-field main-search-bar">
-                    <input type="text" id="search-query">
-                    <label for="search-query">Search recipes here!</label>
-                    <i id="search-button" class="material-icons">search</i>
-                  </div>
-                </form>
+              <!-- main search bar -->
+              <form>
+                <div class="input-field main-search-bar">
+                  <input type="text" id="search-query">
+                  <label for="search-query">Search recipes here!</label>
+                  <i id="search-button" class="material-icons">search</i>
+                </div>
+              </form>
 
-                <!-- ADVANCED SEARCH BUTTON -->
-                <button id="advanced-search-button" class="waves-effect waves-light btn" value="false">advanced</button>
+              <!-- ADVANCED SEARCH BUTTON -->
+              <button id="advanced-search-button" class="waves-effect waves-light btn" value="false">advanced</button>
 
-                <!-- dropdown box for advanced search-->
-                <form id="advanced-search">
+              <!-- dropdown box for advanced search-->
+              <form id="advanced-search">
 
-                  <!-- Cuisine filter -->
-                  <div class="input-field">
-                    <select multiple>
-                      <option value="" disabled selected>Cuisines:</option>
-                      <option value="0">Australian</option>
-                      <option value="1">African</option>
-                      <option value="2">American</option>
-                      <option value="3">British</option>
-                      <option value="4">Cajun</option>
-                      <option value="5">Caribbean</option>
-                      <option value="6">Chinese</option>
-                      <option value="7">Eastern European</option>
-                      <option value="8">European</option>
-                      <option value="9">French</option>
-                      <option value="10">German</option>
-                      <option value="11">Greek</option>
-                      <option value="12">Indian</option>
-                      <option value="13">Irish</option>
-                      <option value="14">Italian</option>
-                      <option value="15">Japenese</option>
-                      <option value="16">Jewish</option>
-                      <option value="17">Korean</option>
-                      <option value="18">Latin American</option>
-                      <option value="19">Malaysian</option>
-                      <option value="20">Mediterranean</option>
-                      <option value="21">Mexican</option>
-                      <option value="22">Middle Eastern</option>
-                      <option value="23">Nordic</option>
-                      <option value="24">Singaporean</option>
-                      <option value="25">Southern</option>
-                      <option value="26">Spanish</option>
-                      <option value="27">Swedish</option>
-                      <option value="28">Thai</option>
-                      <option value="29">Vietnamese</option>
-                    </select>
-                    <label for="cuisine">Cuisine</label>
-                  </div>
+                <!-- Cuisine filter -->
+                <div class="input-field">
+                  <select multiple>
+                    <option value="" disabled selected>Cuisines:</option>
+                    <option value="0">Australian</option>
+                    <option value="1">African</option>
+                    <option value="2">American</option>
+                    <option value="3">British</option>
+                    <option value="4">Cajun</option>
+                    <option value="5">Caribbean</option>
+                    <option value="6">Chinese</option>
+                    <option value="7">Eastern European</option>
+                    <option value="8">European</option>
+                    <option value="9">French</option>
+                    <option value="10">German</option>
+                    <option value="11">Greek</option>
+                    <option value="12">Indian</option>
+                    <option value="13">Irish</option>
+                    <option value="14">Italian</option>
+                    <option value="15">Japenese</option>
+                    <option value="16">Jewish</option>
+                    <option value="17">Korean</option>
+                    <option value="18">Latin American</option>
+                    <option value="19">Malaysian</option>
+                    <option value="20">Mediterranean</option>
+                    <option value="21">Mexican</option>
+                    <option value="22">Middle Eastern</option>
+                    <option value="23">Nordic</option>
+                    <option value="24">Singaporean</option>
+                    <option value="25">Southern</option>
+                    <option value="26">Spanish</option>
+                    <option value="27">Swedish</option>
+                    <option value="28">Thai</option>
+                    <option value="29">Vietnamese</option>
+                  </select>
+                  <label for="cuisine">Cuisine</label>
+                </div>
 
-                  <!-- Diet filter  -->
-                  <div class="input-field">
-                    <select multiple>
-                      <option value="" disabled selected>Diets:</option>
-                      <option value="1">Gluten free</option>
-                      <option value="2">Vegan</option>
-                      <option value="3">Vegetarien</option>
-                      <option value="4">Pescetarian</option>
-                      <option value="5">Paleo</option>
-                      <option value="6">Primal</option>
-                      <option value="7">Whole30</option>
-                      <option value="8">Ketogenic</option>
-                      <option value="9">lacto-vegetarian</option>
-                      <option value="10">ovo-vegetarian</option>
-                    </select>
-                    <label for="diet">Diet</label>
-                  </div>
+                <!-- Diet filter  -->
+                <div class="input-field">
+                  <select multiple>
+                    <option value="" disabled selected>Diets:</option>
+                    <option value="1">Gluten free</option>
+                    <option value="2">Vegan</option>
+                    <option value="3">Vegetarien</option>
+                    <option value="4">Pescetarian</option>
+                    <option value="5">Paleo</option>
+                    <option value="6">Primal</option>
+                    <option value="7">Whole30</option>
+                    <option value="8">Ketogenic</option>
+                    <option value="9">lacto-vegetarian</option>
+                    <option value="10">ovo-vegetarian</option>
+                  </select>
+                  <label for="diet">Diet</label>
+                </div>
 
-                  <!-- Exclude certain ingredients -->
-                  <div class="input-field">
-                    <input type="text" id="exclude-ingredients">
-                    <label for="exclude-ingredients">exclude these ingredients</label>
-                  </div>
+                <!-- Exclude certain ingredients -->
+                <div class="input-field">
+                  <input type="text" id="exclude-ingredients">
+                  <label for="exclude-ingredients">exclude these ingredients</label>
+                </div>
 
-                </form>
+              </form>
 
             </fieldset>
-            
+
             <!-- what's in my fridge -->
             <fieldset class="col s12" id="fridge-search">
 
@@ -172,13 +176,16 @@
         </div>
 
         <div class="row">
+
           <!--This is where the cards will be displayed sequentially-->
           <div class="col s12">
-                <!--This is where the search results are displayed-->
-                <div id="search-results">
-                  
-                </div>
-                <button class="btn waves-effect">Show more Results</button>
+
+            <!--This is where the search results are displayed-->
+            <div id="search-results">
+              
+            </div>
+            <button class="btn waves-effect">Show more Results</button>
+
           </div>
           
         </div>
