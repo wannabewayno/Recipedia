@@ -45,21 +45,25 @@ main {
   margin-top: 33px;
 }
 
-button,
-#advanced-search-button, .waves-effect, .waves-light, .btn {
-  margin:10px 10px 0px 0px;
-  padding:0px 3px 0px 0px;
-  object-position: center;
+#search-bar {
+  margin:0;
+  padding:5%;
+  
+}
+
+#advanced-search-button {
   background-color: #94ab36;
+  margin-bottom:10px;
 }
 
 #search-button {
-    font-size: 20px;
-    margin:10px;
-    cursor: pointer;
+  font-size: 30px;
+  margin-left:10px;
+  cursor: pointer;
 }
+
 #search-button:hover, #search-button:focus{
-    transform: scale(1.05);
+    transform: scale(1.4);
     color: #94ab36;
 }
 .spinner{
