@@ -12,13 +12,21 @@
     padding-bottom: 5%;
 }
 
-.modal-body {
+.recipe-modal {
     position: relative;
     padding:20px;
     width: 80%;
-    border: 2px solid teal;
-    background-color: wheat;
+    background-color: white;
     margin:auto;
     border-radius: 5px;
+}
 
+.shopping-list-modal {
+    position: relative;
+    padding:20px;
+    width: 80%;
+    background-color: #ffff88;
+    color: black;
+    margin:auto;
+    border-radius: 5px;
 }

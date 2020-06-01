@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping-list-modal</title>
+     <!-- Favicon -->
+     <link rel="shortcut icon" href="./assets/images/favicons/red-chilli-vector.png" >
+     <link rel="apple-touch-icon" href="./assets/images/favicons/red-chilli-vector.png">
+     <link rel="icon" href="./assets/images/favicons/red-chilli-vector.png">
+     <!-- font-awesome CDN -->
+     <script
+       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="crossorigin="anonymous"
+     ></script>
+     <!-- Google Fonts Link -->
+     <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+     <!--  MDC icons-->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+     <!-- custom css -->
+     <link rel="stylesheet" href="./assets/css/index.css"/> 
+     <link rel="stylesheet" href="./assets/css/tabs.css"/> 
+     <link rel="stylesheet" href="./assets/css/buttons.css"/> 
+     <link rel="stylesheet" href="./assets/css/nav.css"/>
+     <link rel="stylesheet" href="./assets/css/modal.css">
+     <link rel="stylesheet" href="./assets/css/recipe-modal/visual-info.css">
+     <link rel="stylesheet" href="./assets/css/recipe-modal/recipe.css">
+     <link rel="stylesheet" href="./assets/css/shopping-list.css">
+</head>
+<body>
+    <!-- modal -->
+    <div class="modal-container">
+        <!-- modal body -->
+        <div class="shopping-list-modal">
+
+                <!-- delete button -->
+                <button class='nude-button top-right delete-button'>
+                    <i class='small material-icons'>close</i>
+                </button>
+
+                <!-- menu button to back of shopping list -->
+                <button id="menu-button" class='nude-button top-left'>
+                    <i class='small material-icons'>tune</i>
+                </button>
+                
+                <!-- container FRONT -->
+                <div id="front" class="container">
+
+                    <!-- input container to manually add items to the list -->
+                    <div class="add-to-list-container">
+                        <!-- label -->
+                        <label for="add-to-list">Add anything else?</label>
+                        <!-- input chips (add multiple if ya need, will be a promise) -->
+                        <div class="input-container">
+                            <div id="add-to-list" class="chips"></div>
+                            <!-- add button -->
+                            <button id="add-to-list-btn">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <h4>Shopping list</h4>
+
+                    <!-- shopping list body FLEXBOX-->
+                    <div class="shopping-list-body">
+                        <!-- list container -->
+                        <div class="isle">
+                            <!-- isle title-->
+                            <h5>fruit and veg</h5>
+                            <!-- isle list -->
+                            <ul id="fruit-and-veg">
+                                <!-- list item MANY OF -->
+                                <li class="ingredient"> Bananas 5 pieces </li>
+                                <li class="ingredient"> Carrots 6 pieces </li>
+                                <li class="ingredient"> potatoes 1 kg </li>
+                                <li class="ingredient"> mushrooms 500 gr </li>
+                            </ul>
+                        </div>
+
+                        <div class="isle">
+                            <!-- isle title-->
+                            <h5>Deli</h5>
+                            <!-- isle list -->
+                            <ul id="deli">
+                                <!-- list item MANY OF -->
+                                <li class="ingredient"> Ham shaved 500gr </li>
+                                <li class="ingredient"> blue cheese 60gr  </li>
+                                <li class="ingredient"> prawns 1kg </li>
+                            </ul>
+                        </div>
+
+                        <div class="isle">
+                            <!-- isle title-->
+                            <h5>Spices</h5>
+                            <!-- isle list -->
+                            <ul id="spices">
+                                <!-- list item MANY OF -->
+                                <li class="ingredient"> Paprika 250 gr </li>
+                                <li class="ingredient"> morrocan seasoning 50gr </li>
+                                <li class="ingredient"> cumin ground 50gr </li>
+                                <li class="ingredient"> cayenne pepper 20gr </li>
+                            </ul>
+                        </div>
+
+                        <div class="isle">
+                            <!-- isle title-->
+                            <h5>Meat and dairy</h5>
+                            <!-- isle list -->
+                            <ul id="meat-and-dairy">
+                                <!-- list item MANY OF -->
+                                <li class="ingredient"> milk 2L </li>
+                                <li class="ingredient"> beef minced 2kg </li>
+                                <li class="ingredient"> chicken thighs 400gr </li>
+                                <li class="ingredient"> lamb fillet 300gr </li>
+                            </ul>
+                        </div>
+
+                        
+                    </div>
+                </div>
+    
+                <!-- container BACK (change menu icon is list icon) -->
+                    <!-- select button for which recipes to buy for -->
+                    <!-- List body -->
+                        <!-- list item FLEX BOX -->
+                            <!-- bin icon LEFT -->
+                            <!-- recipe name -->
+                            <!-- eye icon RIGHT -->
+                            <!-- A GAP -->
+                            <!-- input number -->
+                            <!-- number increment for servings -->
+                    <!-- bin icon for remove all -->
+        </div>
+    </div>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- custom js -->
+    <script src="./assets/javascript/activateTabs.js"></script>   
+    <script src="./assets/javascript/spinner.js"></script>   
+    <script src="./assets/javascript/search.js"></script>   
+    <script src="./assets/javascript/openModal.js"></script>
+</body>
+</html>
