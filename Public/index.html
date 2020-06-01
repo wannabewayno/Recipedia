@@ -52,7 +52,7 @@
     
       <div class="container">
 
-        <p class="Welcome">Explore, Create, Inspire</p>
+        <p class="Welcome">What do you fancy?</p>
 
         <!--Main Body Container w/Grids-->
         <div class="row">
@@ -88,7 +88,7 @@
                 <!-- Cuisine filter -->
                 <div class="input-field">
                   <select multiple>
-                    <option value="" disabled selected>Cuisines:</option>
+                    <option value="" disabled>Cuisines:</option>
                     <option value="0">Australian</option>
                     <option value="1">African</option>
                     <option value="2">American</option>
@@ -126,7 +126,7 @@
                 <!-- Diet filter  -->
                 <div class="input-field">
                   <select multiple>
-                    <option value="" disabled selected>Diets:</option>
+                    <option value="" disabled>Diets:</option>
                     <option value="1">Gluten free</option>
                     <option value="2">Vegan</option>
                     <option value="3">Vegetarien</option>
@@ -142,17 +142,18 @@
                 </div>
 
                 <!-- Exclude certain ingredients -->
-                <div class="input-field">
-                  <input type="text" id="exclude-ingredients">
-                  <label for="exclude-ingredients">Exclude these ingredients</label>
+                <label for="exclude-ingredients">Exclude these ingredients</label>
+                <div  id="exclude-ingredients" class="chips chips-placeholder">
+                  <input class="custom-class">
                 </div>
+                
 
               </section>
 
             </form>
 
             <!-- what's in my fridge -->
-            <section class="col s12" id="fridge-search">
+            <form class="col s12" id="fridge-search">
 
               <h5>
                 What's in your fridge?
@@ -167,12 +168,12 @@
                 <li>
                   2.) How many of those items you can be bothered typing in.
                 </li>
-                <div class="fridge-input-wrapper">
-                    <div class="chips"></div>
-                </div>
+                
+                <div id="in-my-fridge"class="chips"></div>
+                
               </ul>
 
-            </section>
+            </form>
 
           </div> <!-- End column -->
         </div> <!-- End row -->
@@ -186,7 +187,7 @@
             <div id="search-results">
               
             </div>
-            <button class="btn waves-effect">Show more Results</button>
+            <button id="show-more-btn" class="btn waves-effect">Show more Results</button>
 
           </div> <!--End column-->
           
