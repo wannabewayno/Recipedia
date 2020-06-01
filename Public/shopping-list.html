@@ -37,7 +37,7 @@
         <div class="shopping-list-modal">
 
                 <!-- delete button -->
-                <button class='nude-button top-right delete-button'>
+                <button class='nude-button top-right close-button'>
                     <i class='small material-icons'>close</i>
                 </button>
 
@@ -124,16 +124,112 @@
                 </div>
     
                 <!-- container BACK (change menu icon is list icon) -->
+                <div id="back" class="container">
                     <!-- select button for which recipes to buy for -->
-                    <!-- List body -->
-                        <!-- list item FLEX BOX -->
-                            <!-- bin icon LEFT -->
-                            <!-- recipe name -->
-                            <!-- eye icon RIGHT -->
-                            <!-- A GAP -->
-                            <!-- input number -->
-                            <!-- number increment for servings -->
+                    <div class="input-field">
+                        <select name="" id="which-recipes" multiple>
+                            <option value="" disabled>Items:</option>
+                            <option value="1">This week's meal plan</option>
+                            <option value="2">Next week's meal plan</option>
+                            <option value="4">Added recipes</option>
+                        </select>
+                        <label for="which-recipes">Choose which items to shop for</label>
+                    </div>
+
+                    <div class="recipe-list-type">
+                        <h5>This week's recipes</h5>
+                        <!-- List body -->
+                        <ul id="this-weeks-recipes">
+                            <!-- list item FLEX BOX -->
+                            <li class="recipe-list-item">
+                                <!-- bin icon LEFT -->
+                                <button class="remove-button">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                                <!-- recipe name -->
+                                <p class="recipe-name">Smoked chicken salad</p>
+                                <!-- eye icon RIGHT -->
+                                <button class="visibility">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                                <!-- input number -->
+                                <div class="servings-adjust-container">
+                                    <p>Servings:<span class="servings-adjust">3</span></p>
+                                    <button class="servings-plus">
+                                        <i class="material-icons">expand_more</i>
+                                    </button>
+                                    <button class="servings-plus">
+                                        <i class="material-icons">expand_less</i>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-list-type">
+                        <h5>Next week's recipes</h5>
+                        <!-- List body -->
+                        <ul id="next-weeks-recipes">
+                            <!-- list item FLEX BOX -->
+                            <li class="recipe-list-item">
+                                <!-- bin icon LEFT -->
+                                <button class="remove-button">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                                <!-- recipe name -->
+                                <p class="recipe-name">Smoked chicken salad</p>
+                                <!-- eye icon RIGHT -->
+                                <button class="visibility">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                                <!-- input number -->
+                                <div class="servings-adjust-container">
+                                    <p>Servings:<span class="servings-adjust">3</span></p>
+                                    <button class="servings-plus">
+                                        <i class="material-icons">expand_more</i>
+                                    </button>
+                                    <button class="servings-plus">
+                                        <i class="material-icons">expand_less</i>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-list-type">
+                        <h5>Added recipes</h5>
+                        <!-- List body -->
+                        <ul id="added-recipes">
+                            <!-- list item FLEX BOX -->
+                            <li class="recipe-list-item">
+                                <!-- bin icon LEFT -->
+                                <button class="remove-button">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                                <!-- recipe name -->
+                                <p class="recipe-name">Smoked chicken salad</p>
+                                <!-- eye icon RIGHT -->
+                                <button class="visibility">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                                <!-- input number -->
+                                <div class="servings-adjust-container">
+                                    <p>Servings:<span class="servings-adjust">3</span></p>
+                                    <button class="servings-plus">
+                                        <i class="material-icons">expand_more</i>
+                                    </button>
+                                    <button class="servings-plus">
+                                        <i class="material-icons">expand_less</i>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                     <!-- bin icon for remove all -->
+                    <button class="remove-all">
+                        <i class="material-icons">delete_sweep</i> Remove all recipes
+                    </button>
+                </div>
         </div>
     </div>
 

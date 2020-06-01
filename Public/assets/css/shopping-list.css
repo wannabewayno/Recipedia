@@ -37,8 +37,27 @@
     margin-bottom: 10px;
     list-style-type: "- " !important;
     list-style-position: outside;
+    cursor: pointer;
 }
 
-/* ---------------------------- FRONT OF SHOPPING LIST ----------------------------------- */
+.ingredient:hover {
+    transform: scale(1.05);
+}
 
+/* ---------------------------- BACK OF SHOPPING LIST ----------------------------------- */
+
+#back{
+    text-align: center;
+}
+
+.recipe-list-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.servings-adjust-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 

@@ -1,5 +1,6 @@
 :root {
-    --button-colour:#94ab36;
+    --button-colour:hsl(72, 52%, 44%);
+    --hover-colour:	hsl(72, 52%, 34%)
 }
 
 button {
@@ -8,6 +9,10 @@ button {
     border-radius: 5px;
     cursor: pointer;
     object-position: center;
+}
+
+button:hover {
+    background-color: var(--hover-colour);
 }
 
 .nude-button {
@@ -40,32 +45,3 @@ button {
     margin-left: 10px;
     margin-bottom: 13px;
 }
-
-/* .menu-button {
-    display: block;
-    width: fit-content;
-    height: auto;
-    background-color: transparent;
-    position: absolute;
-    top:0.5rem;
-    left:0.5rem;
-}
-
-.delete-button{
-    width:fit-content;
-    height:auto;
-    border: none;
-    cursor: pointer;
-    padding:0;
-    margin:0;
-    background-color: transparent;
-    position: absolute;
-    top:0.5rem;
-    right:0.5rem;
-    transition:all 200ms ease-in-out;
-}
-
-.delete-button:hover, .delete-button:focus, .delete-button:active {
-    background-color: transparent;
-    transform: scale(1.5);
-} */
