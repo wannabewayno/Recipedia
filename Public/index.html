@@ -56,7 +56,8 @@
 
         <!--Main Body Container w/Grids-->
         <div class="row">
-          <div class="col s12 z-depth-5" style="padding:0;">
+          <div id="search-container" class="col s12 z-depth-5">
+
             <!-- Tabbed headers -->
             <ul class="tabs">
               <li class="tab col s6">
@@ -68,21 +69,26 @@
             </ul>
 
             <!-- search bar -->
-            <fieldset id="search-bar">
+            <form id="search-bar">
               <!-- main search bar -->
-              <form>
+              <section>
                 <div class="input-field main-search-bar">
-                  <input type="text" id="search-query">
+                  <input type="text" id="search-query" >
                   <label for="search-query">Search recipes here!</label>
                   <i id="search-button" class="material-icons">search</i>
                 </div>
-              </form>
+                <!-- <div class="input-field main-search-bar">
+                  <input type="text" id="search-query">
+                  <label for="search-query">Search recipes here!</label>
+                  <i id="search-button" class="material-icons">search</i>
+                </div> -->
+              </section>
 
               <!-- ADVANCED SEARCH BUTTON -->
-              <button id="advanced-search-button" class="waves-effect waves-light btn" value="false">advanced</button>
+              <button id="advanced-search-button" class="waves-effect waves-light btn" type="button">advanced</button>
 
               <!-- dropdown box for advanced search-->
-              <form id="advanced-search">
+              <section id="advanced-search">
 
                 <!-- Cuisine filter -->
                 <div class="input-field">
@@ -143,15 +149,15 @@
                 <!-- Exclude certain ingredients -->
                 <div class="input-field">
                   <input type="text" id="exclude-ingredients">
-                  <label for="exclude-ingredients">exclude these ingredients</label>
+                  <label for="exclude-ingredients">Exclude these ingredients</label>
                 </div>
 
-              </form>
+              </section>
 
-            </fieldset>
+            </form>
 
             <!-- what's in my fridge -->
-            <fieldset class="col s12" id="fridge-search">
+            <section class="col s12" id="fridge-search">
 
               <h5>
                 What's in your fridge?
@@ -171,9 +177,10 @@
                 </div>
               </ul>
 
-            </fieldset>
-          </div>
-        </div>
+            </section>
+
+          </div> <!-- End column -->
+        </div> <!-- End row -->
 
         <div class="row">
 
@@ -186,9 +193,9 @@
             </div>
             <button class="btn waves-effect">Show more Results</button>
 
-          </div>
+          </div> <!--End column-->
           
-        </div>
+        </div> <!--End row -->
 
       </div> <!--End container--> 
 
@@ -214,7 +221,7 @@
       </div>
 
     </footer>
-   
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->

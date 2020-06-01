@@ -6,9 +6,9 @@ $('#search-button').click(function(event) {
 
 // hitting enter in the search bar, triggers search function
 $('#search-query').keypress(function(event) {
-    event.preventDefault();
     if(event.which === 13) {
-       console.log('pressed enter key');
+        event.preventDefault();
+        console.log('pressed enter key');
         const query = "placeholder" // do stuff to get the query and pass to search function
         search(query);
     }

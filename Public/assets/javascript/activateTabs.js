@@ -1,6 +1,6 @@
 // activates Materialize JS for tabs, chips, input selects and dropdowns, Hides advanced search on start up.
 $(document).ready(function(){
-  $("#advanced-search").hide();
+  $('#advanced-search').hide();
   $('.tabs').tabs();
   $('.chips').chips();
   $('select').formSelect();

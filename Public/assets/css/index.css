@@ -1,10 +1,9 @@
+
 body {
-  height:calc(100vh - 60px);
-  background-color: #fff;
   background-image: url(../images/choppingboard-chilli.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -18,12 +17,14 @@ h4, .list-title {
   font-weight: bold;
 }
 
-fieldset {
+form {
+  /* border-style: var(--border-style); */
+  border-style: none;
   border-top: transparent;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-width: 3px;
-  border-color: #8f4623;
+  border-color: var(--border-colour);
   color: #ce1823;
 }
 
@@ -38,7 +39,6 @@ input[type="text"] {
 /* to clear the sticky footer */
 main {
   margin-bottom: 60px;
-
 }
 
 .main-search-bar {
@@ -50,6 +50,17 @@ main {
 
 .row, .search {
   margin-top: 33px;
+}
+
+#search-container {
+  border-radius: 5px;
+  /* background-color: hsla(0,0%,0%,0.5); */
+  /* background-color: hsla(34,25%,65%,0.4); */
+  /* background-color: hsla(19,61%,35%,0.6); */
+  /* background-color: hsla(0,0%,50%,0.6); */
+  background-color: hsla(27, 84%, 85%,0.4);
+  /* background-color: #fff; */
+  padding:0;
 }
 
 #search-bar {
@@ -73,6 +84,7 @@ main {
     transform: scale(1.4);
     color: #94ab36;
 }
+
 .spinner{
     transform: rotate3d(1,1,0,180deg);
     transition:cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.5s;
@@ -86,4 +98,3 @@ main {
   flex-wrap: wrap;
   justify-content: space-around
 }
-
