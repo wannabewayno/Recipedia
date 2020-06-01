@@ -1,5 +1,11 @@
 body {
+  height:calc(100vh - 60px);
   background-color: #fff;
+  background-image: url(../images/choppingboard-chilli.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
 .Welcome{
@@ -12,7 +18,6 @@ h4, .list-title {
   font-weight: bold;
 }
 
-
 fieldset {
   border-top: transparent;
   border-bottom-left-radius: 5px;
@@ -21,6 +26,7 @@ fieldset {
   border-color: #8f4623;
   color: #ce1823;
 }
+
 ::-webkit-input-placeholder {
   color: #ce1823 !important;
 }
@@ -28,9 +34,10 @@ fieldset {
 input[type="text"] {
   color: #ce1823;
 }
+
 /* to clear the sticky footer */
 main {
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 
 }
 
