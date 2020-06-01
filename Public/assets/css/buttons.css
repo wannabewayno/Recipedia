@@ -11,8 +11,12 @@ button {
     object-position: center;
 }
 
-button:hover {
+button:hover, button:focus {
     background-color: var(--hover-colour);
+}
+
+button:active {
+    transform: scale(0.95);
 }
 
 .nude-button {

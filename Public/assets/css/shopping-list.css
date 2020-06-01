@@ -6,7 +6,7 @@
 
 
 .add-to-list-container {
-    margin-top:20px;
+    margin-top:50px;
 }
 
 .input-container {
@@ -50,6 +50,10 @@
     text-align: center;
 }
 
+.which-recipes-container {
+    margin-top: 50px;
+}
+
 .recipe-list-item {
     display: flex;
     justify-content: flex-start;
@@ -61,3 +65,8 @@
     align-items: center;
 }
 
+/* ------------------------ flip animation ---------------------------------------- */
+
+.flip {
+    transform: rotateY(180deg);
+}

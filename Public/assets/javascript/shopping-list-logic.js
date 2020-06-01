@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('#back').hide();
+});
+
 // TODO: FUNCTION:
 // scans shopping list to see if an entire recipe has been bought for and hides all those ingredients
 // will be triggered by crossing off an item
@@ -13,13 +17,38 @@
 // will have check if the user has disclosed units or not, 
 // probably need a consistency checker for solid or liquid to give everything in approproate units
 
-//TODO: FUNCTION:
-// when the menu button is pressed, flips the shopping-list over to reveal the options on the other side
-// needs a css flip
-// at half flip:
-//  hide front elements
-//  show back elements
-// changes icon to list icon 'to go back to list' will need two id's of buttons
+
+$('#menu-button').click(function(){
+
+    //find half the animation time
+    const transitionCSS = $('.shopping-list-modal').css('transition');
+    //Animation time is given in seconds so
+    const animationTime = parseFloat(transitionCSS.slice(3,7))/2;
+
+    //trigger animation
+    $('.shopping-list-modal').toggleClass('flip');
+    
+    // We now trigger the change at half the animation time so the user won't see.
+    setTimeout(() => {
+        // re-flips content so we can read it :D
+        $('#front,#back').toggle();
+        $('#front, #back').toggleClass('flip');
+        
+        //swap button position so it's the same
+        $('#menu-button, .close-button').toggleClass('top-right top-left')
+
+        // set a new button icon
+        const listButton = `<i class='small material-icons'>list</i>`
+        const menuButton = `<i class='small material-icons'>tune</i>`
+        const buttonText = $('#menu-button').text();
+        if (buttonText === 'list') {
+            $('#menu-button').html(menuButton)
+        } else {
+            $('#menu-button').html(listButton)
+        }
+
+    }, animationTime*1000);
+})
 
 //TODO: FUNCTION 
 // any items on the list that have text-decoration:line-through will be removed from the list when the shopping list is opened again
