@@ -111,6 +111,12 @@ $('#steps, #ingredients').on('click','.remove-button',function(event){
 // ajax post infomration to database
 // show a success message!
 
+//TODO: FUNCTION:
+// function that parses data from the form in what-ever state it's in
+
+//TODO: FUNCTION:
+// validation function
+
 const createDeleteBtn = () => {
     //create a delete button
     const deleteBtn = $('<button>').addClass('remove-button nude-button');
@@ -125,21 +131,3 @@ const createDeleteBtn = () => {
 
     return deleteBtn;
 }
-
-/*
-    Prefilling Text Inputs
-    If you are having trouble with the labels overlapping prefilled content, Try adding class="active" to the label.
-    You can also call the function M.updateTextFields(); to reinitialize all the Materialize labels on the page if you are dynamically adding inputs.
-*/
-
-/*
-    $(document).ready(function() {
-        $('input#input_text, textarea#textarea2').characterCounter();
-    });
-*/
-
-/*
-    resize upon dynamicaly adding fields
-    $('#textarea1').val('New Text');
-    M.textareaAutoResize($('#textarea1'));
-*/
