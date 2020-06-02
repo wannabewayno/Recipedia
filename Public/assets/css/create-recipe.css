@@ -12,6 +12,10 @@
     justify-content: flex-start;
 }
 
+.Valign-between {
+    justify-content: space-evenly;
+}
+
 .xgap-tiny {
     margin: 0.5rem;
 }
