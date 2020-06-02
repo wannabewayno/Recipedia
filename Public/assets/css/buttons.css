@@ -1,6 +1,6 @@
 :root {
     --button-colour:hsl(72, 52%, 44%);
-    --hover-colour:	hsl(72, 52%, 34%)
+    --hover-colour:	hsl(72, 52%, 39%)
 }
 
 button {
@@ -20,6 +20,7 @@ button:active {
 }
 
 .nude-button {
+    padding:0;
     display: block;
     width: fit-content;
     height: auto;
@@ -44,8 +45,15 @@ button:active {
     left:0.5rem;
 }
 
+
+.zero {
+    padding:0 !important;
+    margin:0 !important;
+}
+
 /* --------------- custom button properties ----------------------- */
 #add-to-list-btn {
     margin-left: 10px;
     margin-bottom: 13px;
 }
+

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create recipe</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/images/favicons/red-chilli-vector.png" >
+    <link rel="apple-touch-icon" href="./assets/images/favicons/red-chilli-vector.png">
+    <link rel="icon" href="./assets/images/favicons/red-chilli-vector.png">
+    <!-- font-awesome CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="crossorigin="anonymous"
+    ></script>
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <!--  MDC icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/tabs.css"/> 
+    <link rel="stylesheet" href="./assets/css/buttons.css"/> 
+    <link rel="stylesheet" href="./assets/css/nav.css"/>
+    <link rel="stylesheet" href="./assets/css/modal.css">
+    <link rel="stylesheet" href="./assets/css/recipe-modal/visual-info.css">
+    <link rel="stylesheet" href="./assets/css/recipe-modal/recipe.css">
+    <link rel="stylesheet" href="./assets/css/shopping-list.css">
+    <link rel="stylesheet" href="./assets/css/dashboard/main.css"/>
+    <link rel="stylesheet" href="./assets/css/dashboard/mobile.css"/>
+    <link rel="stylesheet" href="./assets/css/dashboard/desktop.css"/>
+    <link rel="stylesheet" href="./assets/css/create-recipe.css"/>
+</head>
+<body>
+    <!-- modal container -->
+    <div class="modal-container">
+        <!-- modal body -->
+        <div class="create-recipe-modal z-depth-5">
+            <!-- close modal button -->
+            <button class="close-button top-right nude-button">
+                <i class="material-icons">close</i>
+            </button>
+            <!-- this modal is a giant form -->
+            <h3 class="center-align">Create a recipe!</h3>
+            <!-- create recipe form -->
+            <form>
+                
+                <!-- title image and description container -->
+                <section class="">
+                    <!-- title input-field -->
+                    <div class="input-field">
+                        <i class="material-icons prefix">title</i>
+                        <input type="text" id="create-title">
+                        <label for="create-title">Title?</label>
+                    </div>
+                    <!-- description input-field -->
+                    <div class="input-field">
+                        <i class="material-icons prefix">description</i>
+                        <input type="text" name="" id="create-description" data-length="80">
+                        <label for="create-description" class="truncate">Description: e.g perfect winter warmer</label>
+                    </div>
+                    <!-- image input field -->
+                    <div class="file-field input-field feature-left">
+                        <div class="btn">
+                            <span>image</span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- info container -->
+                <section class="Valign-center">
+                    <!-- servings -->
+                    <div class="input-field gapx">
+                        <i class="material-icons prefix">person_add</i>
+                        <input id="create-servings" type="number"/>
+                        <label for="create-servings" class="truncate">Servings</label>
+                    </div>
+                    <!-- prep time -->
+                    <div class="input-field gapx">
+                        <i class="material-icons prefix">av_timer</i>
+                        <input id="create-prep-time" type="number"/>
+                        <label for="create-prep-time" class="truncate">Prep Time</label>
+                    </div>
+                    <!-- cook time -->
+                    <div class="input-field gapx">
+                        <i class="material-icons prefix">timelapse</i>
+                        <input id="create-cook-time" type="number"/>
+                        <label for="create-cook-time" class="truncate">Cook Time</label>
+                    </div>
+                </section>
+
+                <!-- key word container -->
+                <section class="">
+
+                    <div class="Valign-center ygap-small">
+                        <!-- diet tags -->
+                        <div class="input-field xgap-tiny">
+                            <select multiple>
+                                <option value="" disabled>Diets:</option>
+                                <option value="1">Gluten free</option>
+                                <option value="2">Vegan</option>
+                                <option value="3">Vegetarien</option>
+                                <option value="4">Pescetarian</option>
+                                <option value="5">Paleo</option>
+                                <option value="6">Primal</option>
+                                <option value="7">Whole30</option>
+                                <option value="8">Ketogenic</option>
+                                <option value="9">lacto-vegetarian</option>
+                                <option value="10">ovo-vegetarian</option>
+                            </select>
+                            <label for="diet">Diet</label>
+                            </div>
+    
+                        <!-- cuisine tags -->
+                        <div class="input-field gapx">
+                            <select id="create-cuisine">
+                                <option value="">Cuisine</option>
+                                <option value="0">Australian</option>
+                                <option value="1">African</option>
+                                <option value="2">American</option>
+                                <option value="3">British</option>
+                                <option value="4">Cajun</option>
+                                <option value="5">Caribbean</option>
+                                <option value="6">Chinese</option>
+                                <option value="7">Eastern European</option>
+                                <option value="8">European</option>
+                                <option value="9">French</option>
+                                <option value="10">German</option>
+                                <option value="11">Greek</option>
+                                <option value="12">Indian</option>
+                                <option value="13">Irish</option>
+                                <option value="14">Italian</option>
+                                <option value="15">Japenese</option>
+                                <option value="16">Jewish</option>
+                                <option value="17">Korean</option>
+                                <option value="18">Latin American</option>
+                                <option value="19">Malaysian</option>
+                                <option value="20">Mediterranean</option>
+                                <option value="21">Mexican</option>
+                                <option value="22">Middle Eastern</option>
+                                <option value="23">Nordic</option>
+                                <option value="24">Singaporean</option>
+                                <option value="25">Southern</option>
+                                <option value="26">Spanish</option>
+                                <option value="27">Swedish</option>
+                                <option value="28">Thai</option>
+                                <option value="29">Vietnamese</option>
+                            </select>
+                            <label for="cuisine">Cuisine</label>
+                        </div>
+                    </div>
+
+                    <!-- key words -->
+                    <div class="user-keywords-wrapper">
+                        <p class="center-align">Add key words to help other users find this reicpe</p>
+                        <div class="chips" id="user-keywords"></div>
+                    </div>
+                </section>
+
+                <!-- ingredient and method container -->
+                <section class="row">
+                    <h5 class="center-align">Alright, tell us how to cook it</h5>
+                    <!-- ingredient container -->
+                    <div class="col s12 m6 l5 xl4">
+                        <!-- ingredient title -->
+                        <h4>Ingredients</h4>
+                        
+                        <!-- ul element body -->
+                        <ul id="ingredients">
+                            <!-- ingredients will be added here -->
+        
+                        </ul>
+                        <!-- ingredient add inputs -->
+                        <div class="Valign-start">
+                            <!-- input name -->
+                            <div class="input-field ingredient-name">
+                                <input type="text" id="ingredient-name">
+                                <label for="ingredient-name" class="truncate">ingredient name</label>
+                            </div>
+                            <!-- input number -->
+                            <div class="input-field ingredient-value">
+                                <input type="number" id="ingredient-value">
+                                <label for="ingredient-value">quantity</label>
+                            </div>
+                            <!-- input unit drop down -->
+                            <div class="input-field ingredient-unit">
+                                <select name="" id="ingredient-unit">
+                                    <option value="gr" selected>gr</option>
+                                    <option value="kg" >kg</option>
+                                    <option value="cups" >cups</option>
+                                    <option value="ml" >ml</option>
+                                    <option value="L" >L</option>
+                                    <option value="tsp" >tsp</option>
+                                    <option value="Tbsp" >Tbsp</option>
+                                    <option value="pcs" >pcs</option>
+                                </select>
+                                <label for="ingredient-unit"></label>
+                            </div>
+                            <!-- add button -->
+                            <button class="add-ingredient-button nude-button" type="button">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Method container -->
+                    <div class="col s12 m6 l7 xl8">
+                        <!-- method title -->
+                        <h4>Method</h4>
+                        <!-- ul element body -->
+                        <ul id="steps">
+                            <!-- steps go here -->
+                            
+                        </ul>
+                        <!-- input to add steps -->
+                        <div class="input-field">
+                            <textarea id="add-step" class="materialize-textarea" data-count="1"></textarea>
+                            <label for="add-step" id="add-step-label">Step 1</label>
+                            <button class="add-step-button" type="button">
+                                <i class="material-icons zero right">add</i>Add Step
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button id="publish-button" type="submit">
+                            <i class="medium material-icons right">publish</i>Publish
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- here we are cooking some lobster mac and cheeese today so get out the oven and let's get crakicking
+first get the lobster and crack the ehad open and scoop all that white fleshy meat out next get your mac and cheese and cpok to the packet i -->
+            
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- custom js -->
+<script src="./assets/javascript/dashboard-logic.js"></script>
+<script src="./assets/javascript/openModal.js"></script>
+<script src="./assets/javascript/removeInitialChips.js"></script>
+<script src="./assets/javascript/create-recipe-logic.js"></script>
+
+
+</body>
+</html>
