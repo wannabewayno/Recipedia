@@ -11,9 +11,11 @@ $(document).ready(function(){
   $('.chips').chips();
 
   // Initialize exclude ingredient placeholder chips
-  $('#exclude-ingredients').chips({
-    data:[{tag:'Type ingredient'},{tag:'hit enter'}],
-    onChipAdd:removeInitialChips
+  const initialChips = ['Type ingredient','hit enter']
+  const target = '#exclude-ingredients'
+  $(target).chips({
+    data:initialChips.map(text => {return {tag:text}}),
+    onChipAdd:removeInitialChips(target,initialChips)
   });
 
   // activates multiple select drop downs
@@ -26,17 +28,3 @@ $('#advanced-search-button').click(function(){
 });
 
 
-/** removeInitialChips()
- * Call back function for materialize onChipAdd option
- * Removes first two placeholder chips when user inputs their first chip
- */
-const removeInitialChips = () => {
-  const excludeIngredientChips = M.Chips.getInstance($('#exclude-ingredients'));
-  chips = excludeIngredientChips.chipsData;
-  chips.forEach((chip,index) => {
-    if ( chip.tag === 'Type ingredient'|| chip.tag === 'hit enter' ) {
-      excludeIngredientChips.deleteChip(0);
-      excludeIngredientChips.deleteChip(0);
-    }
-  });
-}

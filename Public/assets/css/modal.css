@@ -12,22 +12,30 @@
     padding-bottom: 5%;
 }
 
-.recipe-modal {
+.recipe-modal, .shopping-list-modal, .create-recipe-modal {
     position: relative;
-    padding:20px;
-    width: 80%;
+    padding:10px;
+    width: 90%;
     background-color: white;
     margin:auto;
     border-radius: 5px;
 }
 
 .shopping-list-modal {
-    position: relative;
-    padding:10px;
-    width: 90%;
     background-color: #ffff88;
     color: black;
-    margin:auto;
-    border-radius: 5px;
     transition: all 500ms ease-in-out;
+}
+
+.create-recipe-modal {
+    /* custom stuff goes here */
+}
+
+@media (min-width: 768px) {
+
+    .recipe-modal, .shopping-list-modal, .create-recipe-modal{
+        padding:20px;
+        width:80%;
+    }
+
 }
