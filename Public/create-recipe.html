@@ -37,13 +37,14 @@
     <!-- modal container -->
     <div class="modal-container">
         <!-- modal body -->
-        <div class="create-recipe-modal">
+        <div class="create-recipe-modal z-depth-5">
             <!-- close modal button -->
-            <button class="close-button top-right">
+            <button class="close-button top-right nude-button">
                 <i class="material-icons">close</i>
             </button>
             <!-- this modal is a giant form -->
             <h3 class="center-align">Create a recipe!</h3>
+            <!-- create recipe form -->
             <form>
                 
                 <!-- title image and description container -->
@@ -58,7 +59,7 @@
                     <div class="input-field">
                         <i class="material-icons prefix">description</i>
                         <input type="text" name="" id="create-description" data-length="80">
-                        <label for="create-description">Description: e.g perfect winter warmer</label>
+                        <label for="create-description" class="truncate">Description: e.g perfect winter warmer</label>
                     </div>
                     <!-- image input field -->
                     <div class="file-field input-field feature-left">
@@ -75,31 +76,31 @@
                 <!-- info container -->
                 <section class="Valign-center">
                     <!-- servings -->
-                    <div class="input-field">
+                    <div class="input-field gapx">
                         <i class="material-icons prefix">person_add</i>
                         <input id="create-servings" type="number"/>
-                        <label for="create-servings">Servings</label>
+                        <label for="create-servings" class="truncate">Servings</label>
                     </div>
                     <!-- prep time -->
-                    <div class="input-field">
+                    <div class="input-field gapx">
                         <i class="material-icons prefix">av_timer</i>
                         <input id="create-prep-time" type="number"/>
-                        <label for="create-prep-time">Prep Time</label>
+                        <label for="create-prep-time" class="truncate">Prep Time</label>
                     </div>
                     <!-- cook time -->
-                    <div class="input-field">
+                    <div class="input-field gapx">
                         <i class="material-icons prefix">timelapse</i>
                         <input id="create-cook-time" type="number"/>
-                        <label for="create-cook-time">Cook Time</label>
+                        <label for="create-cook-time" class="truncate">Cook Time</label>
                     </div>
                 </section>
 
                 <!-- key word container -->
                 <section class="">
 
-                    <div class="Valign-center">
+                    <div class="Valign-center ygap-small">
                         <!-- diet tags -->
-                        <div class="input-field">
+                        <div class="input-field xgap-tiny">
                             <select multiple>
                                 <option value="" disabled>Diets:</option>
                                 <option value="1">Gluten free</option>
@@ -117,9 +118,9 @@
                             </div>
     
                         <!-- cuisine tags -->
-                        <div class="input-field">
+                        <div class="input-field gapx">
                             <select id="create-cuisine">
-                                <option value=""> </option>
+                                <option value="">Cuisine</option>
                                 <option value="0">Australian</option>
                                 <option value="1">African</option>
                                 <option value="2">American</option>
@@ -156,70 +157,84 @@
                     </div>
 
                     <!-- key words -->
-                    <label for="user-kewords">Enter up to 5 keywords</label>
-                    <div class="chips" id="user-keywords"></div>
+                    <div class="user-keywords-wrapper">
+                        <p class="center-align">Add key words to help other users find this reicpe</p>
+                        <div class="chips" id="user-keywords"></div>
+                    </div>
                 </section>
 
                 <!-- ingredient and method container -->
                 <section class="row">
-                    <h5>Ok, now tell us how to cook it</h5>
+                    <h5 class="center-align">Alright, tell us how to cook it</h5>
                     <!-- ingredient container -->
-                    <div class="col s12 l6">
+                    <div class="col s12 l5">
                         <!-- ingredient title -->
                         <h4>Ingredients</h4>
+                        
                         <!-- ul element body -->
-                        <ul>
-                            <!-- li -->
-                            <li class="Valign-center">
-                                <!-- remove button (hidden)/ add button (show) -->
-                                <button>
-                                    <i class="material-icons">add</i>
-                                </button>
-                                <!-- input name -->
-                                <div class="input-field">
-                                    <input type="text" id="ingredient-name-1">
-                                    <label for="ingredient-name-1">ingredient name</label>
-                                </div>
-                                <!-- input number -->
-                                <div class="input-field">
-                                    <input type="number" id="ingredient-value-1">
-                                    <label for="ingredient-value-1">how much?</label>
-                                </div>
-                                <!-- input unit drop down -->
-                                <div class="input-field">
-                                    <select name="" id="ingredient-unit-1">
-                                        <option value="0" selected>gr</option>
-                                        <option value="1" >kg</option>
-                                        <option value="2" >cups</option>
-                                        <option value="3" >ml</option>
-                                        <option value="4" >L</option>
-                                        <option value="5" >tspn</option>
-                                        <option value="6" >Tblspn</option>
-                                    </select>
-                                    <label for="ingredient-unit-1"></label>
-                                </div>
-                            </li>
+                        <ul id="ingredients">
+                            <!-- ingredients will be added here -->
+        
                         </ul>
+                        <!-- ingredient add inputs -->
+                        <div class="Valign-start">
+                            <!-- input name -->
+                            <div class="input-field ingredient-name">
+                                <input type="text" id="ingredient-name">
+                                <label for="ingredient-name" class="truncate">ingredient name</label>
+                            </div>
+                            <!-- input number -->
+                            <div class="input-field ingredient-value">
+                                <input type="number" id="ingredient-value">
+                                <label for="ingredient-value">quantity</label>
+                            </div>
+                            <!-- input unit drop down -->
+                            <div class="input-field ingredient-unit">
+                                <select name="" id="ingredient-unit">
+                                    <option value="gr" selected>gr</option>
+                                    <option value="kg" >kg</option>
+                                    <option value="cups" >cups</option>
+                                    <option value="ml" >ml</option>
+                                    <option value="L" >L</option>
+                                    <option value="tsp" >tsp</option>
+                                    <option value="Tbsp" >Tbsp</option>
+                                    <option value="pcs" >pcs</option>
+                                </select>
+                                <label for="ingredient-unit"></label>
+                            </div>
+                            <!-- add button -->
+                            <button class="add-ingredient-button nude-button" type="button">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </div>
                     </div>
                     <!-- Method container -->
-                    <div class="col s12 l6">
+                    <div class="col s12 l7">
                         <!-- method title -->
                         <h4>Method</h4>
                         <!-- ul element body -->
-                        <ul>
-                            <!-- li -->
-                            <li class="input-field">
-                                <!-- text area -->
-                                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                <label for="textarea1">Step 1</label>
-                            </li>
+                        <ul id="steps">
+                            <!-- steps go here -->
+                            
                         </ul>
+                        <!-- input to add steps -->
+                        <div class="input-field">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Step 1</label>
+                            <button class="add-step-button" type="button">
+                                <i class="material-icons zero right">add</i>Add Step
+                            </button>
+                        </div>
                     </div>
                 </section>
 
-                <button id="publish-button" type="button">
-                    <i class="medium material-icons right">publish</i>Publish
-                </button>
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button id="publish-button" type="submit">
+                            <i class="medium material-icons right">publish</i>Publish
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
