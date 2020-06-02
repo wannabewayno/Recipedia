@@ -1,0 +1,105 @@
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* ---------- revert the mobile-design schema and change everything to a desktop design -------------- */
+    .mobile-name{
+        display: none;
+    }
+    
+    .bullet-point{
+        display: none;
+    }
+
+    body{
+        background-color: white;
+    }
+
+    .mobile-layout {
+        margin:0;
+        height:fit-content;
+        width:fit-content;
+        display:block;
+    }
+
+    .dow {
+        padding:0;
+        padding-bottom: 10px;
+    }
+
+    .dow-cards {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .meal-type {
+        display: block;
+        text-align: center;
+    }
+
+    .lunch {
+        flex-direction: row-reverse;
+    }
+/* ------------------------ recipe-card ------------------------ */
+    .recipe-card {
+        border:none;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width:calc(25vw - 100px);
+        height:calc(25vw - 100px);
+        border-radius: 25px;
+        transition: all 400ms ease-in-out;
+        /* transition bg-colour */
+        background-color: #bca990;
+    }
+    
+    .recipe-title {
+        width:100%;
+        text-align: center;
+        font-size: 1.2rem;
+        position:absolute;
+        color:white;
+        bottom:0;
+        background-color: hsla(0,0%,0%,0.3);
+        transition: inherit;
+    }
+    
+    .recipe-card > img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        transition: inherit;
+    }
+    
+    .overlay {
+        opacity: 0;
+        color: #cb4745;
+        position:absolute;
+        transition: inherit;
+    }
+    
+    /* -------- transition effects --------------- */
+    .recipe-card:hover > .overlay {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    .recipe-card:hover > img, .recipe-card:hover .recipe-title {
+        opacity: 0;
+        cursor: pointer;
+        transform: scale(2);
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

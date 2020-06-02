@@ -1,0 +1,72 @@
+/* ---------------------------------- FRONT OF SHOPPING LIST ------------------------------------------- */
+
+#add-to-list {
+    margin: 0;
+}
+
+
+.add-to-list-container {
+    margin-top:50px;
+}
+
+.input-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+#front > h4 {
+    text-align: center;
+}
+
+.shopping-list-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.isle {
+    margin:0 20px;
+    
+}
+.isle > h5 {
+    text-decoration-line: underline;
+}
+
+.ingredient {
+    text-decoration-line:none;
+    margin-bottom: 10px;
+    list-style-type: "- " !important;
+    list-style-position: outside;
+    cursor: pointer;
+}
+
+.ingredient:hover {
+    transform: scale(1.05);
+}
+
+/* ---------------------------- BACK OF SHOPPING LIST ----------------------------------- */
+
+#back{
+    text-align: center;
+}
+
+.which-recipes-container {
+    margin-top: 50px;
+}
+
+.recipe-list-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.servings-adjust-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* ------------------------ flip animation ---------------------------------------- */
+
+.flip {
+    transform: rotateY(180deg);
+}

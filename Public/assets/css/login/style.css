@@ -1,0 +1,73 @@
+/* Small screen sizes */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+}
+
+.sign-up, .sign-in {
+  margin-top: 4rem;
+}
+
+.sign-up > h4, .sign-in > h4 {
+  margin-top:0;
+}
+
+.sign-in {
+  width:80%;
+  padding:0 2rem 4rem 2rem;
+  border-bottom:2px solid black
+}
+
+.sign-up {
+  text-align: center;
+  width:100%;
+  margin-bottom: 4rem;
+}
+
+#sign-up-btn {
+  margin-top:2rem;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  
+}
+/* anything above this */
+@media (min-width: 768px) {
+
+  .layout {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .sign-up {
+    padding-left:4rem;
+    width:100%;
+  }
+
+  .sign-in {
+    padding:0 4rem 0 0;
+    width:100%;
+    border-right:2px solid black;
+    border-bottom:none;
+  }
+
+  small{
+    display: block;
+  }
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

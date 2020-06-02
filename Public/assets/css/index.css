@@ -1,31 +1,32 @@
+
 body {
-  background-color: #fff;
+  background-image: url(../images/choppingboard-chilli.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .Welcome{
   text-align: center;
-  font-size: xx-large;
-  color: #ce1823;
-}
-
-.Explore{
-  text-align: center;
-  font-size: large;
+  font-size: x-large;
+  color: #fff;
 }
 
 h4, .list-title {
   font-weight: bold;
 }
 
-
-fieldset {
+form {
+  border-style: var(--border-style);
   border-top: transparent;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-width: 3px;
-  border-color: #94ab36;
+  border-color: var(--border-colour);
   color: #ce1823;
 }
+
 ::-webkit-input-placeholder {
   color: #ce1823 !important;
 }
@@ -34,8 +35,13 @@ input[type="text"] {
   color: #ce1823;
 }
 
+/* to clear the sticky footer */
+main {
+  margin-bottom: 60px;
+}
 
 .main-search-bar {
+  margin-top:0;
   display: flex;
   justify-content: start;
   align-content: center;
@@ -46,26 +52,48 @@ input[type="text"] {
   margin-top: 33px;
 }
 
-button,
-#advanced-search-button, .waves-effect, .waves-light, .btn {
-  margin:10px 10px 0px 0px;
-  padding:0px 3px 0px 0px;
-  object-position: center;
-  background-color: #94ab36;
+#search-container {
+  position: relative;
+  border-radius: 5px;
+  margin-top: 33vh;
+  padding:0;
+  /* background-color: hsla(0,0%,0%,0.5); */
+  /* background-color: hsla(34,25%,65%,0.4); */
+  /* background-color: hsla(19,61%,35%,0.6); */
+  /* background-color: hsla(0,0%,0%,0.4); */
+  /* background-color: hsla(27, 84%, 85%,0.4); */
+  background-color: #fff;
 }
 
-.fa-search{
-    font-size: 20px;
-    margin:10px;
-    cursor: pointer;
+#search-bar {
+  margin:0;
+  padding:0 5% 0 5%;
+  
 }
-.fa-search:hover, .fa-search:focus{
-    transform: scale(1.05);
+
+#advanced-search-button {
+  background-color: #94ab36;
+  margin-bottom:10px;
+}
+
+#search-button {
+  font-size: 30px;
+  margin-left:10px;
+  cursor: pointer;
+}
+
+#search-button:hover, #search-button:focus{
+    transform: scale(1.4);
     color: #94ab36;
 }
+
+#exclude-ingredient {
+  margin-top:0;
+}
+
 .spinner{
-    transform: rotate3d(1,1,0,180deg);
-    transition:cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.5s;
+  transform: rotate3d(1,1,0,180deg);
+  transition:cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.5s;
 }
 
 
@@ -76,4 +104,3 @@ button,
   flex-wrap: wrap;
   justify-content: space-around
 }
-

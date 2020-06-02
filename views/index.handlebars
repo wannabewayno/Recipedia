@@ -1,0 +1,136 @@
+ <!-- NavBar -->
+ <nav>
+    <h3>Recipedia</h3>
+    <div class="divider-container">
+      <div class="divider">
+        <img src="./assets/images/green-chilli.png" alt=""/>
+        <div class="divider-bottom"></div>
+        <div class="divider-top"></div>
+        <div class="divider-filler"></div>
+      </div>
+      <div class="coloured-section">
+        <a href="/signup.html">
+          <button id="sign-in-button"  class="btn-floating waves-effect waves-light z-depth-3">
+            <i class="tiny material-icons">person</i>
+          </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+  
+    <div class="container">
+
+      <p class="Welcome">Explore, create and inspire</p>
+
+      <!--Main Body Container w/Grids-->
+      <div class="row">
+          <div class="col s12">
+            <div class="row z-depth-5">
+
+              <!-- Tabbed headers -->
+              <ul class="tabs">
+                <li class="tab col s6">
+                  <a class="a-tab-left"href="#search-bar" class="class text-darken-4">Recipe Search</a>
+                </li>
+                <li class="tab col s6">
+                  <a class="a-tab-right" href="#fridge-search" class="class text-darken-4">In the fridge?</a>
+                </li>
+              </ul>
+
+              <!-- search bar -->
+              <fieldset class="col s12" id="search-bar">
+
+                  <form class="row">
+                      <div class="input-field main-search-bar">
+                        <input type="text" id="search-query">
+                        <label for="search-query">Search recipes here!</label>
+                        <i class="fa fa-search"></i>
+                      </div>
+                  </form>
+                  <!-- ADVANCED SEARCH BUTTON -->
+                  <button id="advanced-search-button" class="waves-effect waves-light btn" value="false">advanced</button>
+                  <form id="advanced-search">
+                      <!-- dropdown box for advanced search-->
+                    <div class="input-field">
+                      <input type="text" id="cuisine">
+                      <label for="cuisine">cuisine</label>
+                    </div>
+                    <div class="input-field">
+                      <input type="text" id="diet">
+                      <label for="diet">Diet</label>
+                    </div>
+                    <div class="input-field">
+                      <input type="text" id="exclude-ingredients">
+                      <label for="exclude-ingredients">excluding ingredients</label>
+                    </div>
+
+                  </form>
+
+              </fieldset>
+              <!-- what's in my fridge -->
+              <fieldset class="col s12" id="fridge-search">
+
+                <h5>
+                  What's in your fridge?
+                </h5>
+                <p>
+                  you're only limited by:
+                </p>
+                <ul>
+                  <li>
+                    The contents of your fridge and pantry.
+                  </li>
+                  <li>
+                    How many of those items you can be bothered typing in.
+                  </li>
+                  <div class="fridge-input-wrapper">
+                      <div class="chips"></div>
+                  </div>
+                </ul>
+
+              </fieldset>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <!--This is where the cards will be displayed sequentially-->
+        <div class="col s12">
+          <!--This is where the search results are displayed-->
+          <div id="search-results">
+
+            {{!-- Recipe card template --}}
+            <div class="recipe-card" data-id="{{recipe.id}}">
+              <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg" alt="">
+              <p class="recipe-title">{{recipe.title}}</p>
+              <p class="overlay">View Recipe</p>
+            </div>
+
+          </div>
+          <button class="btn waves-effect">Show more Results</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <section id="modal-goes-here"></section>
+
+  </main>
+
+  <footer class="footer">
+
+    <div class="button-container">
+      <button class="footer-button btn-floating">
+        <i class="material-icons">format_list_bulleted</i>
+      </button>
+
+      <button class="footer-button btn-floating">
+        <i class="material-icons">favorite</i>
+      </button>
+
+      <button class="footer-button btn-floating">
+        <i class="material-icons">dashboard</i>
+      </button>
+    </div>
+
+  </footer>

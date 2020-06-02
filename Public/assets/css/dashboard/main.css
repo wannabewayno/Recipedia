@@ -1,0 +1,52 @@
+/* ---------- css independent of change mobile responsiveness ------------- */
+
+body {
+    /* background-color: #8f4623; */
+    background-image: url(../../images/chopping-board-4k.jpg);
+    background-position: center;
+    background-size: contain;
+}
+
+.dow-title{
+    margin:0;
+    text-align: center;
+}
+
+main {
+    margin-bottom: 100px;
+}
+
+.dow {
+    height: fit-content;
+    padding:0 5% 40px 5%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    /* background-color: #8f4623; */
+    /* background-color: #cb4745; */
+    background-color: #bca990;
+    color:#ce1823;
+    /* color: #94ab36; */
+}
+
+.button-container {
+    width:70vw;
+}
+
+#create-recipe-section {
+    text-align: center;
+    margin: auto;
+    position:absolute;
+    right:0;
+    background-color: #ce1823;
+    height: 100%;
+    width: 30vw;
+}
+
+#create-recipe {
+    border: none;
+    margin-top:10px;
+    position:relative;
+    background-color: #94ab36;
+    height: 60%;
+    width: fit-content;
+}

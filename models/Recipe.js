@@ -24,11 +24,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     tags: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     image: {
-      type: DataTypes.BINARY,
+      type: DataTypes.TEXT,
       allowNull: true
     }
   });
