@@ -13,14 +13,11 @@ router.get("/api/recipes", function(req, res) {
   });
 });
 
-router.post("/api/cats", function(req, res) {
-  cat.create([
-    "name", "sleepy"
-  ], [
-    req.body.name, req.body.sleepy
-  ], function(result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+router.post("/api/recipes", function(req, res) {
+  db.Recipe.create({name: req.body.name, ingredients: "", servings: "", instructions: "", created_by: "", tags: ""}).then(newrecipe => {
+    res.json({ data: newrecipe });
+  }).catch(error => {
+    res.status(422).json({message: "recipe generation failed"})
   });
 });
 

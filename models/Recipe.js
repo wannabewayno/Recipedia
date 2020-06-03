@@ -33,6 +33,8 @@ module.exports = function(sequelize, DataTypes) {
     // }
   }, {});
 
+  
+
   Recipe.associate = function(models) {
     // We're saying that a Favourite should belong to a Recipe
     // A Post can't be created without an Author due to the foreign key constraint
