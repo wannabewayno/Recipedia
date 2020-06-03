@@ -42,7 +42,7 @@
     <!-- ================================= Log in =================================== -->
     <section class="sign-in">
       <h4>Sign in</h4>
-      <form id="sign-in" action="/auth/login" method="POST">
+      <form id="sign-in" >
   
         <!-- email -->
         <div class="input-field">
@@ -52,7 +52,7 @@
   
         <!-- password -->
         <div class="input-field">
-          <input id="sign-in-password" type="password" name="userPass">
+          <input id="sign-in-password" type="password" >
           <label for="sign-in-password">password</label>
         </div>
   
@@ -72,35 +72,35 @@
       <button id="join-btn" class="btn">
         <i class="material-icons right">arrow_drop_down</i>Join right now
       </button>
-      <form id="sign-up">
+      <form id="sign-up" action="/auth/login" method="POST">
 
         <!-- email -->
         <div class="input-field">
-          <input id="sign-up-email" type="text">
+          <input id="sign-up-email" type="text" name="regEmail">
           <label for="sign-up-email">email</label>
         </div>
   
         <!-- password -->
         <div class="input-field">
-          <input id="sign-up-password" type="password">
+          <input id="sign-up-password" type="password" name="regPass">
           <label for="sign-up-password">password</label>
         </div>
   
         <!-- confirm password -->
         <div class="input-field">
-          <input id="sign-up-confirm-password" type="password">
+          <input id="sign-up-confirm-password" type="password" name="regConfirmPass">
           <label for="sign-up-confirm-password">confirm password</label>
         </div>
 
         <!-- first name -->
         <div class="input-field">
-          <input id="sign-up-first-name" type="text">
+          <input id="sign-up-first-name" type="text" name="regFirstName">
           <label for="sign-up-first-name">first name</label>
         </div>
   
         <!-- last name -->
         <div class="input-field">
-          <input id="sign-up-last-name" type="text">
+          <input id="sign-up-last-name" type="text" name="regLastName">
           <label for="sign-up-last-name">last name</label>
         </div>
 
