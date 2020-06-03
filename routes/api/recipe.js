@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const queryHandler = require("../../Queries/queryRequests");
+
 
 // Import the model (cat.js) to use its database functions.
 const db = require("../../models");
@@ -11,6 +13,30 @@ router.get("/api/recipes", function(req, res) {
       data: data
     });
   });
+});
+
+router.get("/api/recipesss", function(req, res) {
+  queryRequest = {
+    // author: "nick",
+    name: "burger",
+    ingredients: ["carrot", "flour"],
+    ingredientsUnwanted: ["strawberries", "flour"],
+    tags: ["gluten free"], 
+    // cuisine: "italian", ---------------- not in the database
+    // diet: "keto" ---------------- also not in the database
+  }
+  
+  db.Recipe.findAll({where: queryHandler(queryRequest)}).then(function(data) {
+    res.json({
+      data: data
+    })
+  })
+
+  // db.Recipe.findAll().then(function(data) {
+  //   res.json({
+  //     data: data
+  //   });
+  // });
 });
 
 router.post("/api/cats", function(req, res) {
