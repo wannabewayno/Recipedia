@@ -2,9 +2,9 @@ const publishRecipe = () => {
     //triggerSpinner();
     
     const data = getRecipeFormData();
-
-    $.post("/api/login", data)
-    .then(/* do stuff here*/);
+    console.log(data);
+    $.post("/api/recipes", data)
+    .then(response => console.log(response));
 
    // cancelSpinner();
 
