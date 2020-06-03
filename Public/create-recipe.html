@@ -68,7 +68,7 @@
                             <input type="file">
                         </div>
                         <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
+                            <input class="file-path validate" type="text" id="create-image">
                         </div>
                     </div>
                 </section>
@@ -101,7 +101,7 @@
                     <div class="Valign-center ygap-small">
                         <!-- diet tags -->
                         <div class="input-field xgap-tiny">
-                            <select multiple>
+                            <select multiple id="create-diet">
                                 <option value="" disabled>Diets:</option>
                                 <option value="1">Gluten free</option>
                                 <option value="2">Vegan</option>
@@ -115,7 +115,7 @@
                                 <option value="10">ovo-vegetarian</option>
                             </select>
                             <label for="diet">Diet</label>
-                            </div>
+                        </div>
     
                         <!-- cuisine tags -->
                         <div class="input-field gapx">
@@ -159,7 +159,7 @@
                     <!-- key words -->
                     <div class="user-keywords-wrapper">
                         <p class="center-align">Add key words to help other users find this reicpe</p>
-                        <div class="chips" id="user-keywords"></div>
+                        <div class="chips" id="create-keywords"></div>
                     </div>
                 </section>
 
@@ -171,11 +171,11 @@
                         <!-- ingredient title -->
                         <h4>Ingredients</h4>
                         
-                        <!-- ul element body -->
                         <ul id="ingredients">
-                            <!-- ingredients will be added here -->
+                            <!-- ingredients will be added here dynamically -->
         
                         </ul>
+
                         <!-- ingredient add inputs -->
                         <div class="Valign-start">
                             <!-- input name -->
@@ -190,7 +190,7 @@
                             </div>
                             <!-- input unit drop down -->
                             <div class="input-field ingredient-unit">
-                                <select name="" id="ingredient-unit">
+                                <select id="ingredient-unit">
                                     <option value="gr" selected>gr</option>
                                     <option value="kg" >kg</option>
                                     <option value="cups" >cups</option>
@@ -212,11 +212,12 @@
                     <div class="col s12 m6 l7 xl8">
                         <!-- method title -->
                         <h4>Method</h4>
-                        <!-- ul element body -->
+
                         <ul id="steps">
-                            <!-- steps go here -->
+                            <!-- steps will be added here dynamically -->
                             
                         </ul>
+
                         <!-- input to add steps -->
                         <div class="input-field">
                             <textarea id="add-step" class="materialize-textarea" data-count="1"></textarea>
@@ -249,7 +250,7 @@ first get the lobster and crack the ehad open and scoop all that white fleshy me
 <script src="./assets/javascript/dashboard-logic.js"></script>
 <script src="./assets/javascript/openModal.js"></script>
 <script src="./assets/javascript/removeInitialChips.js"></script>
-<script src="./assets/javascript/create-recipe-logic.js"></script>
+<script id="index" src="./assets/javascript/create-recipe-form/index.js"></script>
 
 
 </body>
