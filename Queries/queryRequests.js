@@ -18,44 +18,54 @@ const sequelize = require("sequelize");
 
 const requestHandler = (req) => {
     let query = "SELECT recipes.name, recipes.ingredients, recipes.servings, recipes.cuisine, recipes.diets, recipes.instructions, recipes.tags, user.name FROM recipedia.recipes LEFT JOIN user ON recipes.created_by = user.id WHERE"
+    
     // author
     if ( req.author != null ) {
         query += " user.name LIKE '" + req.author + "' AND";
     }
+
     // name
     if ( req.name != null ) {
         query += " recipes.name LIKE '" + req.name + "' AND";
     }
+
     // ingredients
     if ( req.ingredients != null ) {
         for ( i = 0; i < req.ingredients.length; i++) {
             query += " recipes.ingredients LIKE '%" + req.ingredients[i] + "%' AND";
         }
     }
+    
     // unwanted Ingredients
     if ( req.ingredientsUnwanted != null ) {
         for ( i = 0; i < req.ingredientsUnwanted.length; i++) {
             query += " recipes.ingredients NOT LIKE '%" + req.ingredientsUnwanted[i] + "%' AND";
         }
     }
+
     // tags
     if ( req.tags != null ) {
         for ( i = 0; i < req.tags.length; i++) {
             query += " recipes.tags LIKE '%" + req.tags[i] + "%' AND";
         }
     }
+
     // cuisine
     if ( req.cuisine != null ) {
         query += " recipes.cuisine LIKE '" + req.cuisine + "' AND";
     }
+
     // diet
     if ( req.diet != null ) {
         query += " recipes.diets LIKE '" + req.diet + "'"
     }
-    // removes the final "AND" if it exists.
+
+    // removes the final "AND" if it exists
     if ( query.slice( query.length-3, query.length ) === "AND") {
         query = query.slice( 0, query.length-3 );
     }
+
+    //removes the final "WHERE" if it exists
     if (query.slice( query.length-5, query.length ) === "WHERE") {
      query = query.slice( 0, query.length-5 )
     }
