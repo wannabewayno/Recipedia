@@ -12,13 +12,25 @@
     padding-bottom: 5%;
 }
 
-.modal-body {
+.recipe-modal, .shopping-list-modal, .create-recipe-modal {
     position: relative;
-    padding:20px;
-    width: 80%;
-    border: 2px solid teal;
-    background-color: wheat;
+    padding:5vw;
+    width: 90%;
+    background-color: white;
     margin:auto;
     border-radius: 5px;
+}
 
+.shopping-list-modal {
+    background-color: #ffff88;
+    color: black;
+    transition: all 500ms ease-in-out;
+}
+
+
+@media (min-width: 768px) {
+
+    .recipe-modal, .shopping-list-modal, .create-recipe-modal{
+        width:80%;
+    }
 }

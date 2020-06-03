@@ -1,67 +1,72 @@
-:root{
-    --background-colour:#8f4623
+:root {
+  --border-colour:#94ab36;
+  --border-style:none;
+  --background-colour:hsla(27, 84%, 85%,0.4);
 }
 
-.tabs{
-    overflow: hidden;
-    color:teal;
-    padding-bottom: 30px;
-    border-top-left-radius: 5px;
-    border-top-right-radius:5px;
-    background-color: transparent;
-  }
+.tabs {
+  overflow: hidden;
+  color:teal;
+  padding-bottom: 30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius:5px;
+  background-color: transparent;
+}
   
-  .a-tab-left{
-    border-left:3px groove var(--background-colour);
-    border-right:1.5px groove var(--background-colour);
-  }
-  .a-tab-right{
-    border-left:1.5px inset var(--background-colour);
-    border-right:3px groove var(--background-colour);
+.a-tab-left {
+  border-left:3px var(--border-style) var(--border-colour);
+  border-right:1.5px var(--border-style) var(--border-colour);
+}
   
-  }
-  .a-tab-right, .a-tab-left{
-    color:teal;
-    background-color: hsl(0, 0, 80%);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-top:3px groove var(--background-colour);
-    border-bottom:2px groove var(--background-colour);
-  }
-  
-  .tabs .indicator{
-    color:teal;
-    margin-left:0%;
-    margin-right:0%;
-    border-left:3px groove var(--background-colour);
-    border-right:1.5px groove var(--background-colour);
-    background-color: white;
-  }
-  
-  .tabs .tab a:focus, .tabs .tab a:focus.active{
-    background-color: white;
-    color: teal;
-  }
-  
-  .tabs .tab a:hover, .tabs .tab a.active{
-    color:teal;
-  }
-  
-  .tabs .tab a{
-    color:#ce1823;
-  }
+.a-tab-right {
+  border-left:1.5px var(--border-style) var(--border-colour);
+  border-right:3px var(--border-style) var(--border-colour);
 
-  label {
-      color:#ce1823;
-  }
+}
+.a-tab-right, .a-tab-left{
+  /* color:teal; */
+  /* background-color: hsl(0, 0, 80%); */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top:3px var(--border-style) var(--border-colour);
+  border-bottom:2px var(--border-style) var(--border-colour);
+}
   
-  /* ----------------------------------- fridge tab ------------------------------------------------------------------- */
+.tabs .indicator{
+  /* color:teal; */
+  margin-left:0%;
+  margin-right:0%;
+  border-left:3px var(--border-style) var(--border-colour);
+  border-right:1.5px var(--border-style) var(--border-colour);
+  background-color: var(--background-colour);
+  /* background-color: transparent; */
+}
   
-  .fridge-input-wrapper{
-    width:100%;
-    padding:10px;
-  }
+.tabs .tab a:focus, .tabs .tab a:focus.active{
+  background-color: var(--background-colour);
+  background-color: transparent;
+  /* color: teal; */
+}
+
+.tabs .tab a:hover, .tabs .tab a.active{
+  color:#ce1823;
+}
+
+.tabs .tab a{
+  color:#ce1823;
+}
+
+label {
+  color:#ce1823;
+}
   
-  .chips{
-    width:100%;
-  } 
+/* ----------------------------------- fridge tab ------------------------------------------------------------------- */
+
+.fridge-input-wrapper{
+  width:100%;
+  padding:10px;
+}
+
+.chips{
+  width:100%;
+} 

@@ -1,0 +1,53 @@
+
+.Valign-start, .Valign-center {
+    display:flex;
+    align-items: center;
+}
+
+.Valign-center {
+    justify-content: space-evenly;
+}
+
+.Valign-start {
+    justify-content: flex-start;
+}
+
+.Valign-between {
+    justify-content: space-evenly;
+}
+
+.xgap-tiny {
+    margin: 0.5rem;
+}
+
+.ygap-tiny {
+    margin: 0.5rem 0 ;
+}
+
+.ygap-small {
+    margin: 1rem 0 ;
+}
+
+.user-keywords-wrapper {
+    margin: auto;
+    width: 80%;
+}
+
+.ingredient-name, .ingredient-value, .ingredient-unit {
+    margin-right:5px;
+}
+
+.ingredient-name {
+    width:120px;
+}
+
+.ingredient-value {
+    width:70px;
+}
+
+.ingredient-unit {
+    width:55px;
+}
+.saved-ingredient {
+    font-size: 1.5rem;
+}
