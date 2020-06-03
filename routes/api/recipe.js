@@ -20,7 +20,7 @@ router.post("/api/recipes", function(req, res) {console.log(req.body);
 //   }).catch(error => {
 //     res.status(422).json({message: "recipe generation failed"})
 //   });
-// });
+});
 
 // router.put("/api/cats/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;

@@ -20,7 +20,7 @@ module.exports = function(app) {
 
   app.get("/dashboard", function(req, res) {
     
-    res.sendFile(path.join(__dirname, "../Public/dashboard.html"));
+    res.sendFile(path.join(__dirname, "../../Public/create-recipe.html"));
   });
 
   app.get("/login", function(req, res) {

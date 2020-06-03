@@ -44,7 +44,11 @@ $(document).ready(function() {
     // removes target ingredient when clicking the bin icon  
     removeElement('.remove-button','#ingredients','#steps');
 
-    $('#publish-recipe').click(publishRecipe);
+    $('#publish-button').click(publishRecipe);
+    // $('#publish-button').click(function(){
+    //     console.log('hello-world');
+    // });
+
 
 });
 
