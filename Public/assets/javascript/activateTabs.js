@@ -27,4 +27,7 @@ $('#advanced-search-button').click(function(){
   $('#advanced-search').toggle("slow");
 });
 
+//TODO: FUNCTION:
+// write a function that auto scrolls by the height of the tab box when a tab is pressed. 
+
 
