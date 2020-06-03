@@ -42,17 +42,17 @@
     <!-- ================================= Log in =================================== -->
     <section class="sign-in">
       <h4>Sign in</h4>
-      <form id="sign-in">
+      <form id="sign-in" action="/auth/login" method="POST">
   
         <!-- email -->
         <div class="input-field">
-          <input id="sign-in-email" type="text">
+          <input id="sign-in-email" type="text" name="userEmail">
           <label for="sign-in-email">email</label>
         </div>
   
         <!-- password -->
         <div class="input-field">
-          <input id="sign-in-password" type="password">
+          <input id="sign-in-password" type="password" name="userPass">
           <label for="sign-in-password">password</label>
         </div>
   
