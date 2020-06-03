@@ -8,8 +8,7 @@
  */
 const removeElement = (deleteSelector,...targetContainers) => {
 
-    return $(targetContainers.join(' ')).on('click', deleteSelector ,function(event){
-
+    return $(targetContainers.join(', ')).on('click', deleteSelector ,function(event){
         event.stopPropagation();
     
         const item = $(event.currentTarget).parents('.saved-data');
