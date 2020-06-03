@@ -14,6 +14,12 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../index.html"));
   });
 
+  // Dashboard/meal planner route
+  app.get("/dashboard", function(req, res) {
+    
+    res.sendFile(path.join(__dirname, "../Public/dashboard.html"));
+  });
+
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {

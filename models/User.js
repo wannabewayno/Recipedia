@@ -42,7 +42,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
     }
-  });
+  }, {});
 
   User.associate = function(models) {
     // We're saying that a Favourite should belong to a User
