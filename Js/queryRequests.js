@@ -1,28 +1,21 @@
 /** 
- * example of a request :: 
- * queryRequest = {
- *   author: "nick",
- *   name: "burger",
- *   ingredients: ["carrot"],
- *   ingredientsUnwanted: ["strawberries", "flour"],
- *   tags: ["gluten free"],
- *   cuisine: "italian",
- *   diet: "keto"
- * }
- * perfectly okay to omit fields.
+  example of a request :: 
+  queryRequest = {
+    author: "nick",
+    name: "burger",
+    ingredients: ["carrot"],
+    ingredientsUnwanted: ["strawberries", "flour"],
+    tags: ["gluten free"],
+    cuisine: "italian",
+    diet: "keto"
+  }
+  perfectly okay to omit fields.
 */ 
 
-// queryRequest = {
-//     author: "nick",
-//     name: "burger",
-//     ingredients: ["carrot"],
-//     ingredientsUnwanted: ["strawberries", "flour"],
-//     tags: ["gluten free"],
-//     cuisine: "italian",
-//     diet: "keto"
-// }
+const sequelize = require("sequelize");
 
 // this function takes in the object of requests and sorts through them one at a time, to add them to the query.
+
 const requestHandler = (req) => {
     let query = "SELECT recipes.name, recipes.ingredients, recipes.servings, recipes.cuisine, recipes.diets, recipes.instructions, recipes.tags, user.name FROM recipedia.recipes LEFT JOIN user ON recipes.created_by = user.id WHERE"
     // author
@@ -66,9 +59,10 @@ const requestHandler = (req) => {
     if (query.slice( query.length-5, query.length ) === "WHERE") {
      query = query.slice( 0, query.length-5 )
     }
-    // For copy + pasting
-    console.log(query);
-    return(query);
+
+    const results = await sequelize.query(query, {type: sequelize.SELECT});
+
+    return(results);
 }
 
 module.exports = {requestHandler};
