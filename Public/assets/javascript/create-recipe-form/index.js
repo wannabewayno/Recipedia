@@ -7,6 +7,7 @@ const dependencies = [
     `create-recipe-form/getIngredients.js`,
     `create-recipe-form/getRecipeFormData.js`,
     `create-recipe-form/getChips.js`,
+    `create-recipe-form/publishRecipe.js`,
     //------ files not in this directory ------
     `removeElement.js`,
     `getDropdownValues.js`
@@ -49,18 +50,6 @@ $(document).ready(function() {
 //TODO: FUNCTION:
 // validation function/s
 
-//TODO: FUNCTION: publish recipe data.
-const publish = () => {
-    triggerSpinner();
-    
-    getRecipeFormData();
-
-    $.POST();
-
-    cancelSpinner();
-
-    successMessage()
-}
 
 //TODO: FUNCTION:
 // write a function that takes in an image, stores it in amazon s3, returns the href it's stored under.
@@ -69,5 +58,7 @@ const amazonS3 = () => {
 }
 
 //TODO: FUNCTION:
+// probably find the ingredient, replace it with an input instance... get the data from the data forms.
+// either modify the existing function for both cases... or create a special add case
 // a way to edit an ingredient or element without having to delete the whole stack and start again
 // in the case of steps, order is important, will need a re-order function or the like.
