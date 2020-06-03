@@ -24,4 +24,6 @@ const getRecipeFormData = () => {
     data.diets       = JSON.stringify(getDropdownValues('#create-diet')) // could be multiple diets
     data.ingredients = JSON.stringify(getIngredients()); // get's ingredients and stringifies it ready for data storage
     data.steps       = JSON.stringify(getSteps()); // get's cooking steps and stringifies it, ready for data storage
+
+    return data;
 }
