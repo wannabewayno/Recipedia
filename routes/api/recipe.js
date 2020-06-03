@@ -13,13 +13,14 @@ router.get("/api/recipes", function(req, res) {
   });
 });
 
-router.post("/api/recipes", function(req, res) {
-  db.Recipe.create({name: req.body.name, ingredients: "", servings: "", instructions: "", created_by: "", tags: ""}).then(newrecipe => {
-    res.json({ data: newrecipe });
-  }).catch(error => {
-    res.status(422).json({message: "recipe generation failed"})
-  });
-});
+router.post("/api/recipes", function(req, res) {console.log(req.body);
+//   db.Recipe.create({name: req.body, ingredients: "", servings: "", instructions: "", created_by: "", tags: "", image: ""}).then(newrecipe => {
+//     console.log(object);
+//     res.json({ data: newrecipe });
+//   }).catch(error => {
+//     res.status(422).json({message: "recipe generation failed"})
+//   });
+// });
 
 // router.put("/api/cats/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;
