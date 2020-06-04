@@ -1,12 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const queryConditions = require("../../Queries/queryRequests");
-
-
 // Import the model (cat.js) to use its database functions.
 // Import our models to use its database functions.
 const db = require("../../models");
 
+// import the queryConditions to use as a condition generator
+const queryConditions = require("../../Queries/queryRequests");
 
 module.exports = app => {
 
@@ -38,11 +35,12 @@ module.exports = app => {
   });
 
 };
+
 /* 
-router.get("/api/recipes", function(req, res) {
+app.get("/api/recipes", function(req, res) {
   
 
-router.post("/api/cats", function(req, res) {
+app.post("/api/cats", function(req, res) {
   cat.create([
     "name", "sleepy"
   ], [
