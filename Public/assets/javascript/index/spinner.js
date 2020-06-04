@@ -8,8 +8,6 @@ $(document).ready(function(){
  */
 const spinner = target => {
     const interval = setInterval(() => {
-        console.log('hello world');
-        console.log($(target));
         $(target).toggleClass('spinner3D')
     }, 500);
     return interval;

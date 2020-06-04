@@ -13,7 +13,13 @@ $(document).ready(function(){
 
   // Initialize exclude ingredient placeholder chips
   const initialChips = ['Type ingredient','hit enter']
-  const target = '#exclude-ingredients'
+  let target = '#exclude-ingredients'
+  $(target).chips({
+    data:initialChips.map(text => {return {tag:text}}),
+    onChipAdd:removeInitialChips(target,initialChips)
+  });
+  
+  target = '#in-my-fridge'
   $(target).chips({
     data:initialChips.map(text => {return {tag:text}}),
     onChipAdd:removeInitialChips(target,initialChips)

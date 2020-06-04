@@ -1,6 +1,6 @@
 // if the magnifying glass is clicked, triggers search function
 $('#search-button').click(function(event) {
-    const query = "placeholder"// do stuff to get the query and pass to search function
+    const query = getQueries();
     search(query)
 });
 
@@ -9,22 +9,23 @@ $('#search-query').keypress(function(event) {
     if(event.which === 13) {
         event.preventDefault();
         console.log('pressed enter key');
-        const query = "placeholder" // do stuff to get the query and pass to search function
+        const query = getQueries();
         search(query);
     }
 });
 
 const search = query => {
+    console.log(query);
     //! Will have to trim() and lowerCase() all user input strings
     console.log(`running search function`);
     // starts loading spinner
     const interval = spinner('#search-button');
 
    
-    // TODO: do an ajax request with query
-    $.get('endpoint',{
-        //options
-    })
+    // // TODO: do an ajax request with query
+    // $.get('endpoint',{
+        
+    // })
     /* // TODO:
     .then( results => {
         ! might need to JSON.parse some columns or not we'll see
