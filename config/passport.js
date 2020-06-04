@@ -7,9 +7,11 @@ var db = require("../models");
 passport.use(new LocalStrategy(
   // Our user will sign in using an email, rather than a "username"
   {
-    usernameField: "email"
+    usernameField: "userEmail",
+    passwordField: "userPass"
   },
   function(email, password, done) {
+    console.log("passport working");
     // When a user tries to sign in this code runs
     db.User.findOne({
       where: {
@@ -18,16 +20,32 @@ passport.use(new LocalStrategy(
     }).then(function(dbUser) {
       // If there's no user with the given email
       if (!dbUser) {
+        console.log("incorrect email")
         return done(null, false, {
           message: "Incorrect email."
         });
       }
       // If there is a user with the given email, but the password the user gives us is incorrect
-      else if (!dbUser.validPassword(password)) {
-        return done(null, false, {
-          message: "Incorrect password."
-        });
+      try {
+        if (await bcrypt.compare(password, user.password)) {
+          console.log("passport password: " + password)
+          return done(null, user);
+        }else {
+          return done(null, false, { message: 'Password incorrect'})
+        }
+      } catch (error) {
+        return done(error)
       }
+
+
+
+
+      // else if (!dbUser.validPassword(password)) {
+      //   console.log(password);
+      //   return done(null, false, {
+      //     message: "Incorrect password."
+      //   });
+      // }
       // If none of the above, return the user
       return done(null, dbUser);
     });
