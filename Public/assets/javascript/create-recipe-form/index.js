@@ -1,4 +1,4 @@
-// a list of all file names this depends on to run.
+// a list of all function paths this file depends on to run.
 const dependencies = [
     `create-recipe-form/addIngredient.js`,
     `create-recipe-form/addStep.js`,
@@ -7,6 +7,7 @@ const dependencies = [
     `create-recipe-form/getIngredients.js`,
     `create-recipe-form/getRecipeFormData.js`,
     `create-recipe-form/getChips.js`,
+    `create-recipe-form/uploadImage.js`,
     `create-recipe-form/publishRecipe.js`,
     //------ files not in this directory ------
     `removeElement.js`,
@@ -14,6 +15,9 @@ const dependencies = [
 ];
 
 $(document).ready(function() {
+    // Initializers
+    // ==========================================================================
+
     //inserts scripts for every new function we create so that we don't have to.
     dependencies.forEach(dependency => {
         const script = `<script src="./assets/javascript/${dependency}"></script>`
@@ -23,7 +27,7 @@ $(document).ready(function() {
     // activates select drop downs
      $('select').formSelect();
 
-    // activates charracter count on
+    // activates charracter count.
     $('#create-description').characterCounter();
 
     $('.chips').chips();
@@ -35,14 +39,22 @@ $(document).ready(function() {
         onChipAdd:removeInitialChips(target,initialChips)
     });
 
+    // event listeners
+    //====================================================================
+
     // adds ingredient from input into the container '#ingredients'
-    $('.add-ingredient-button').click(addIngredient);
+    $('.add-ingredient-button').click( addIngredient );
 
     // adds cooking steps from input into the container '#steps'
-    $('.add-step-button').click(addStep);
+    $('.add-step-button').click( addStep );
 
     // removes target ingredient when clicking the bin icon  
     removeElement('.remove-button','#ingredients','#steps');
+
+    // sends form data to post route via publishRecipe
+    $('#publish-button').click( publishRecipe );
+    
+    $('#image-file').on('change',uploadImage)
 
 });
 

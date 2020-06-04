@@ -16,7 +16,8 @@ module.exports = {
     */
 
    return queryInterface.bulkInsert('users', [{
-    name: faker.lorem.words(),
+    first_name: faker.lorem.words(),
+    last_name: faker.lorem.words(),
     email: faker.internet.email(),
     phone: faker.phone.phoneNumber(),
     password: faker.internet.password(),

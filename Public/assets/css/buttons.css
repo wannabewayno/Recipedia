@@ -1,9 +1,12 @@
 :root {
     --button-colour:hsl(72, 52%, 44%);
-    --hover-colour:	hsl(72, 52%, 39%)
+    --hover-colour:	hsl(72, 52%, 39%);
+    --disabled-colour: hsl(72, 0%, 44%);
 }
 
-button {
+button, .anchor-btn {
+    padding:0.5rem;
+    font-size: large;
     background-color: var(--button-colour);
     border:none;
     border-radius: 5px;
@@ -11,11 +14,11 @@ button {
     object-position: center;
 }
 
-button:hover, button:focus {
+button:hover, button:focus, .anchor-btn:hover, .anchor-btn:focus {
     background-color: var(--hover-colour);
 }
 
-button:active {
+button:active, .anchor-btn:active {
     transform: scale(0.95);
 }
 
@@ -45,11 +48,11 @@ button:active {
     left:0.5rem;
 }
 
-
 .zero {
     padding:0 !important;
     margin:0 !important;
 }
+
 
 /* --------------- custom button properties ----------------------- */
 #add-to-list-btn {
@@ -57,3 +60,14 @@ button:active {
     margin-bottom: 13px;
 }
 
+.disabled {
+    background-color: var(--disabled-colour);
+}
+
+.disabled:hover, .disabled:focus, .disabled:hover, .disabled:focus {
+    background-color: var(--disabled-colour);
+}
+
+.disabled:active, .disabled:active {
+    transform: none;
+}
