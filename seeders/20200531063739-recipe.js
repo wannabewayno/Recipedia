@@ -31,8 +31,8 @@ module.exports = {
     instructions: JSON.stringify(faker.lorem.paragraphs()),
     created_by: 1,
     tags: "ingredients",
-    createdAt: new Date(),
-    updatedAt: new Date()
+    // createdAt: new Date(),
+    // updatedAt: new Date()
   }], {});
   },
 

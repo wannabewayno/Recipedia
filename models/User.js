@@ -4,20 +4,20 @@ const bcrypt = require("bcryptjs");
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
-    first_name: {
+    name: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    last_name: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
-    },
+    // last_name: {
+    //   type: DataTypes.TEXT,
+    //   allowNull: true,
+    //   validate: {
+    //     len: [1]
+    //   }
+    // },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -41,14 +41,14 @@ module.exports = function(sequelize, DataTypes) {
         len: [8]
       }
     },
-    diets: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    cuisines: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    }
+    // diets: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
+    // cuisines: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // }
   }, {});
 
   User.associate = function(models) {
