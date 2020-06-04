@@ -13,6 +13,7 @@ router.get("/api/recipes", function(req, res) {
   });
 });
 
+//TODO: create a recipe uuid here to also store this in s3. send image to s3, retrieve a url and send that to db, respond to user with success!
 router.post("/api/recipes", function(req, res) {console.log(req.body);
 //   db.Recipe.create({name: req.body, ingredients: "", servings: "", instructions: "", created_by: "", tags: "", image: ""}).then(newrecipe => {
 //     console.log(object);
@@ -22,6 +23,11 @@ router.post("/api/recipes", function(req, res) {console.log(req.body);
 //   });
 });
 
+
+router.post("/api/upload", (req,res) => {
+  console.log(req.file);
+  res.json();
+});
 // router.put("/api/cats/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;
 

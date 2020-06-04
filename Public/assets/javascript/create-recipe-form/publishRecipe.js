@@ -1,7 +1,7 @@
-const publishRecipe = () => {
+const publishRecipe = async () => {
     //triggerSpinner();
     
-    const data = getRecipeFormData();
+    const data = await getRecipeFormData();
     console.log(data);
     $.post("/api/recipes", data)
     .then(response => console.log(response));

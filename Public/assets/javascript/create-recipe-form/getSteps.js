@@ -3,5 +3,5 @@ const getSteps = () => {
     $('#steps').find(".step-body").each(function(){
         steps.push($(this).text());
     });
-
+    return steps;
 }

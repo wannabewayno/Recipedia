@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="./assets/css/dashboard/mobile.css"/>
     <link rel="stylesheet" href="./assets/css/dashboard/desktop.css"/>
     <link rel="stylesheet" href="./assets/css/create-recipe.css"/>
+    <link rel="stylesheet" href="./assets/css/styleHelpers.css"/>
 </head>
 <body>
     <!-- modal container -->
@@ -65,12 +66,13 @@
                     <div class="file-field input-field feature-left">
                         <div class="btn">
                             <span>image</span>
-                            <input type="file" accept="image/*">
+                            <input type="file" accept="image/*" id="image-file">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" id="create-image">
                         </div>
                     </div>
+                    <div id="editor"></div>
                 </section>
 
                 <!-- info container -->

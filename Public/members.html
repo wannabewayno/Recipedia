@@ -2,34 +2,174 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>users name</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <!-- font-awesome CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="crossorigin="anonymous"></script>
+  <!-- Google Fonts Link -->
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+  <!--  MDC icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <!-- custom css -->
+  <link rel="stylesheet" href="./assets/css/tabs.css"/>
+  <link rel="stylesheet" href="./assets/css/buttons.css"/>
+  <link rel="stylesheet" href="./assets/css/nav.css"/>
+  <link rel="stylesheet" href="./assets/css/styleHelpers.css"/>
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
-    </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-        <p>back to home <a href="./">page</a></p>
+<!-- NavBar -->
+  <nav>
+    <h3>Recipedia</h3>
+    <div class="divider-container">
+
+      <div class="divider">
+        <img src="./assets/images/green-chilli.png" alt=""/>
+        <div class="divider-bottom"></div>
+        <div class="divider-top"></div>
+        <div class="divider-filler"></div>
       </div>
+
+      <div class="coloured-section">
+        <a id="sign-in-button" class="btn-floating waves-effect waves-light z-depth-3" href="/signup.html">
+          <i class="tiny material-icons">person</i>
+        </a>
+      </div>
+
     </div>
+  </nav>
+
+
+  <div class="container">
+    <!-- greeting -->
+    <h4>Hello user</h4>
+    <!-- section 1 -->
+      <section class="row">
+        <div class="col s12 m12 l6 xl6">
+          <!-- Button edit account settings -->
+          <button class="account-dropdown-btn">
+            <i class="material-icons right">arrow_drop_down</i>Edit account settings
+          </button>
+            <!-- button triggers a jQuery drop down -->
+            <div id="account-settings">
+              <ul class="account">
+                <!-- first name -->
+                <li class="Valign-start">
+                  <span>Wayne</span>
+                  <button class="edit-btn">
+                    <i class="material-icons">edit</i>
+                  </button>
+                </li>
+                <!-- last name -->
+                <li class="Valign-start">
+                  <span>Griffiths</span>
+                  <button class="edit-btn">
+                    <i class="material-icons">edit</i>
+                  </button>
+                </li>
+                <!-- email -->
+                <li class="Valign-start">
+                  <span>wayne.c.griffiths@gmail.com</span>
+                  <button class="edit-btn">
+                    <i class="material-icons">edit</i>
+                  </button>
+                </li>
+                <!-- password -->
+                <li class="Valign-start">
+                  <span>**********</span>
+                  <button class="edit-btn">
+                    <i class="material-icons">edit</i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+        </div>
+          <!--  edit preferences -->
+        <div class="col s12 m12 l6 xl6">
+          <button class="account-dropdown-btn">
+            <i class="material-icons right">arrow_drop_down</i>Edit your preferences
+          </button>
+          <div id="user-preferences">
+            <h5>Diets</h5>
+            <ul>
+  
+              <!-- each diet will appear here -->
+              <li class="user-diet Valign-start">
+              	<span>Vegan</span>
+              	<button class="edit-btn">
+              	    <i class="material-icons">edit</i>
+              	</button>
+              </li>
+  
+            </ul>
+            <!-- ul allergies -->
+            <h5>Allergies</h5>
+            <ul>
+  
+              <!-- Each allergy will be here -->
+              <li class="user-allergy Valign-start">
+                <span>Nut allergy</span>
+                <button class="edit-btn">
+                  <i class="material-icons">edit</i>
+                </button>
+              </li>
+  
+            </ul>
+              <!-- each li contains a diet and a button -->
+          </div>
+        </div>
+      </section>
+    <!-- section 2 -->
+      <section class="row">
+        <div class="col s12">
+          <!-- Authored recipes title -->
+          <h5>Authored Recipes</h5>
+            <ul id="authored-recipes">
+
+              <!-- Each recipe will be here as a list -->
+              <li class="authored-recipe Valign-start">
+                <span>recipe title</span>
+                <button class="edit-btn">
+                  <i class="material-icons">edit</i>
+                </button>
+                <button class="remove-btn">
+                  <i class="material-icons">delete</i>
+                </button>
+              </li>
+
+            </ul>
+        </div>
+      </section>
+    <!-- Will need logic for when pressing on edit button, replaces that instance with a form with the appropriate route handler -->
   </div>
+
+  <footer class="footer">
+
+    <div class="button-container">
+      <button class="footer-button btn-floating">
+        <i class="material-icons">format_list_bulleted</i>
+      </button>
+
+      <button class="footer-button btn-floating">
+        <i class="material-icons">favorite</i>
+      </button>
+
+      <a class="footer-button btn-floating" href="/dashboard">
+        <i class="material-icons">dashboard</i>
+      </a>
+
+    </div>
+
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="javascript/members/index.js"></script>
 
 </body>
 
