@@ -4,7 +4,8 @@ const publishRecipe = async () => {
     const data = await getRecipeFormData();
     console.log(data);
     $.post("/api/recipes", data)
-    .then(response => console.log(response));
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
 
    // cancelSpinner();
 

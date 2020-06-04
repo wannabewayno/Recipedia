@@ -37,13 +37,6 @@ $(document).ready(function(){
     $('#advanced-search').toggle("slow",function(){
       scrollToView(pos1);
     });
-    
-  //   setTimeout(() => {
-  //     const pos2 = getHeight();
-  //     const difference = pos2-pos1;
-  //     console.log(difference);
-  //     window.scrollBy(0, difference);
-  //   }, 600);
   });
     
   // if the magnifying glass is clicked, triggers search function
@@ -62,11 +55,14 @@ $(document).ready(function(){
     }
   });
 
-  $('#search-results').on('click','.recipe-card',function(event){
+  $('#search-results').on('click','.recipe-card',async function(event){
     console.log("hello-world");
+    const recipeID = $(this).data('id');
+    const allRecipes = await JSON.parse(localStorage.getItem('searchResults')); //search results are stored in localstorage for quick access
+    const thisRecipe = allRecipes[recipeID]; //This is now the JSON of our recipe.
+    //open the modal and pass it the recipe information
+    openModal(thisRecipe);
   });
-
-
 
 });
  

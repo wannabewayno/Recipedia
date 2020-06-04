@@ -4,7 +4,7 @@ const getQueries = type => {
 
         // removes placeholder chips if the user doesn't remove them;
         removeInitialChips('#in-my-fridge',['Type ingredient','hit enter'])();
-        searchData.ingredients = getChips('#in-my-fridge');
+        searchData.ingredients = getChips('#in-my-fridge').map(keyword => keyword.trim().toLowerCase());
 
     } else {
 
