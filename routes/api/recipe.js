@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 const express = require('express');
 const router = express.Router();
 const queryConditions = require("../../Queries/queryRequests");
 
 
 // Import the model (cat.js) to use its database functions.
-=======
 // Import our models to use its database functions.
->>>>>>> cdb25d20ef6a0358c832f1d568a45a64a396c448
 const db = require("../../models");
 
 
@@ -15,36 +12,32 @@ module.exports = app => {
 
   // Create all our routes and set up logic within those routes where required.
   app.get("/api/recipes", function(req, res) {
-    db.Recipe.findAll().then(function(data) {
+    // should send reqs through in the body.
+    queryRequest = {
+      // author: req.body.author, // need to join the tables first for this to work.
+      name: req.body.name,
+      ingredients: req.body.ingredients,
+      ingredientsUnwanted: req.body.ingredientsUnwanted,
+      tags: req.body.tags
+      // cuisine: req.body.cuisine ---------------- not in the database
+      // diet: req.body.diet ---------------- not in the database
+    }
+    
+    db.Recipe.findAll({ 
+      attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags"],
+      where: queryConditions(queryRequest)
+    }).then(function(data) {
       res.json({
         data: data
-      });
-    });
-  });
-<<<<<<< HEAD
-});
-
-router.get("/api/recipesss", function(req, res) {
-  // should send reqs through in the body.
-  queryRequest = {
-    // author: "nick", // need to join the tables first for this to work.
-    name: "pasta",
-    ingredients: ["b"],
-    ingredientsUnwanted: ["a"],
-    tags: ["vegan"]
-    // cuisine: "italian", ---------------- not in the database
-    // diet: "keto" ---------------- not in the database
-  }
-  
-  db.Recipe.findAll({ 
-    where: queryConditions(queryRequest),
-    include: 
-    }).then(function(data) {
-    res.json({
-      data: data
+      })
     })
-  })
-});
+
+  });
+
+};
+/* 
+router.get("/api/recipes", function(req, res) {
+  
 
 router.post("/api/cats", function(req, res) {
   cat.create([
@@ -54,7 +47,6 @@ router.post("/api/cats", function(req, res) {
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
-=======
 
   //TODO: create a recipe uuid here to also store this in s3. send image to s3, retrieve a url and send that to db, respond to user with success!
   app.post("/api/recipes", function(req, res) {console.log(req.body);
@@ -64,7 +56,6 @@ router.post("/api/cats", function(req, res) {
   //   }).catch(error => {
   //     res.status(422).json({message: "recipe generation failed"})
   //   });
->>>>>>> cdb25d20ef6a0358c832f1d568a45a64a396c448
   });
 
 
@@ -97,5 +88,4 @@ router.post("/api/cats", function(req, res) {
       }
     });
   });
-
-}
+*/

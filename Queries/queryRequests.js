@@ -1,16 +1,3 @@
-// /** 
-//   example of a request :: 
-//   req = {
-//     author: "nick",
-//     name: "burger",
-//     ingredients: ["carrot"],
-//     ingredientsUnwanted: ["strawberries", "flour"],
-//     tags: ["gluten free"],
-//     cuisine: "italian",
-//     diet: "keto"
-//   }
-//   perfectly okay to omit fields.
-// */ 
     const Sequelize = require("sequelize");
     const Op = Sequelize.Op;
 
@@ -32,7 +19,8 @@ module.exports = function(req) {
     if (req.ingredientsUnwanted != null) {
         for (let i = 0; i < req.ingredientsUnwanted.length; i++) {
             conditions.push({
-                    ingredients: { [Op.substring]: req.ingredientsUnwanted[i] }
+                    // need to use this method due to the way sequelize handles JSON requests 
+                    ingredients: Sequelize.where(Sequelize.fn('', Sequelize.col('ingredients')), ' NOT LIKE', '%' + req.ingredientsUnwanted[i] + '%')
             })
         }
     }
