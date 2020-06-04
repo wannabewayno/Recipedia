@@ -66,44 +66,52 @@
           <div id="account-settings" class="">
             <ul class="account">
               <!-- first name -->
-              <li class="Valign-between">
+              <li class="Valign-between account">
                 <div class="Valign-center">
                   <span class="label">First name:</span>
                   <span class="data xgap-tiny">Wayne</span>
                 </div>
-                <button class="edit-btn">
-                  <i class="material-icons">edit</i>
-                </button>
+                <div>
+                  <button class="edit-btn">
+                    <i class="material-icons">edit</i>
+                  </button>
+                </div>
               </li>
               <!-- last name -->
-              <li class="Valign-between">
+              <li class="Valign-between account">
                 <div class="Valign-center">
                   <span class="label">Last name:</span>
                   <span class="data xgap-tiny">Griffiths</span>
                 </div>
-                <button class="edit-btn">
-                  <i class="material-icons">edit</i>
-                </button>
+                <div>
+                  <button class="edit-btn">
+                    <i class="material-icons">edit</i>
+                  </button>
+                </div>
               </li>
               <!-- email -->
-              <li class="Valign-between">
+              <li class="Valign-between account">
                 <div class="Valign-center">
                   <span class="label">Email:</span>
                   <span class="data xgap-tiny">wayne.c.griffiths@gmail.com</span>
                 </div>
-                <button class="edit-btn">
-                  <i class="material-icons">edit</i>
-                </button>
+                <div>
+                  <button class="edit-btn">
+                    <i class="material-icons">edit</i>
+                  </button>
+                </div>
               </li>
               <!-- password -->
-              <li class="Valign-between">
+              <li class="Valign-between account">
                 <div class="Valign-center">
                   <span class="label">Password:</span>
                   <span class="data xgap-tiny"> Secret</span>
                 </div>
-                <button class="edit-btn">
-                  <i class="material-icons">edit</i>
-                </button>
+                <div>
+                  <button class="edit-btn">
+                    <i class="material-icons">edit</i>
+                  </button>
+                </div>
               </li>
             </ul>
           </div>
@@ -121,7 +129,10 @@
   
               <!-- each diet will appear here -->
               <li class="user-diet Valign-between">
-              	<span>Vegan</span>
+                <div>
+                  <span class="label">Diet:</span>
+                	<span class="data xgap-tiny">Vegan</span>
+                </div>
               	<div>
                     <button class="edit-btn">
                   	    <i class="material-icons">edit</i>
@@ -139,7 +150,10 @@
   
               <!-- Each allergy will be here -->
               <li class="user-allergy Valign-between">
-                <span>Nut allergy</span>
+                <div>
+                  <span class="label">Allergy:</span>
+                  <span class="data xgap-tiny">Nut allergy</span>
+                </div>
                 <div>
                   <button class="edit-btn">
                     <i class="material-icons">edit</i>
@@ -164,12 +178,15 @@
 
               <!-- Each recipe will be here as a list -->
               <li class="authored-recipe Valign-start">
-                <span class="data xgap-tiny">recipe title</span>
                 <div>
-                  <button class="edit-btn">
+                  <span class="label"></span>
+                  <span class="data xgap-tiny">recipe title</span>
+                </div>
+                <div>
+                  <button class="edit-recipe-btn">
                     <i class="material-icons">edit</i>
                   </button>
-                  <button class="remove-btn">
+                  <button class="remove-recipe-btn">
                     <i class="material-icons">delete</i>
                   </button>
                 </div>
