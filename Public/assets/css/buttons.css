@@ -3,7 +3,9 @@
     --hover-colour:	hsl(72, 52%, 39%)
 }
 
-button {
+button, .anchor-btn {
+    padding:0.5rem;
+    font-size: large;
     background-color: var(--button-colour);
     border:none;
     border-radius: 5px;
@@ -11,11 +13,11 @@ button {
     object-position: center;
 }
 
-button:hover, button:focus {
+button:hover, button:focus, .anchor-btn:hover, .anchor-btn:focus {
     background-color: var(--hover-colour);
 }
 
-button:active {
+button:active, .anchor-btn:active {
     transform: scale(0.95);
 }
 
