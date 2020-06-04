@@ -1,0 +1,28 @@
+.Valign-start, .Valign-center {
+    display:flex;
+    align-items: center;
+}
+
+.Valign-center {
+    justify-content: space-evenly;
+}
+
+.Valign-start {
+    justify-content: flex-start;
+}
+
+.Valign-between {
+    justify-content: space-evenly;
+}
+
+.xgap-tiny {
+    margin: 0.5rem;
+}
+
+.ygap-tiny {
+    margin: 0.5rem 0 ;
+}
+
+.ygap-small {
+    margin: 1rem 0 ;
+}
