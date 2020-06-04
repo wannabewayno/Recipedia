@@ -28,7 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //route for login
-app.use("/auth", require('./routes/auth'));
+app.use("/auth", require('./routes/api/api-routes'));
 
 
 // Requiring our routes

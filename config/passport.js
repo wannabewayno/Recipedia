@@ -26,27 +26,27 @@ passport.use(new LocalStrategy(
         });
       }
       // If there is a user with the given email, but the password the user gives us is incorrect
-      try {
-        if (await bcrypt.compare(password, user.password)) {
-          console.log("passport password: " + password)
-          return done(null, user);
-        }else {
-          return done(null, false, { message: 'Password incorrect'})
-        }
-      } catch (error) {
-        return done(error)
-      }
-
-
-
-
-      // else if (!dbUser.validPassword(password)) {
-      //   console.log(password);
-      //   return done(null, false, {
-      //     message: "Incorrect password."
-      //   });
+      // try {
+      //   if (await bcrypt.compare(password, user.password)) {
+      //     console.log("passport password: " + password)
+      //     return done(null, user);
+      //   }else {
+      //     return done(null, false, { message: 'Password incorrect'})
+      //   }
+      // } catch (error) {
+      //   return done(error)
       // }
-      // If none of the above, return the user
+
+
+
+
+      else if (!dbUser.validPassword(password)) {
+        console.log(password);
+        return done(null, false, {
+          message: "Incorrect password."
+        });
+      }
+     // If none of the above, return the user
       return done(null, dbUser);
     });
   }
