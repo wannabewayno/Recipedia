@@ -2,6 +2,7 @@
 const dependencies = [
     `members/createEditForm.js`,
     `members/createListItem.js`,
+    `members/patch.js`,
     //------ files not in this directory ------
     `getDropdownValues.js`
 ];
@@ -29,20 +30,28 @@ $(document).ready(function() {
     });
 
     $('#user-preferences, #account-settings').on('click','.edit-btn',function(event) {
-        const siblings = $(event.currentTarget).parent().siblings()[0];
-        console.log(siblings);
+        const siblings = $(this).parent().siblings()[0];
         const value = $(siblings).children('.data').text()
         const dataLabel = $(siblings).children('.label').text()
-        const editForm = createEditForm(value,dataLabel);
-        const appendTarget = $(event.currentTarget).parents('li');
+        const field = $(siblings).children('.label').data('field');
+        const editForm = createEditForm(value,dataLabel,field);
+        const appendTarget = $(this).parents('li');
         appendTarget.html(editForm);
     });
 
     $('#user-preferences, #account-settings').on('click','.undo-btn',function(event){
-        const appendTarget = $(event.currentTarget).parents('li');
+        const appendTarget = $(this).parents('li');
         const classes = appendTarget.attr('class');
-        const { value, dataLabel } = $(event.currentTarget).data();
-        const listItem = createListItem(value,dataLabel,classes);
+        const { value, dataLabel, field } = $(this).data();
+        const listItem = createListItem(value,dataLabel,field,classes);
         appendTarget.html(listItem);
+    });
+
+    $('#user-preferences, #account-settings').on('click','.patch-button',function(event){
+        $(this).prop('disabled', true).addClass('.disabled');
+        const input = $(this).parent().siblings().children('.editInput');
+        const value = input.val();
+        const field = input.data('field');
+        patch(field,value);
     });
 })
