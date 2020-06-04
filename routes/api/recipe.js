@@ -25,6 +25,9 @@ module.exports = app => {
     
     db.Recipe.findAll({ 
       attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags"],
+      // include: [
+      //   db.User
+      // ],
       where: queryConditions(queryRequest)
     }).then(function(data) {
       res.json({
