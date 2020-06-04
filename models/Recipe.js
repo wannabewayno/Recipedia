@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.JSON,
       allowNull: false,
     },
-    createdBy: {
+    created_by: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -27,11 +27,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    image: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    }
-  });
+    // image: {
+    //   type: DataTypes.TEXT,
+    //   allowNull: true
+    // }
+  }, {});
+
+  
 
   Recipe.associate = function(models) {
     // We're saying that a Favourite should belong to a Recipe

@@ -1,8 +1,8 @@
 // Requiring path to so we can use relative routes to our HTML files
-var path = require("path");
+const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+const isAuthenticated = require("../../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
 
@@ -13,11 +13,14 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../index.html"));
   });
-
+  
   // Dashboard/meal planner route
+
+  //Will need handlebars for meal planning
+
   app.get("/dashboard", function(req, res) {
     
-    res.sendFile(path.join(__dirname, "../Public/dashboard.html"));
+    res.sendFile(path.join(__dirname, "../../Public/create-recipe.html"));
   });
 
   app.get("/login", function(req, res) {
@@ -25,13 +28,14 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../../Public/login.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+  // Will need handlebars for user information (all except "id") + list of recipes that they've authored
+  app.get("/members", /*isAuthenticated,*/ function(req, res) {
+    res.sendFile(path.join(__dirname, "../../Public/members.html"));
   });
 
 };
