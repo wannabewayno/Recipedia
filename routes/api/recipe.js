@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const queryHandler = require("../../Queries/queryRequests");
+const queryConditions = require("../../Queries/queryRequests");
 
 
 // Import the model (cat.js) to use its database functions.
@@ -16,27 +16,25 @@ router.get("/api/recipes", function(req, res) {
 });
 
 router.get("/api/recipesss", function(req, res) {
+  // should send reqs through in the body.
   queryRequest = {
-    // author: "nick",
-    name: "burger",
-    ingredients: ["carrot", "flour"],
-    ingredientsUnwanted: ["strawberries", "flour"],
-    tags: ["gluten free"], 
+    // author: "nick", // need to join the tables first for this to work.
+    name: "pasta",
+    ingredients: ["b"],
+    ingredientsUnwanted: ["a"],
+    tags: ["vegan"]
     // cuisine: "italian", ---------------- not in the database
-    // diet: "keto" ---------------- also not in the database
+    // diet: "keto" ---------------- not in the database
   }
   
-  db.Recipe.findAll({where: queryHandler(queryRequest)}).then(function(data) {
+  db.Recipe.findAll({ 
+    where: queryConditions(queryRequest),
+    include: 
+    }).then(function(data) {
     res.json({
       data: data
     })
   })
-
-  // db.Recipe.findAll().then(function(data) {
-  //   res.json({
-  //     data: data
-  //   });
-  // });
 });
 
 router.post("/api/cats", function(req, res) {

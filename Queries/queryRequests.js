@@ -15,7 +15,9 @@
     const Op = Sequelize.Op;
 
 module.exports = function(req) {
-        let conditions = [];
+    let conditions = [];
+    let Sequelize = require("sequelize");
+    let Op = Sequelize.Op;
         
     // ingredients
     if (req.ingredients != null) {
@@ -30,9 +32,7 @@ module.exports = function(req) {
     if (req.ingredientsUnwanted != null) {
         for (let i = 0; i < req.ingredientsUnwanted.length; i++) {
             conditions.push({
-                ingredients: {
-                    ingredients: { [Op.substring]: req.ingredients[i] }
-                }
+                    ingredients: { [Op.substring]: req.ingredientsUnwanted[i] }
             })
         }
     }
@@ -41,7 +41,7 @@ module.exports = function(req) {
     if (req.tags != null) {
         for (let i = 0; i < req.tags.length; i++) {
             conditions.push({
-                ingredients: { [Op.substring]: req.tags[i] }
+                tags: { [Op.substring]: req.tags[i] }
             })
         }
     }
