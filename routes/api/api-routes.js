@@ -4,7 +4,7 @@ const passport = require("../../config/passport");
 const express = require('express');
 const router = express.Router();
 const recipe = require('./recipe');
-// const user = require('./user');
+const user = require('./user');
 
 
 // Using the passport.authenticate middleware with our local strategy.
@@ -56,6 +56,6 @@ router.get("/api/user_data", function (req, res) {
 });
 
 router.use(recipe)
-// router.use(user)
+router.use(user)
 
 module.exports = router

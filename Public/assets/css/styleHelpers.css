@@ -1,4 +1,4 @@
-.Valign-start, .Valign-center {
+.Valign-start, .Valign-center, .Valign-between, .Valign-around {
     display:flex;
     align-items: center;
 }
@@ -12,7 +12,14 @@
 }
 
 .Valign-between {
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+.Valign-around {
+    justify-content: space-around;
+}
+.end {
+    justify-self: flex-end;
 }
 
 .xgap-tiny {

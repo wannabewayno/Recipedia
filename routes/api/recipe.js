@@ -24,10 +24,6 @@ router.post("/api/recipes", function(req, res) {console.log(req.body);
 });
 
 
-router.post("/api/upload", (req,res) => {
-  console.log(req.file);
-  res.json();
-});
 // router.put("/api/cats/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;
 
