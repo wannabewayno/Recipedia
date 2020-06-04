@@ -1,18 +1,4 @@
-// if the magnifying glass is clicked, triggers search function
-$('#search-button').click(function(event) {
-    const query = getQueries();
-    search(query)
-});
 
-// hitting enter in the search bar, triggers search function
-$('#search-query').keypress(function(event) {
-    if(event.which === 13) {
-        event.preventDefault();
-        console.log('pressed enter key');
-        const query = getQueries();
-        search(query);
-    }
-});
 
 const search = query => {
     console.log(query);
@@ -63,12 +49,10 @@ const search = query => {
     
     /*
     TODO: write the renderResults function that populates the search-results with recipeCardInfo
-
-    * probably something like this: 
-    ? note: this is probably a good time to use handlbars to template this maybe? Will read up on this.
+    * this will just be template literal js file sorry.
     const renderResults = recipeCardInfo => {
         recipeCardInfo.forEach(recipeCardObject => {
-            const recipeThumbnail = recipeCard(recipeCardObject) // somehow make recipe card in this function, either a template or template literals
+            const recipeThumbnail = createThumbnail(recipeCardObject) // somehow make recipe card in this function, either a template or template literals
             $('#search-results').append(recipeThumbnail)
         });
     }
