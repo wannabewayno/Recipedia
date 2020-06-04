@@ -6,10 +6,10 @@ const dependencies = [
     `create-recipe-form/getSteps.js`,
     `create-recipe-form/getIngredients.js`,
     `create-recipe-form/getRecipeFormData.js`,
-    `create-recipe-form/getChips.js`,
     `create-recipe-form/uploadImage.js`,
     `create-recipe-form/publishRecipe.js`,
     //------ files not in this directory ------
+    `getChips.js`,
     `removeElement.js`,
     `getDropdownValues.js`
 ];

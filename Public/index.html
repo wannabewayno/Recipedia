@@ -21,10 +21,11 @@
     <!--  MDC icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- custom css -->
-    <link rel="stylesheet" href="./assets/css/index.css"/> 
     <link rel="stylesheet" href="./assets/css/tabs.css"/> 
     <link rel="stylesheet" href="./assets/css/buttons.css"/> 
     <link rel="stylesheet" href="./assets/css/nav.css"/> 
+    <link rel="stylesheet" href="./assets/css/index.css"/> 
+    <link rel="stylesheet" href="./assets/css/styleHelpers.css"/> 
   </head> 
   <body>
     <!-- NavBar -->
@@ -87,56 +88,56 @@
 
                 <!-- Cuisine filter -->
                 <div class="input-field">
-                  <select multiple>
-                    <option value="" disabled>Cuisines:</option>
-                    <option value="0">Australian</option>
-                    <option value="1">African</option>
-                    <option value="2">American</option>
-                    <option value="3">British</option>
-                    <option value="4">Cajun</option>
-                    <option value="5">Caribbean</option>
-                    <option value="6">Chinese</option>
-                    <option value="7">Eastern European</option>
-                    <option value="8">European</option>
-                    <option value="9">French</option>
-                    <option value="10">German</option>
-                    <option value="11">Greek</option>
-                    <option value="12">Indian</option>
-                    <option value="13">Irish</option>
-                    <option value="14">Italian</option>
-                    <option value="15">Japenese</option>
-                    <option value="16">Jewish</option>
-                    <option value="17">Korean</option>
-                    <option value="18">Latin American</option>
-                    <option value="19">Malaysian</option>
-                    <option value="20">Mediterranean</option>
-                    <option value="21">Mexican</option>
-                    <option value="22">Middle Eastern</option>
-                    <option value="23">Nordic</option>
-                    <option value="24">Singaporean</option>
-                    <option value="25">Southern</option>
-                    <option value="26">Spanish</option>
-                    <option value="27">Swedish</option>
-                    <option value="28">Thai</option>
-                    <option value="29">Vietnamese</option>
+                  <select id="cuisine" multiple>
+                    <option value="">Cuisine</option>
+                    <option value="australian">Australian</option>
+                    <option value="african">African</option>
+                    <option value="american">American</option>
+                    <option value="british">British</option>
+                    <option value="cajun">Cajun</option>
+                    <option value="caribbean">Caribbean</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="eaterneuropean">Eastern European</option>
+                    <option value="european">European</option>
+                    <option value="french">French</option>
+                    <option value="german">German</option>
+                    <option value="greek">Greek</option>
+                    <option value="indian">Indian</option>
+                    <option value="irish">Irish</option>
+                    <option value="italian">Italian</option>
+                    <option value="japanese">Japenese</option>
+                    <option value="jewish">Jewish</option>
+                    <option value="korean">Korean</option>
+                    <option value="latinamerican">Latin American</option>
+                    <option value="malaysian">Malaysian</option>
+                    <option value="mediterranean">Mediterranean</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="middleeastern">Middle Eastern</option>
+                    <option value="nordic">Nordic</option>
+                    <option value="singaporean">Singaporean</option>
+                    <option value="southern">Southern</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="swedish">Swedish</option>
+                    <option value="thai">Thai</option>
+                    <option value="vietnamese">Vietnamese</option>
                   </select>
                   <label for="cuisine">Cuisine</label>
                 </div>
 
                 <!-- Diet filter  -->
                 <div class="input-field">
-                  <select multiple>
+                  <select id="diet" multiple>
                     <option value="" disabled>Diets:</option>
-                    <option value="1">Gluten free</option>
-                    <option value="2">Vegan</option>
-                    <option value="3">Vegetarien</option>
-                    <option value="4">Pescetarian</option>
-                    <option value="5">Paleo</option>
-                    <option value="6">Primal</option>
-                    <option value="7">Whole30</option>
-                    <option value="8">Ketogenic</option>
-                    <option value="9">lacto-vegetarian</option>
-                    <option value="10">ovo-vegetarian</option>
+                    <option value="glutenfree">Gluten free</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="vegetarien">Vegetarien</option>
+                    <option value="pescetarian">Pescetarian</option>
+                    <option value="paleo">Paleo</option>
+                    <option value="primal">Primal</option>
+                    <option value="whole30">Whole30</option>
+                    <option value="ketogenic">Ketogenic</option>
+                    <option value="lacto-vegetarian">lacto-vegetarian</option>
+                    <option value="ovo-vegetarian">ovo-vegetarian</option>
                   </select>
                   <label for="diet">Diet</label>
                 </div>
@@ -169,7 +170,10 @@
                   2.) How many of those items you can be bothered typing in.
                 </li>
                 
-                <div id="in-my-fridge"class="chips"></div>
+                <div class="Valign-start">
+                  <div id="in-my-fridge"class="chips"></div>
+                  <i id="search-fridge-button" class="material-icons xgap-tiny">search</i>
+                </div>
                 
               </ul>
 
@@ -224,10 +228,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- custom js -->
     <script src="./assets/javascript/removeInitialChips.js"></script>
-    <script src="./assets/javascript/activateTabs.js"></script>   
-    <script src="./assets/javascript/spinner.js"></script>   
-    <script src="./assets/javascript/search.js"></script>   
-    <script src="./assets/javascript/openModal.js"></script>   
+    <script src="./assets/javascript/index/spinner.js"></script>   
+    <script src="./assets/javascript/index/search.js"></script>   
+    <script src="./assets/javascript/modal-logic/openModal.js"></script>
+    <script src="./assets/javascript/getChips.js"></script>
+    <script src="./assets/javascript/index/getQueries.js"></script>
+    <script src="./assets/javascript/getDropdownValues.js"></script>
+    <script src="./assets/javascript/createThumbnail.js"></script>
+    <script src="./assets/javascript/index/scrollToView.js"></script>
+    <script src="./assets/javascript/index/index.js"></script>   
 </body>
 
 </html>

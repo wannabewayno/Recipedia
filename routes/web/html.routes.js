@@ -17,10 +17,13 @@ module.exports = app => {
   
   // Dashboard/meal planner route
 
-  //! Will need handlebars for meal planning, this will require a get request
+  //! Will need handlebars for meal planning, this will require a db query
 
   app.get("/dashboard", function(req, res) {
-    
+    //db.mealPlan where id = our user id!
+    //retrieves the saved meals
+    // run a sorting function on this for anything that is null/undefined or a palceholder value
+    // then send this off for templating with handlbars
     res.sendFile(path.join(__dirname, "../../Public/dashboard.html"));
   });
 
