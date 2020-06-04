@@ -15,12 +15,12 @@
  * @param {String} value - the item to edit
  * @param {String} dataLabel -  the value label 
  */
-const createListItem = (value,dataLabel,classes) => {
+const createListItem = (value,dataLabel,field,classes) => {
 
     // create all necessary html elements
     const divData = $('<div>');
     const divButtons = $('<div>');
-    const spanLabel = $('<span>').addClass('label').text(dataLabel);
+    const spanLabel = $('<span>').addClass('label').data({'field':field}).text(dataLabel);
     const spanData = $('<span>').addClass('data xgap-tiny').text(value);
     const iconEdit = $('<icon>').addClass('material-icons').text('edit');
     const buttonEdit = $('<button>').addClass('edit-btn').append(iconEdit);
