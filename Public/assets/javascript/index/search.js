@@ -18,9 +18,13 @@ const search = query => {
     //! Will have to trim() and lowerCase() all user input strings
     console.log(`running search function`);
     // starts loading spinner
-    spinner();
+    const interval = spinner('#search-button');
+
+   
     // TODO: do an ajax request with query
-    
+    $.get('endpoint',{
+        //options
+    })
     /* // TODO:
     .then( results => {
         ! might need to JSON.parse some columns or not we'll see
@@ -50,6 +54,9 @@ const search = query => {
         * we now pass the recipeCardInfo to render the recipe cards for the user to look at
         * when they click on any of these cards, it will pull that recipe from local storage
         renderResults(recipeCardInfo);
+
+        clear the spinner when we're done
+        clearSpinner(interval);
     })
     */
     

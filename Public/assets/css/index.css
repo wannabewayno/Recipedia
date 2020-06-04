@@ -80,20 +80,27 @@ main {
   font-size: 30px;
   margin-left:10px;
   cursor: pointer;
+  transition:cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.5s;
 }
 
 #search-button:hover, #search-button:focus{
-    transform: scale(1.4);
+    /* transform: scale(1.4); */
     color: #94ab36;
+    
 }
 
 #exclude-ingredient {
   margin-top:0;
 }
 
-.spinner{
+.spinner:focus, .spinner, .spinner:hover {
   transform: rotate3d(1,1,0,180deg);
+  transform: rotateX(180deg);
   transition:cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.5s;
+}
+
+.spinner3D{
+  transform: rotate3d(1,1,0,180deg);
 }
 
 

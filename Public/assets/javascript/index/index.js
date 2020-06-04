@@ -1,6 +1,7 @@
 // activates Materialize JS for tabs, chips, input selects and dropdowns, Hides advanced search on start up.
 $(document).ready(function(){
-  
+  // initializers
+  // ============================================================================
   $('#show-more-btn').hide();
   $('#advanced-search').hide();
   
@@ -20,12 +21,19 @@ $(document).ready(function(){
 
   // activates multiple select drop downs
   $('select').formSelect();
+
+  // event listeners
+  // ============================================================================
+
+  //expands search bar when 'advanced' is clicked
+  $('#advanced-search-button').click(function(){
+    $('#advanced-search').toggle("slow");
+  });
+
+
 });
  
-//expands search bar when 'advanced' is clicked
-$('#advanced-search-button').click(function(){
-  $('#advanced-search').toggle("slow");
-});
+
 
 //TODO: FUNCTION:
 // write a function that auto scrolls by the height of the tab box when a tab is pressed. 
