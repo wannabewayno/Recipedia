@@ -78,12 +78,17 @@ DROP TABLE IF EXISTS `users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
+  `user_name` varchar(45) NOT NULL,
+  `first_name` varchar(45)  NULL,
+  `last_name` varchar(45)  NULL,
   `email` varchar(45) DEFAULT NULL,
   `phone` int DEFAULT NULL,
   `password` varchar(450) NOT NULL,
   `diets` varchar(45) DEFAULT NULL,
+  `cuisines` varchar(45) DEFAULT NULL,
   `favourites` int DEFAULT NULL,
+  `createdAt` varchar(45) DEFAULT NULL,
+  `updatedAt` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

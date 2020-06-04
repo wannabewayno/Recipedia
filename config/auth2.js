@@ -39,7 +39,7 @@ exports.register = (req, res) => {
 
         db.query(
           "INSERT INTO users SET ?",
-          { name: regFirstName, email: regEmail, password: hashedPassword },
+          { user_name: regFirstName, email: regEmail, password: hashedPassword },
           (error, result) => {
             if (error) {
               throw error;

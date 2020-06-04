@@ -8,8 +8,8 @@ module.exports = {
     return queryInterface.bulkInsert('favourites', [{
       user_id: 1,
       recipe_id: 1,
-      // createdAt: new Date(),
-      // updatedAt: new Date()
+      createdAt: new Date(),
+      updatedAt: new Date()
     }], {});
   },
 
