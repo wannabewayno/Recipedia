@@ -18,7 +18,7 @@
  */
 const createEditForm = (value,dataLabel) => {
     // create all necessary html elements
-    const form = $('<form>').attr({'action':'/api/user','method':'patch'}).addClass('Valign-center');
+    const form = $('<form>').attr({'action':'/api/user','method':'post'}).addClass('Valign-center');
     const divInput = $('<div>').addClass('input-field');
     const divButtons = $('<div>').addClass('Valign-center');
     const label = $('<label>').attr('for','editInput').addClass('active').text(dataLabel);
