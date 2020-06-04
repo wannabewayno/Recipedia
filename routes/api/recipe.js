@@ -34,6 +34,37 @@ module.exports = app => {
 
   });
 
+  app.post("/api/recipes", function(req, res) {
+    console.log(req.body);
+    //TODO: do database stuff here to add a recipe
+    // let wayne know how to change the keys in req.body to help you out here
+  //   db.Recipe.create({name: req.body, ingredients: "", servings: "", instructions: "", created_by: "", tags: "", image: ""}).then(newrecipe => {
+  //     console.log(object);
+  //     res.json({ data: newrecipe });
+  //   }).catch(error => {
+  //     res.status(422).json({message: "recipe generation failed"})
+  //   });
+  });
+
+  app.delete("/api/recipe/:id", function(req, res) {
+    // remove the recipe with this id;
+    const recipeID = req.params.id;
+    
+
+    //TODO: do database stuff here
+    // var condition = "id = " + req.params.id;
+    // cat.delete(condition, function(result) {
+    //   if (result.affectedRows == 0) {
+    //     // If no rows were changed, then the ID must not exist, so 404
+    //     return res.status(404).end();
+    //   } else {
+    //     res.status(200).end();
+    //   }
+    // });
+  });
+
+
+
 };
 
 /* 
@@ -82,7 +113,7 @@ app.post("/api/cats", function(req, res) {
 
     cat.delete(condition, function(result) {
       if (result.affectedRows == 0) {
-        // If no rows were changed, then the ID must not exist, so 404
+        If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
       } else {
         res.status(200).end();
