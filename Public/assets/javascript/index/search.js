@@ -43,9 +43,6 @@ const search = query => {
         clearSpinner(interval);
     })
     
-    
-    // TODO: write the renderResults function that populates the search-results with recipeCardInfo
-    // * this will just be template literal js file sorry.
     const renderResults = recipeCardInfo => {
         recipeCardInfo.forEach(recipeCardObject => {
             const recipeThumbnail = createThumbnail(recipeCardObject);
