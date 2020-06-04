@@ -5,20 +5,36 @@ const passport = require("passport")
 const router = express.Router();
 
 //user registration
-router.post('/register', authController.register);
+router.post('/register', checkNotAuthenticated, authController.register);
 
 //user login
-router.post('/login', (req, res, next) => {
+router.post('/login', checkNotAuthenticated, (req, res, next) => {
     passport.authenticate('local', {
         successRedirect: "/members",
         failureRedirect: "/login",
-        //failureFlash: true
+        failureFlash: true
     })(req, res, next);
 });
 
 //user logout 
-router.get('/logout', (req, res) => {
-    req.logout();
+router.delete('/logout', (req, res) => {
+    req.logOut();
+    res.redirect("/");
 })
+
+function checkAuthenticated(req, res, next) {
+    if(req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect("/login")
+}
+
+function checkNotAuthenticated(req, res, next) {
+    if(req.isAuthenticated()) {
+        res.redirect("/")
+    }
+    return next();
+
+}
 
 module.exports = router;

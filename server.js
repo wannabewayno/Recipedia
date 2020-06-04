@@ -2,6 +2,7 @@ require('dotenv').config()
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+const methodOverride = require("method-override");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const apiRoutes = require('./routes/api/api-routes');
@@ -29,6 +30,7 @@ app.use(passport.session());
 
 //route for login
 app.use("/auth", require('./routes/auth'));
+app.use(methodOverride("_method"))
 
 
 // Requiring our routes

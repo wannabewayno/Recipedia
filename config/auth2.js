@@ -1,5 +1,4 @@
 const mysql = require("mysql");
-const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 const db = mysql.createConnection({
@@ -19,6 +18,7 @@ exports.register = (req, res) => {
     regConfirmPass,
     regFirstName,
     regLastName,
+    regUserName
   } = req.body;
 
   db.query(
@@ -28,10 +28,10 @@ exports.register = (req, res) => {
       try {
         if (results.length > 0) {
           console.log("email in use");
-          return;
+          return done(null, false, {message: "email in use"});
         } else if (regPass !== regConfirmPass) {
           console.log("Passwords do not match");
-          return;
+          return done(null, false, {message: "password incorrect"});
         }
 
         let hashedPassword = await bcrypt.hash(regPass, 8);
@@ -39,7 +39,7 @@ exports.register = (req, res) => {
 
         db.query(
           "INSERT INTO users SET ?",
-          { user_name: regFirstName, email: regEmail, password: hashedPassword },
+          { user_name: regUserName, first_name: regFirstName, last_name: regLastName, email: regEmail, password: hashedPassword },
           (error, result) => {
             if (error) {
               throw error;
@@ -51,7 +51,6 @@ exports.register = (req, res) => {
         );
       } catch (error) {
         console.log("(line 93) tryCatch error: " + error);
-        console.log(results);
       }
     }
   );
