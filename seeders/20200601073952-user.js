@@ -16,15 +16,15 @@ module.exports = {
     */
 
    return queryInterface.bulkInsert('users', [{
-    first_name: faker.lorem.words(),
-    last_name: faker.lorem.words(),
+    name: faker.lorem.words(),
+    //last_name: faker.lorem.words(),
     email: faker.internet.email(),
     phone: faker.phone.phoneNumber(),
     password: faker.internet.password(),
     diets: faker.lorem.words(),
-    cuisines: "ingredients",
-    createdAt: new Date(),
-    updatedAt: new Date()
+    //cuisines: "ingredients",
+    //createdAt: new Date(),
+    //updatedAt: new Date()
   }], {});
 
   },

@@ -37,9 +37,6 @@ passport.use(new LocalStrategy(
       //   return done(error)
       // }
 
-
-
-
       else if (!dbUser.validPassword(password)) {
         console.log(password);
         return done(null, false, {
