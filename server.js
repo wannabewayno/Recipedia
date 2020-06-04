@@ -32,8 +32,12 @@ app.use("/auth", require('./routes/api/api-routes'));
 
 
 // Requiring our routes
-require("./routes/web/html-routes.js")(app);
-app.use(apiRoutes)
+// Routes
+// ====================================================================================
+// require("./routes/web/html-routes.js")(app);
+// app.use(apiRoutes)
+const routes  = require('./routes/index.routes.js');
+routes(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({force: false}).then(function() {

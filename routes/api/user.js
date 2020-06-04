@@ -1,12 +1,8 @@
-const express = require('express');
-const router = express.Router();
-
-// Import the model (cat.js) to use its database functions.
+//require our models to use;
 const db = require("../../models");
 
-
-router.post("/api/user", function(req, res) {
-    console.log(req.body);
-});
-
-module.exports = router;
+module.exports = app => {
+    app.post("/api/user", function(req, res) {
+        console.log(req.body);
+    });
+}
