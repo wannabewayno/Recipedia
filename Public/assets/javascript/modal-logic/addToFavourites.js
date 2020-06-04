@@ -52,7 +52,6 @@ $(document).ready(function(){
 });
 
 
-
 /**
  * @param {String} recipeID - the db recipe-id to add to favourites 
  */
@@ -63,7 +62,6 @@ const addToFavourites = recipeID => {
 
    return AJAX;
 }
-
 
 
 /**
