@@ -47,6 +47,7 @@ $(document).ready(function() {
         appendTarget.html(listItem);
     });
 
+    //this is for patching account information
     $('#user-preferences, #account-settings').on('click','.patch-button',function(event){
         $(this).prop('disabled', true).addClass('.disabled');
         const input = $(this).parent().siblings().children('.editInput');
@@ -54,4 +55,24 @@ $(document).ready(function() {
         const field = input.data('field');
         patch(field,value);
     });
-})
+
+    // this is for deleting recipes
+    $('#authored-recipes').on("click",".remove-recipe-btn",function(){
+        const recipeID = $(this).parent().siblings().children('.data').data('id');
+        deleteRecipe(recipeID);
+    });
+
+    // <li class="authored-recipe Valign-start">
+    //             <div>
+    //               <span class="label">title</span>
+    //               <span class="data xgap-tiny" data-id="">recipe title</span>
+    //             </div>
+    //             <div>
+    //               <button class="edit-recipe-btn">
+    //                 <i class="material-icons">edit</i>
+    //               </button>
+    //               <button class="remove-recipe-btn">
+    //                 <i class="material-icons">delete</i>
+    //               </button>
+    //             </div>
+    //           </li>
