@@ -1,6 +1,7 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
 const db = require('../../models');
+const exhb = require('express-handlebars');
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
@@ -20,10 +21,11 @@ module.exports = app => {
   //! Will need handlebars for meal planning, this will require a db query
 
   app.get("/dashboard", function(req, res) {
-    //db.mealPlan where id = our user id!
+    //db.MealPlan where id = our user id!
     //retrieves the saved meals
     // run a sorting function on this for anything that is null/undefined or a palceholder value
     // then send this off for templating with handlbars
+    res.render
     res.sendFile(path.join(__dirname, "../../Public/dashboard.html"));
   });
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan</title>
+    <!-- font-awesome CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="crossorigin="anonymous"
+    ></script>
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <!--  MDC icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/tabs.css"/>
+    <link rel="stylesheet" href="./assets/css/buttons.css"/>
+    <link rel="stylesheet" href="./assets/css/nav.css"/>
+    <link rel="stylesheet" href="./assets/css/dashboard/main.css"/>
+    <link rel="stylesheet" href="./assets/css/dashboard/mobile.css"/>
+    <link rel="stylesheet" href="./assets/css/dashboard/desktop.css"/>
+    <link rel="stylesheet" href="./assets/css/styleHelpers.css"/>
+    <link rel="stylesheet" href="./assets/css/modal.css">
+    <link rel="stylesheet" href="./assets/css/recipe-modal/visual-info.css">
+    <link rel="stylesheet" href="./assets/css/recipe-modal/recipe.css">
+    <link rel="stylesheet" href="./assets/css/shopping-list.css">
+    <link rel="stylesheet" href="./assets/css/create-recipe.css"/>
+
+</head>
+<body>
+     <!-- NavBar -->
+     <nav>
+        <h3>Recipedia</h3>
+        <div class="divider-container">
+          <div class="divider">
+            <img src="./assets/images/green-chilli.png" alt="green-chilli"/>
+            <div class="divider-bottom"></div>
+            <div class="divider-top"></div>
+            <div class="divider-filler"></div>
+          </div>
+          <button id="sign-in-button" class="btn-floating waves-effect waves-light">
+            <i class="large material-icons">account_circle</i>
+          </button>
+        </div>
+      </nav>
+        <!-- Meal Planner goes here-->
+    <main>
+        <div class="container">
+            <h4>The board...</h4>
+            {{{body}}}
+        </div>
+    </main>
+
+     <footer class="footer">
+
+        <div class="button-container">
+            <button class="footer-button btn-floating list-button">
+                <i class="material-icons">format_list_bulleted</i>
+            </button>
+
+            <button class="footer-button btn-floating favourite-button">
+                <i class="material-icons">favorite</i>
+            </button>
+
+            <a class="footer-button btn-floating create-recipe" href="/">
+                <i class="material-icons">search</i>
+            </a>
+        </div>
+        
+        <div id="create-recipe-section">
+            <a id="publish-recipe" class="footer-button z-depth-2 anchor-btn" href="/create">
+                <i class="material-icons right">create</i> Add Recipe
+            </a>
+        </div>
+        
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- materialize js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- custom js -->
+    <script src="./../../public/assets/javascript/svgArc.js"></script>
+    <script src="./../../public/assets/javascript/activateTabs.js"></script>
+    <script src="./../../public/assets/javascript/createRecipe.js"></script>
+    <script src="./../../public/assets/javascript/dashboard-logic.js"></script>
+    <script src="./../../public/assets/javascript/renderTimeBar.js"></script>
+    <script src="./../../public/assets/javascript/search.js"></script>
+    <script src="./../../public/assets/javascript/openModal.js"></script>
+
+</body>
+</html>
