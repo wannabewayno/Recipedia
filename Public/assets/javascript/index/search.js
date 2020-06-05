@@ -4,7 +4,7 @@ const search = (query,type) => {
     console.log(`running search function`);
 
     let endPoint;
-    type === fridge? endPoint = '/api/fridge':'/api/recipes';
+    type === 'fridge'? endPoint = '/api/fridge':'/api/recipes';
 
     // starts loading spinner
     const interval = spinner('#search-button');
