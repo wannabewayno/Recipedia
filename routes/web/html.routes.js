@@ -21,9 +21,10 @@ module.exports = app => {
   //! Will need handlebars for meal planning, this will require a db query
 
   app.get("/dashboard", function(req, res) {
-    //db.MealPlan where id = our user id!
-    //retrieves the saved meals
-    // run a sorting function on this for anything that is null/undefined or a palceholder value
+    // db.MealPlan where id = our user id!
+    // retrieves the meal plan
+    // will look like 
+    // run a sorting function on this for anything that is null/undefined or a placeholder value
     // then send this off for templating with handlbars
     // ! test data at the moment;
     const data = { 

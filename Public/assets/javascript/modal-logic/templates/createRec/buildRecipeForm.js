@@ -1,41 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>create recipe</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="./assets/images/favicons/red-chilli-vector.png" >
-    <link rel="apple-touch-icon" href="./assets/images/favicons/red-chilli-vector.png">
-    <link rel="icon" href="./assets/images/favicons/red-chilli-vector.png">
-    <!-- font-awesome CDN -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="crossorigin="anonymous"
-    ></script>
-    <!-- Google Fonts Link -->
-    <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
-    <!--  MDC icons-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <!-- custom css -->
-    <link rel="stylesheet" href="./assets/css/tabs.css"/> 
-    <link rel="stylesheet" href="./assets/css/buttons.css"/> 
-    <link rel="stylesheet" href="./assets/css/nav.css"/>
-    <link rel="stylesheet" href="./assets/css/modal.css">
-    <link rel="stylesheet" href="./assets/css/recipe-modal/visual-info.css">
-    <link rel="stylesheet" href="./assets/css/recipe-modal/recipe.css">
-    <link rel="stylesheet" href="./assets/css/shopping-list.css">
-    <link rel="stylesheet" href="./assets/css/dashboard/main.css"/>
-    <link rel="stylesheet" href="./assets/css/dashboard/mobile.css"/>
-    <link rel="stylesheet" href="./assets/css/dashboard/desktop.css"/>
-    <link rel="stylesheet" href="./assets/css/create-recipe.css"/>
-    <link rel="stylesheet" href="./assets/css/styleHelpers.css"/>
-</head>
-<body>
-    <!-- modal container -->
+const buildRecipeForm = () => {
+    const Form = `<!-- modal container -->
     <div class="modal-container">
         <!-- modal body -->
         <div class="create-recipe-modal z-depth-5">
@@ -240,18 +204,7 @@
                 </div>
             </form>
         </div>
-    </div>
-   
-<!-- Jquery -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!-- custom js -->
-<script src="./assets/javascript/dashboard-logic.js"></script>
-<script src="./assets/javascript/openModal.js"></script>
-<script src="./assets/javascript/removeInitialChips.js"></script>
-<script id="index" src="./assets/javascript/create-recipe-form/index.js"></script>
+    </div>`
 
-
-</body>
-</html>
+    return Form;
+}
