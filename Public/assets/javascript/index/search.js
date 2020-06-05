@@ -1,20 +1,17 @@
 
 
-const search = (query,type) => {
+const search = async (query,type) => {
     console.log(`running search function`);
 
     let endPoint;
-    type === 'fridge'? endPoint = "api/fridge":"api/recipes";
+    type === 'fridge'? endPoint = "/api/fridge":"/api/recipes";
 
     // starts loading spinner
     const interval = spinner('#search-button');
 
-    $.ajax({
-        url:endPoint,
-        method: "GET",
-        data: { "data":query }, 
-        ContentType:"application/json",
-    })
+    const params = await JSON.stringify(query)
+
+    $.get(`${endPoint}/${params}`)
     .then( results => {
         //this comes from db
         console.log(results);
