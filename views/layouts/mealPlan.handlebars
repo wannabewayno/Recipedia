@@ -80,9 +80,9 @@
         </div>
         
         <div id="create-recipe-section">
-            <a id="publish-recipe" class="footer-button z-depth-2 anchor-btn" href="/create">
+            <button id="create-recipe" class="footer-button z-depth-2 anchor-btn">
                 <i class="material-icons right">create</i> Add Recipe
-            </a>
+            </button>
         </div>
         
     </footer>
@@ -101,17 +101,6 @@
     <script src="./assets/javascript/removeInitialChips.js"></script>
     <script src="./assets/javascript/noScroll.js"></script>
 
-    {{!-- create recipe js --}}
-    <script src="./assets/javascript/create-recipe-form/addIngredient.js"></script>
-    <script src="./assets/javascript/create-recipe-form/addStep.js"></script>
-    <script src="./assets/javascript/create-recipe-form/createDeleteBtn.js"></script>
-    <script src="./assets/javascript/create-recipe-form/getIngredients.js"></script>
-    <script src="./assets/javascript/create-recipe-form/getRecipeFormData.js"></script>
-    <script src="./assets/javascript/create-recipe-form/getSteps.js"></script>
-    <script src="./assets/javascript/create-recipe-form/uploadImage.js"></script>
-    <script src="./assets/javascript/create-recipe-form/publishRecipe.js"></script>
-    <script src="./assets/javascript/create-recipe-form/index.js"></script>
-
     {{!-- modal - templates --}}
         {{!-- recipeModal --}}
         <script src="./assets/javascript/modal-logic/templates/recipeModal/templateMethod.js"></script>
@@ -121,14 +110,29 @@
         <script src="./assets/javascript/modal-logic/templates/recipeModal/constructModal.js"></script>
         {{!-- create-recipe-modal --}}
         <script src="./assets/javascript/modal-logic/templates/createRecipeForm/buildRecipeForm.js"></script>
+        <script src="./assets/javascript/modal-logic/templates/createRecipeForm/createRecipeForm.js"></script>
+
     {{!-- modal-logic js --}}
     <script src="./assets/javascript/modal-logic/renderTimeBar.js"></script>
     <script src="./assets/javascript/modal-logic/shopping-list-logic.js"></script>
     <script src="./assets/javascript/modal-logic/openModal.js"></script>
 
+
+    {{!-- create recipe js --}}
+    <script src="./assets/javascript/create-recipe-form/addIngredient.js"></script>
+    <script src="./assets/javascript/create-recipe-form/addStep.js"></script>
+    <script src="./assets/javascript/create-recipe-form/createDeleteBtn.js"></script>
+    <script src="./assets/javascript/create-recipe-form/getIngredients.js"></script>
+    <script src="./assets/javascript/create-recipe-form/getRecipeFormData.js"></script>
+    <script src="./assets/javascript/create-recipe-form/getSteps.js"></script>
+    <script src="./assets/javascript/create-recipe-form/uploadImage.js"></script>
+    <script src="./assets/javascript/create-recipe-form/publishRecipe.js"></script>
+    <script src="./assets/javascript/create-recipe-form/formInitializers.js"></script>
+    <script src="./assets/javascript/create-recipe-form/index.js"></script>
+
     {{!-- dashboard js --}}
-    <script src="./assets/javascript/dashboard/loadRecipes.js"></script>
-    <script src="./assets/javascript/dashboard/index.js"></script>
+    <script src="./assets/javascript/mealPlan/loadRecipes.js"></script>
+    <script src="./assets/javascript/mealPlan/index.js"></script>
 
 </body>
 </html>

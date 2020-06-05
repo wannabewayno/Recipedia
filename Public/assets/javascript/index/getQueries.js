@@ -8,7 +8,7 @@ const getQueries = type => {
 
     } else {
 
-        searchData.keywords = $('#search-query').val().split(' ').map(keyword => keyword.trim().toLowerCase())
+        searchData.tags = $('#search-query').val().split(' ').map(keyword => keyword.trim().toLowerCase())
         searchData.cuisines = getDropdownValues('#cuisine');
         searchData.diets = getDropdownValues('#diet');
 

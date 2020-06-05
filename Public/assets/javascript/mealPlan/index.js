@@ -17,7 +17,16 @@ $(document).ready(function(){
       openModal(thisRecipe);
     });
 
+  // when you click on create recipe, comes up with a modal
+  $('#create-recipe').on('click',function(){
+    createRecipeForm('#modal-goes-here');
+
+  });
+  
+  // add an event listener to remove modals
   removeElement('.close-button','.modal-container',['#modal-goes-here'],noScroll);
+
+
 
 });
 
