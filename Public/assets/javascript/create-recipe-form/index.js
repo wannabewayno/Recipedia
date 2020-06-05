@@ -21,16 +21,22 @@ $(document).ready(function() {
     //====================================================================
 
     // adds ingredient from input into the container '#ingredients'
-    $('.add-ingredient-button').click( addIngredient );
+    $('#modal-goes-here').on('click','.add-ingredient-button', function() {
+        addIngredient()
+    });
 
     // adds cooking steps from input into the container '#steps'
-    $('.add-step-button').click( addStep );
+    $('#modal-goes-here').on('click','.add-step-button', function() {
+        addStep()
+    });
 
     // removes target ingredient when clicking the bin icon  
     removeElement('.remove-button','.saved-data',['#ingredients','#steps'],noScroll);
 
     // sends form data to post route via publishRecipe
-    $('#publish-button').click( publishRecipe );
+    $('#modal-goes-here').on('click','#publish-button', function() {
+        publishRecipe()
+    });
     
     $('#image-file').on('change',uploadImage)
 
