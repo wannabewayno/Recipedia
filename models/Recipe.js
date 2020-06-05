@@ -63,7 +63,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
-    Recipe.belongsTo(models.Recipe, {
+    Recipe.belongsTo(models.User, {
       foreignKey: {
         name: "created_by",
         allowNull: false
