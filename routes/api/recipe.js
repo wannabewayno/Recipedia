@@ -17,8 +17,8 @@ module.exports = app => {
       ingredients: req.body.ingredients,
       excludeIngredients: req.body.excludeIngredients ,
       tags: req.body.tags,
-      cuisine: req.body.cuisine, // ---------------- not in the database
-      diet: req.body.diet // ---------------- not in the database
+      cuisines: req.body.cuisines, // ---------------- not in the database
+      diets: req.body.diets // ---------------- not in the database
     }
 
     db.Recipe.findAll({

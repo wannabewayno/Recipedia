@@ -8,13 +8,14 @@ const queryConditions = require("../Queries/queryRequests");
 
 module.exports = queryLoop = async (conditions, conditionsUnwanted) => {
 
+    // sets the request for the queryconditions folder to handle
     queryRequest = {
         ingredients: conditions,
         ingredientsUnwanted: conditionsUnwanted
     }
+    // declares variable to be used before recursion begins
     let finalResult;
     return await db.Recipe.findAll({
-        attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags", "id"],
         // include: [
         //   db.User
         // ],
@@ -32,7 +33,7 @@ module.exports = queryLoop = async (conditions, conditionsUnwanted) => {
 
             if (unwantedIngredients) {
                 // Loop is here
-                return BETTERdata = new Promise ((resolve) => { 
+                return promiseData = new Promise ((resolve) => { 
                     resolve(queryLoop(conditions, conditionsUnwanted));
                 }).then(results => {
                     return results;
