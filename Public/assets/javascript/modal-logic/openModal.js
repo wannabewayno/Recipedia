@@ -24,6 +24,7 @@ const openModal = async recipeInfo => {
 
     //append the modal to the page, cleverly at...
     $('#modal-goes-here').append(modal);
+    $('body').toggleClass('no-scroll')
 
     renderTimeBar(recipeInfo.cookTime,recipeInfo.prepTime)();
 
