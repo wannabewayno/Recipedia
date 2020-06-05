@@ -43,7 +43,8 @@ module.exports = app => {
 
   app.get("/api/fridge/:json", async function (req, res) {
     // should send reqs through in the body.
-    req.body = JSON.stringify(req.params.json);
+    req.body = JSON.parse(req.params.json);
+    console.log(req.body);
     if (req.body.ingredients != null) {
       ingredients = req.body.ingredients;
       
