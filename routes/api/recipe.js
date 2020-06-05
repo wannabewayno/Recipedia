@@ -10,24 +10,25 @@ module.exports = app => {
 
   // Create all our routes and set up logic within those routes where required.
   app.get("/api/recipes", function(req, res) {
-    // should send reqs through in the body.
+    // sets parameters
     queryRequest = {
       // author: req.body.author, // need to join the tables first for this to work.
       name: req.body.name,
-      ingredients: ["hi!", "hithere!", "carrot"],
+      ingredients: req.body.ingredients,
       ingredientsUnwanted: req.body.ingredientsUnwanted,
       tags: req.body.tags,
       cuisine: req.body.cuisine, // ---------------- not in the database
       diet: req.body.diet // ---------------- not in the database
     }
-    
+
     db.Recipe.findAll({
-      attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags"],
+      attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags", "id"],
       // include: [
       //   db.User
       // ],
       where: queryConditions(queryRequest)
-    }).then(function(data) {
+    }).then(function(results) {
+      data = formatResults(results);
       res.json({
         data: data
       })
@@ -35,62 +36,44 @@ module.exports = app => {
 
   });
 
-<<<<<<< HEAD
-  app.get("/api/fridge", function(req, res) {
+  app.get("/api/fridge", async function(req, res) {
     // should send reqs through in the body.
-    ingredients = ["carrot", "hi!"]//req.body.fridge;
-    
-    // db.Recipe.findAll({ 
-    //   attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags"],
-    //  // include: [
-    //  //   db.User
-    //  // ],
-    //   where: queryConditions(queryRequest)
-    // })
-    fridge(ingredients).then(data => {
+    if (req.body.fridge != null) {
+      ingredients = req.body.fridge;
+      
+      //declares variables
+      let conditions = ingredients;
+      let conditionsUnwanted = [];
+  
+      let newdata;
+      await fridge(conditions, conditionsUnwanted).then(results => {
+        data = formatResults(results);
+      });
       res.json({
           data: data
-        })
-    });
+      });
+    } else {
+      // in case req.body.fridge is null
+      res.json({
+        data: []
+      })
+    };
+  });
 
-  })
-=======
   //this route simply gets any recipe by the requested id and sends it back to the front end
 
   app.get("/api/recipesById", (req,res) => {
-    console.log(req.params);
-    console.log(req.body);
-    // * results from db goes here
-    results = [
-      { id:1,
-        name:'beef tacos',
-        image:'https://img.taste.com.au/Qx66C4sN/w720-h480-cfill-q80/taste/2016/11/beef-tacos-98153-1.jpeg',
-        diets:'["glutenfree","paleo"]',
-        cookTime:20,
-        prepTime:40,
-        servings:2,
-        instructions:'["some","dummy instructions","to render and see what","the go is"]',
-        ingredients:'[{"name":"beef","value":200,"unit":"gr"}]',
-        description:'lol food',
-        created_by:'some sick cunt called Kev',
-        cusine:"australian"
-      },
-      { id:2,
-        name:"duck à l'orange",
-        image:"https://www.whats4eats.com/files/poultry-canard-a-lorange-iStock-16444997-4x3.jpg",
-        diets:'["glutenfree"]',
-        cookTime:20,
-        prepTime:40,
-        servings:2,
-        instructions:'["some","dummy instructions","to render and see what","the go is"]',
-        ingredients:'[{"name":"beef","value":200,"unit":"gr"},{"name":"ginger","value":1,"unit":"pcs"},{"name":"vegetable stock","value":1,"unit":"L"}]',
-        description:'lol food',
-        created_by:'some sick cunt called Kev',
-        cusine:"australian"
-      }
-  ]
-    const data = formatResults(results)
-    res.json(data);
+    //query request
+    db.Recipe.findAll({
+      attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags", "id"],
+      // include: [
+      //   db.User
+      // ],
+      where: [ { id: req.body.id } ]
+    }).then(function(results) {
+      let data = formatResults(results)
+      res.json(data);
+    })
   });
 
   app.post("/api/recipes", function(req, res) {
@@ -124,7 +107,6 @@ module.exports = app => {
 
 
 
->>>>>>> 2db5f4762b56a9e912de2ed8f39f1bfefed54c34
 };
 
 /* 

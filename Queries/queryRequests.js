@@ -62,5 +62,6 @@ module.exports = function(req) {
             name: req.name
         })
     }
+    
     return conditions;
 };
