@@ -17,10 +17,13 @@ const formInitializers = (selector) => {
 
             const dietSelector = document.getElementById('create-diet');
             const cuisineSelector = document.getElementById('create-cuisine');
+            const unitSelector = document.getElementById('ingredient-unit');
             const description = document.getElementById('create-description');
             const chips = document.getElementsByClassName('chips');
             const initialChipsDiv = document.getElementById('create-keywords');
 
+
+            $(unitSelector).formSelect();
             $(dietSelector).formSelect();
             $(cuisineSelector).formSelect();
             $(description).characterCounter();
