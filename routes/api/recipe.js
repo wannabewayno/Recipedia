@@ -74,7 +74,7 @@ module.exports = app => {
 
   app.get("/api/recipesById/:id", (req,res) => {
     console.log(req.params);
-    req.body = JSON.parse(req.params);
+    req.body = (req.params);
     console.log(req.body);
     
     //query request
@@ -82,7 +82,7 @@ module.exports = app => {
       // include: [
       //   db.User
       // ],
-      where: [{ id: req.body.id }]
+      where: [{ id: JSON.parse(req.body.id) }]
     }).then(function (results) {
       let data = formatResults(results)
       res.json(data);
