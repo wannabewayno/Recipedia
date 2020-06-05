@@ -2,18 +2,13 @@
  * this function is configured to add initializers for createRecipeForm;
  */
 const formInitializers = (selector) => {
-    console.log('is this firing?');
+    
     if (selector) { // the selector achors the tags to the DOM after it's been dynamically inserted
 
         return () => {
             // Add more initializers as needed :D
-            console.log('------------- modal statement');
-            console.log(`${selector} > select`);
             // activates select drop downs
-            $(selector).children('select').each(function(){
-                console.log('-------------  formSelect');
-                $(this).formSelect();
-            });
+            
 
             const dietSelector = document.getElementById('create-diet');
             const cuisineSelector = document.getElementById('create-cuisine');
@@ -42,7 +37,7 @@ const formInitializers = (selector) => {
 
         return () => {
             // Add more initializers as needed :D
-            console.log('-------------- else statement');
+            
             // activates select drop downs
             $('select').formSelect();
     
