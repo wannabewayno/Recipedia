@@ -23,11 +23,12 @@ module.exports = queryLoop = async (conditions, conditionsUnwanted) => {
         }).then(async function(data) {
 
             let unwantedIngredients = false;
-            
-            for (let i = 0; i < data[0].ingredients.length; i++) {
-                if (conditions.indexOf(data[0].ingredients[i]) === -1 && conditionsUnwanted.indexOf(data[0].ingredients[i]) === -1) {
-                    conditionsUnwanted.push(data[0].ingredients[i]);
-                    unwantedIngredients = true;
+            if (data.length != 0) {
+                for (let i = 0; i < data[0].ingredients.length; i++) {
+                    if (conditions.indexOf(data[0].ingredients[i]) === -1 && conditionsUnwanted.indexOf(data[0].ingredients[i]) === -1) {
+                        conditionsUnwanted.push(data[0].ingredients[i]);
+                        unwantedIngredients = true;
+                    }
                 }
             }
 
