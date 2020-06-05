@@ -2,6 +2,7 @@ require('dotenv').config()
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+const methodOverride = require("method-override");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const apiRoutes = require('./routes/api/api-routes');
@@ -19,13 +20,18 @@ const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+//route for login
+app.use("/auth", require('./routes/auth'));
+app.use(methodOverride("_method"))
+
 
 // Requiring our routes
 // Routes
