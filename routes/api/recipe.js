@@ -60,7 +60,7 @@ module.exports = app => {
     } else {
       // in case req.body.ingredients is null
       res.json({
-        data: ["21345"]
+        data: data
       })
     };
   });
