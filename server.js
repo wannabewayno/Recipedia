@@ -1,11 +1,14 @@
+// sets environment variables
 require('dotenv').config()
+
 // Requiring necessary npm packages
 const express = require("express");
+const exphbs = require("express-handlebars");
 const session = require("express-session");
 const methodOverride = require("method-override");
+
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
-const apiRoutes = require('./routes/api/api-routes');
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -15,16 +18,14 @@ const db = require("./models");
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("Public"));
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 // Set Handlebars.
-const exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ defaultLayout: "mealPlan" }));
 app.set("view engine", "handlebars");
 
 //route for login
@@ -32,11 +33,8 @@ app.use("/auth", require('./routes/auth'));
 app.use(methodOverride("_method"))
 
 
-// Requiring our routes
 // Routes
 // ====================================================================================
-// require("./routes/web/html-routes.js")(app);
-// app.use(apiRoutes)
 const routes  = require('./routes/index.routes.js');
 routes(app);
 

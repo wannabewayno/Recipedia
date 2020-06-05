@@ -25,6 +25,7 @@ module.exports = app => {
     //retrieves the saved meals
     // run a sorting function on this for anything that is null/undefined or a palceholder value
     // then send this off for templating with handlbars
+    // ! test data at the moment;
     const data = { 
       mealPlan:[
         {
@@ -45,7 +46,7 @@ module.exports = app => {
         }
       ] 
   }
-    res.render('DOW',data,{ layout:'mealPlan'})
+    res.render('DOW', data )
     // res.sendFile(path.join(__dirname, "../../Public/dashboard.html"));
   });
 
