@@ -51,11 +51,11 @@ module.exports = app => {
     // res.sendFile(path.join(__dirname, "../../Public/dashboard.html"));
   });
 
-  // //! this is only a placeholder for testing, this will be a modal anchored to dashboard.html
-  // app.get("/create", function(req, res) {
+  //! this is only a placeholder for testing, this will be a modal anchored to dashboard.html
+  app.get("/create", function(req, res) {
     
-  //   res.sendFile(path.join(__dirname, "../../Public/create-recipe.html"));
-  // });
+    res.sendFile(path.join(__dirname, "../../Public/create-recipe.html"));
+  });
 
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
