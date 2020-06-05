@@ -15,14 +15,13 @@ module.exports = app => {
       // author: req.body.author, // need to join the tables first for this to work.
       name: req.body.name,
       ingredients: req.body.ingredients,
-      ingredientsUnwanted: req.body.ingredientsUnwanted,
+      excludeIngredients: req.body.excludeIngredients ,
       tags: req.body.tags,
-      cuisine: req.body.cuisine, // ---------------- not in the database
-      diet: req.body.diet // ---------------- not in the database
+      cuisines: req.body.cuisines,
+      diets: req.body.diets
     }
 
     db.Recipe.findAll({
-      attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags", "id"],
       // include: [
       //   db.User
       // ],
@@ -38,9 +37,9 @@ module.exports = app => {
 
   app.get("/api/fridge", async function (req, res) {
     // should send reqs through in the body.
-    if (req.body.fridge != null) {
-      ingredients = req.body.fridge;
-
+    if (req.body.ingredients != null) {
+      ingredients = req.body.ingredients;
+      
       //declares variables
       let conditions = ingredients;
       let conditionsUnwanted = [];
@@ -53,7 +52,7 @@ module.exports = app => {
         data: data
       });
     } else {
-      // in case req.body.fridge is null
+      // in case req.body.ingredients is null
       res.json({
         data: []
       })
