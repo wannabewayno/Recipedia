@@ -106,7 +106,7 @@ module.exports = function(sequelize, DataTypes) {
     
     }, {});
   
-    Recipe.associate = function(models) {
+    MealPlan.associate = function(models) {
       // We're saying that a MealPlan should belong to a user
       // And that the MealPlan has many recipes
       MealPlan.hasMany(models.Recipe, {
@@ -115,7 +115,7 @@ module.exports = function(sequelize, DataTypes) {
           allowNull: false
         }
       });
-      
+
       MealPlan.belongsTo(models.User, {
         foreignKey: {
           name: "user_id",
