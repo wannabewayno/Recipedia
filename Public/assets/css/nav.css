@@ -76,6 +76,15 @@ nav>h3 {
     background-color: #94ab36;
 }
 
+#sign-out-button{
+    margin:8px 100px 0 0;
+    position: absolute;
+    right:0;
+
+    height:50px;
+}
+
+
 /* ---------------------- sticky footer ----------------------------- */
 .footer {
     z-index:1;

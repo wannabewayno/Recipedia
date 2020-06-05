@@ -1,4 +1,4 @@
-// Import the model (cat.js) to use its database functions.
+const formatResults = require('./../../lib/formatResults');
 // Import our models to use its database functions.
 const db = require("../../models");
 
@@ -35,6 +35,7 @@ module.exports = app => {
 
   });
 
+<<<<<<< HEAD
   app.get("/api/fridge", function(req, res) {
     // should send reqs through in the body.
     ingredients = ["carrot", "hi!"]//req.body.fridge;
@@ -53,6 +54,77 @@ module.exports = app => {
     });
 
   })
+=======
+  //this route simply gets any recipe by the requested id and sends it back to the front end
+
+  app.get("/api/recipesById", (req,res) => {
+    console.log(req.params);
+    console.log(req.body);
+    // * results from db goes here
+    results = [
+      { id:1,
+        name:'beef tacos',
+        image:'https://img.taste.com.au/Qx66C4sN/w720-h480-cfill-q80/taste/2016/11/beef-tacos-98153-1.jpeg',
+        diets:'["glutenfree","paleo"]',
+        cookTime:20,
+        prepTime:40,
+        servings:2,
+        instructions:'["some","dummy instructions","to render and see what","the go is"]',
+        ingredients:'[{"name":"beef","value":200,"unit":"gr"}]',
+        description:'lol food',
+        created_by:'some sick cunt called Kev',
+        cusine:"australian"
+      },
+      { id:2,
+        name:"duck à l'orange",
+        image:"https://www.whats4eats.com/files/poultry-canard-a-lorange-iStock-16444997-4x3.jpg",
+        diets:'["glutenfree"]',
+        cookTime:20,
+        prepTime:40,
+        servings:2,
+        instructions:'["some","dummy instructions","to render and see what","the go is"]',
+        ingredients:'[{"name":"beef","value":200,"unit":"gr"},{"name":"ginger","value":1,"unit":"pcs"},{"name":"vegetable stock","value":1,"unit":"L"}]',
+        description:'lol food',
+        created_by:'some sick cunt called Kev',
+        cusine:"australian"
+      }
+  ]
+    const data = formatResults(results)
+    res.json(data);
+  });
+
+  app.post("/api/recipes", function(req, res) {
+    console.log(req.body);
+    //TODO: do database stuff here to add a recipe
+    // let wayne know how to change the keys in req.body to help you out here
+  //   db.Recipe.create({name: req.body, ingredients: "", servings: "", instructions: "", created_by: "", tags: "", image: ""}).then(newrecipe => {
+  //     console.log(object);
+  //     res.json({ data: newrecipe });
+  //   }).catch(error => {
+  //     res.status(422).json({message: "recipe generation failed"})
+  //   });
+  });
+
+  app.delete("/api/recipe/:id", function(req, res) {
+    // remove the recipe with this id;
+    const recipeID = req.params.id;
+    
+
+    //TODO: do database stuff here
+    // var condition = "id = " + req.params.id;
+    // cat.delete(condition, function(result) {
+    //   if (result.affectedRows == 0) {
+    //     // If no rows were changed, then the ID must not exist, so 404
+    //     return res.status(404).end();
+    //   } else {
+    //     res.status(200).end();
+    //   }
+    // });
+  });
+
+
+
+>>>>>>> 2db5f4762b56a9e912de2ed8f39f1bfefed54c34
 };
 
 /* 
@@ -94,14 +166,14 @@ app.post("/api/cats", function(req, res) {
   //       res.status(200).end();
   //     }
   //   });
-  // });
+  //});
 
   app.delete("/api/cats/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
     cat.delete(condition, function(result) {
       if (result.affectedRows == 0) {
-        // If no rows were changed, then the ID must not exist, so 404
+        If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
       } else {
         res.status(200).end();

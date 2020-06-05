@@ -27,7 +27,7 @@ const getRecipeFormData = async () => {
     data.cuisine     = getDropdownValues('#create-cuisine')[0] // there will only be one cuisine
     data.diets       = await JSON.stringify(getDropdownValues('#create-diet')) // could be multiple diets
     data.ingredients = await JSON.stringify(getIngredients()); // get's ingredients and stringifies it ready for data storage
-    data.steps       = JSON.stringify(getSteps()); // get's cooking steps and stringifies it, ready for data storage
+    data.steps       = await JSON.stringify(getSteps()); // get's cooking steps and stringifies it, ready for data storage
 
     return data;
 }

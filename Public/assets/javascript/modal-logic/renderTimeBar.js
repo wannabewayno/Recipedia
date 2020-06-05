@@ -65,34 +65,37 @@ const timeToDegrees = (cookTime,prepTime) => {
  * @param {Number} prepTime - preperation time required before cooking a recipe
  */
 const renderTimeBar = (cookTime,prepTime) => {
-    // we get angle where preptime ends and cook time starts
-    const intersectionAngle = timeToDegrees(cookTime,prepTime);
 
-    // the width needs to match the image as the time bar will frame the image.
-    let width = $('#recipe-img').css('width');
-    let height = $('#recipe-img').css('height');
+    return function () {
+        // we get angle where preptime ends and cook time starts
+        const intersectionAngle = timeToDegrees(cookTime,prepTime);
 
-    // from css, it's a string. with a 'px' suffix. so remove it and parse it to a number
-    width = parseFloat(width.replace('px',''));
-    height = parseFloat(height.replace('px',''));
+        // the width needs to match the image as the time bar will frame the image.
+        let width = $('#recipe-img').css('width');
+        let height = $('#recipe-img').css('height');
 
-    // picture is either oversquare or undersquare, we need the smallest side value to properly clip into a circle
-    const min = Math.min(width,height)
-    const frameLength = min + 15*2
-    
-    // the center of our circle needs to be in the center of the bounding box
-    const centerX = frameLength/2;
-    const centerY = frameLength/2;
-    // with a radius of half the box minus half the stroke width (as it's on a centerline)
-    const radius = (min/2) + 15/2
-    
-    // we now set these properties of the svg and path elements with this information.
-    $('.timeBar').attr({'width':frameLength,'height':frameLength})
-    $('.image-container').css({'width':min,'height':min})
-    $('#prepPath').attr("d",describeArc(centerX, centerY, radius, 0, intersectionAngle ));
-    $('#cookPath').attr("d",describeArc(centerX, centerY, radius, intersectionAngle, 270 ));
+        // from css, it's a string. with a 'px' suffix. so remove it and parse it to a number
+        width = parseFloat(width.replace('px',''));
+        height = parseFloat(height.replace('px',''));
 
-    updateTimerIcon(intersectionAngle,frameLength);
+        // picture is either oversquare or undersquare, we need the smallest side value to properly clip into a circle
+        const min = Math.min(width,height)
+        const frameLength = min + 15*2
+        
+        // the center of our circle needs to be in the center of the bounding box
+        const centerX = frameLength/2;
+        const centerY = frameLength/2;
+        // with a radius of half the box minus half the stroke width (as it's on a centerline)
+        const radius = (min/2) + 15/2
+        
+        // we now set these properties of the svg and path elements with this information.
+        $('.timeBar').attr({'width':frameLength,'height':frameLength})
+        $('.image-container').css({'width':min,'height':min})
+        $('#prepPath').attr("d",describeArc(centerX, centerY, radius, 0, intersectionAngle ));
+        $('#cookPath').attr("d",describeArc(centerX, centerY, radius, intersectionAngle, 270 ));
+
+        updateTimerIcon(intersectionAngle,frameLength);
+    }
 }
 /**
  * @param {Number} intersectionAngle -  the angle to position the timer icon
@@ -115,10 +118,6 @@ const updateTimerIcon = (intersectionAngle,frameLength) => {
     $('#timer-icon').css(iconCSS);
     $('#timer-icon-container').css(containerCSS);
 }
-
-$(window).resize(function(){
-    renderTimeBar(60,20);
-});
 
 
 

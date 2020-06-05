@@ -27,14 +27,22 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    // image: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: true
-    // }
+    image: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    cusine: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    diets: {
+      type: DataTypes.JSON,
+      allowNull: true
+    }
+    
   }, {});
 
   
-
   Recipe.associate = function(models) {
     // We're saying that a Favourite should belong to a Recipe
     // A Post can't be created without an Author due to the foreign key constraint

@@ -3,7 +3,7 @@
     overflow: auto;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 9000;
     display: block;
     position: fixed;
     width: 100%;
@@ -19,6 +19,7 @@
     background-color: white;
     margin:auto;
     border-radius: 5px;
+    z-index:9999;
 }
 
 .shopping-list-modal {
@@ -27,6 +28,9 @@
     transition: all 500ms ease-in-out;
 }
 
+.no-scroll {
+    overflow-y: hidden;
+}
 
 @media (min-width: 768px) {
 

@@ -47,6 +47,7 @@ $(document).ready(function() {
         appendTarget.html(listItem);
     });
 
+    //this is for patching account information
     $('#user-preferences, #account-settings').on('click','.patch-button',function(event){
         $(this).prop('disabled', true).addClass('.disabled');
         const input = $(this).parent().siblings().children('.editInput');
@@ -54,4 +55,11 @@ $(document).ready(function() {
         const field = input.data('field');
         patch(field,value);
     });
-})
+
+    // this is for deleting recipes
+    $('#authored-recipes').on("click",".remove-recipe-btn",function(){
+        const recipeID = $(this).parent().siblings().children('.data').data('id');
+        deleteRecipe(recipeID);
+    });
+
+});

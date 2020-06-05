@@ -1,6 +1,7 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
 const db = require('../../models');
+const exhb = require('express-handlebars');
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
@@ -17,11 +18,36 @@ module.exports = app => {
   
   // Dashboard/meal planner route
 
-  //! Will need handlebars for meal planning, this will require a get request
+  //! Will need handlebars for meal planning, this will require a db query
 
   app.get("/dashboard", function(req, res) {
-    
-    res.sendFile(path.join(__dirname, "../../Public/dashboard.html"));
+    //db.MealPlan where id = our user id!
+    //retrieves the saved meals
+    // run a sorting function on this for anything that is null/undefined or a palceholder value
+    // then send this off for templating with handlbars
+    // ! test data at the moment;
+    const data = { 
+      mealPlan:[
+        {
+          dayName:"Monday",
+          type: [
+            { typeName:'Breakfast',title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:1 },
+            { typeName:'Lunch', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:2 },
+            { typeName:'Dinner', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:15 }
+          ]
+        },
+        {
+          dayName:"Tuesday",
+          type: [
+            { typeName:'Breakfast',title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:2304 },
+            { typeName:'Lunch', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:1 },
+            { typeName:'Dinner', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:90 }
+          ]
+        }
+      ] 
+  }
+    res.render('DOW', data )
+    // res.sendFile(path.join(__dirname, "../../Public/dashboard.html"));
   });
 
   //! this is only a placeholder for testing, this will be a modal anchored to dashboard.html
