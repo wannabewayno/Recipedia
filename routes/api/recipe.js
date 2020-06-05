@@ -12,6 +12,7 @@ module.exports = app => {
   app.get("/api/recipes/:json", function (req, res) {
     console.log(req.params.json);
     req.body = JSON.parse(req.params.json)
+
     // sets parameters
     queryRequest = {
       // author: req.body.author, // need to join the tables first for this to work.
@@ -38,6 +39,7 @@ module.exports = app => {
     })
 
   });
+
 
   app.get("/api/fridge/:json", async function (req, res) {
     // should send reqs through in the body.
@@ -68,9 +70,11 @@ module.exports = app => {
 
 
   //this route simply gets any recipe by the requested id and sends it back to the front end
+
   app.get("/api/recipesById/:json", (req,res) => {
     console.log(req.params);
     req.body = req.params.json;
+    
     //query request
     db.Recipe.findAll({
       // 
@@ -84,7 +88,7 @@ module.exports = app => {
     })
   });
 
-  app.post("/api/recipes", function (req, res) {
+ app.post("/api/recipes", function (req, res) {
     console.log(req.body);
     //TODO: do database stuff here to add a recipe
     // let wayne know how to change the keys in req.body to help you out here
@@ -96,7 +100,7 @@ module.exports = app => {
     });
   });
 
-  app.delete("/api/recipes/:id", function (req, res) {
+ app.delete("/api/recipes/:id", function (req, res) {
     // remove the recipe with this id;
     const recipeID = req.params.id;
 
@@ -117,5 +121,4 @@ module.exports = app => {
     }
   });
 };
-
 
