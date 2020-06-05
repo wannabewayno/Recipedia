@@ -11,7 +11,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-
     ingredients: {
       type: DataTypes.JSON,
       allowNull: false,
