@@ -4,6 +4,7 @@ const db = require("../../models");
 
 // import the queryConditions to use as a condition generator
 const queryConditions = require("../../Queries/queryRequests");
+const fridge = require("../../Queries/fridgeRequest");
 
 module.exports = app => {
 
@@ -36,21 +37,22 @@ module.exports = app => {
 
   app.get("/api/fridge", function(req, res) {
     // should send reqs through in the body.
-    ingredients = req.body.fridge;
+    ingredients = ["carrot", "hi!"]//req.body.fridge;
     
-    db.Recipe.findAll({ 
-      attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags"],
-      // include: [
-      //   db.User
-      // ],
-      where: queryConditions(queryRequest)
-    }).then(function(data) {
+    // db.Recipe.findAll({ 
+    //   attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags"],
+    //  // include: [
+    //  //   db.User
+    //  // ],
+    //   where: queryConditions(queryRequest)
+    // })
+    fridge(ingredients).then(data => {
       res.json({
-        data: data
-      })
-    })
+          data: data
+        })
+    });
 
-  });
+  })
 };
 
 /* 

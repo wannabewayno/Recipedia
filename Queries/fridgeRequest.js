@@ -3,14 +3,17 @@
 // reads the ingredients of the top most recipe
 // adds the unwanted ones to the excluded ingredients recipe
 // recalls the query, till the first one matches the ingredients, checks the rest and passes through the ones that match.
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
+const db = require("../models");
+const queryConditions = require("../Queries/queryRequests");
 
 module.exports = function(ingredients) {
     let conditions = ingredients;
     let conditionsUnwanted = [];
-    let Sequelize = require("sequelize");
-    let Op = Sequelize.Op;
+    
 
-    let queryLoop = () => {
+    let queryLoop = function() {
         queryRequest = {
             ingredients: conditions,
             ingredientsUnwanted: conditionsUnwanted
@@ -22,34 +25,27 @@ module.exports = function(ingredients) {
             // ],
             where: queryConditions(queryRequest)
           }).then(function(data) {
-              data = JSON.parse(data)
               let unwantedIngredients = false;
-              for (let i = 0; i < data[0]; i++) {
-                    if (ing.indexOf(data[i]) === -1 && conditionsUnwanted.indexOf(data[i] === -1)) {
-                        conditionsUnwanted.append(data[i]);
+              for (let i = 0; i < data[0].ingredients.length; i++) {
+                    if (conditions.indexOf(data[0].ingredients[i]) === -1 && conditionsUnwanted.indexOf(data[0].ingredients[i]) === -1) {
+                        conditionsUnwanted.push(data[0].ingredients[i]);
                         unwantedIngredients = true;
                     }
               }
               if (unwantedIngredients) {
-                  queryLoop()
-              } else if ()
+                    let ans = queryLoop()
+                    console.log(ans)
+                    return ans;
+              } else if (!unwantedIngredients) {
+                  for (let i = 0; i < data; i++) {
+                        for (let j = 0; j < data[i].ingredients.length; j++) {
+                            if (conditions.indexOf(data[i].ingredients[j]) === -1) {
+                                conditions = conditions.splice(i, 1);
+                                i--;
+                            }
+                        }
+                  }
+              }
           })
     }
-
-    // ingredients
-    if (req.ingredients != null) {
-        for (let i = 0; i < req.ingredients.length; i++) {
-            conditions.push({
-                ingredients: { [Op.substring]: req.ingredients[i] }
-            })
-        }
-        for (let i = 0; i < ingredientsUnwanted.length; i++) {
-            conditions.push({
-                // need to use this method due to the way sequelize handles JSON requests 
-                ingredients: Sequelize.where(Sequelize.fn('', Sequelize.col('ingredients')), ' NOT LIKE', '%' + req.ingredientsUnwanted[i] + '%')
-            })
-        }
-    }
-
-return conditions;
 };
