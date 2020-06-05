@@ -4,7 +4,7 @@ const createRecipeForm = appendTarget => {
     $(appendTarget).html(form);
 
     //then we need to run all the initializations again.
-    formInitializers()
+    formInitializers('#modal-goes-here')();
 
     // and get rid of scrolling from the body
     noScroll();

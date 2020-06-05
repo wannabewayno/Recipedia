@@ -2,7 +2,7 @@ $(document).ready(function() {
     // Initializers
     // ==========================================================================
 
-    formInitializers();
+    formInitializers()();
 
     // event listeners
     //====================================================================
