@@ -17,8 +17,7 @@ $(document).ready(function(){
       openModal(thisRecipe);
     });
 
-  removeElement('.remove-button')
-
+  removeElement('.close-button','.modal-container',['#modal-goes-here'],noScroll);
 
 });
 
