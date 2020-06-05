@@ -34,6 +34,10 @@ module.exports = app => {
 
   });
 
+  app.get("/api/recipesById", (req,res) => {
+    
+  });
+
   app.post("/api/recipes", function(req, res) {
     console.log(req.body);
     //TODO: do database stuff here to add a recipe
