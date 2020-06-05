@@ -18,7 +18,7 @@ const getRecipeFormData = async () => {
 
     // then get the user's keywords, but only if there are any.
     const userKeywords = getChips('#create-keywords');
-    const metaKeywords = data.title.split(' ');
+    const metaKeywords = data.name.split(' ');
 
     metaKeywords.push(...userKeywords);
     const keywords = await JSON.stringify(metaKeywords);

@@ -10,6 +10,7 @@ module.exports = app => {
 
   // Create all our routes and set up logic within those routes where required.
   app.get("/api/recipes", function (req, res) {
+    console.log(req.body);
     // sets parameters
     queryRequest = {
       // author: req.body.author, // need to join the tables first for this to work.
@@ -37,6 +38,9 @@ module.exports = app => {
   });
 
   app.get("/api/fridge", async function (req, res) {
+    console.log(req.body);
+    console.log(req.user);
+    console.log(req.params);
     // should send reqs through in the body.
     if (req.body.fridge != null) {
       ingredients = req.body.fridge;
@@ -61,7 +65,7 @@ module.exports = app => {
   });
 
   //this route simply gets any recipe by the requested id and sends it back to the front end
-  app.get("/api/recipesById", (req,res) => {
+ app.get("/api/recipesById", (req,res) => {
     console.log(req.body);
     //query request
     db.Recipe.findAll({
@@ -76,7 +80,7 @@ module.exports = app => {
     })
   });
 
-  app.post("/api/recipes", function (req, res) {
+ app.post("/api/recipes", function (req, res) {
     console.log(req.body);
     //TODO: do database stuff here to add a recipe
     // let wayne know how to change the keys in req.body to help you out here
@@ -88,7 +92,7 @@ module.exports = app => {
     });
   });
 
-  app.delete("/api/recipes/:id", function (req, res) {
+ app.delete("/api/recipes/:id", function (req, res) {
     // remove the recipe with this id;
     const recipeID = req.params.id;
 
@@ -109,5 +113,4 @@ module.exports = app => {
     }
   });
 };
-
 
