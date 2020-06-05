@@ -1,4 +1,4 @@
-// Import the model (cat.js) to use its database functions.
+const formatResults = require('./../../lib/formatResults');
 // Import our models to use its database functions.
 const db = require("../../models");
 
@@ -32,6 +32,44 @@ module.exports = app => {
       })
     })
 
+  });
+
+  //this route simply gets any recipe by the requested id and sends it back to the front end
+
+  app.get("/api/recipesById", (req,res) => {
+    console.log(req.params);
+    console.log(req.body);
+    // * results from db goes here
+    results = [
+      { id:1,
+        name:'beef tacos',
+        image:'https://img.taste.com.au/Qx66C4sN/w720-h480-cfill-q80/taste/2016/11/beef-tacos-98153-1.jpeg',
+        diets:'["glutenfree","paleo"]',
+        cookTime:20,
+        prepTime:40,
+        servings:2,
+        instructions:'["some","dummy instructions","to render and see what","the go is"]',
+        ingredients:'[{"name":"beef","value":200,"unit":"gr"}]',
+        description:'lol food',
+        created_by:'some sick cunt called Kev',
+        cusine:"australian"
+      },
+      { id:2,
+        name:"duck à l'orange",
+        image:"https://www.whats4eats.com/files/poultry-canard-a-lorange-iStock-16444997-4x3.jpg",
+        diets:'["glutenfree"]',
+        cookTime:20,
+        prepTime:40,
+        servings:2,
+        instructions:'["some","dummy instructions","to render and see what","the go is"]',
+        ingredients:'[{"name":"beef","value":200,"unit":"gr"},{"name":"ginger","value":1,"unit":"pcs"},{"name":"vegetable stock","value":1,"unit":"L"}]',
+        description:'lol food',
+        created_by:'some sick cunt called Kev',
+        cusine:"australian"
+      }
+  ]
+    const data = formatResults(results)
+    res.json(data);
   });
 
   app.post("/api/recipes", function(req, res) {

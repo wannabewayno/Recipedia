@@ -31,17 +31,17 @@ module.exports = app => {
         {
           dayName:"Monday",
           type: [
-            { typeName:'Breakfast',title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg" },
-            { typeName:'Lunch', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg" },
-            { typeName:'Dinner', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg" }
+            { typeName:'Breakfast',title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:1 },
+            { typeName:'Lunch', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:2 },
+            { typeName:'Dinner', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:15 }
           ]
         },
         {
           dayName:"Tuesday",
           type: [
-            { typeName:'Breakfast',title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg" },
-            { typeName:'Lunch', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg" },
-            { typeName:'Dinner', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg" }
+            { typeName:'Breakfast',title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:2304 },
+            { typeName:'Lunch', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:1 },
+            { typeName:'Dinner', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:90 }
           ]
         }
       ] 

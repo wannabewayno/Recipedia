@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Plan</title>
+     <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/images/favicons/red-chilli-vector.png" >
+    <link rel="apple-touch-icon" href="./assets/images/favicons/red-chilli-vector.png">
+    <link rel="icon" href="./assets/images/favicons/red-chilli-vector.png">
     <!-- font-awesome CDN -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="crossorigin="anonymous"
@@ -20,15 +24,16 @@
     <link rel="stylesheet" href="./assets/css/tabs.css"/>
     <link rel="stylesheet" href="./assets/css/buttons.css"/>
     <link rel="stylesheet" href="./assets/css/nav.css"/>
-    <link rel="stylesheet" href="./assets/css/dashboard/main.css"/>
-    <link rel="stylesheet" href="./assets/css/dashboard/mobile.css"/>
-    <link rel="stylesheet" href="./assets/css/dashboard/desktop.css"/>
     <link rel="stylesheet" href="./assets/css/styleHelpers.css"/>
     <link rel="stylesheet" href="./assets/css/modal.css">
     <link rel="stylesheet" href="./assets/css/recipe-modal/visual-info.css">
     <link rel="stylesheet" href="./assets/css/recipe-modal/recipe.css">
     <link rel="stylesheet" href="./assets/css/shopping-list.css">
     <link rel="stylesheet" href="./assets/css/create-recipe.css"/>
+    <link rel="stylesheet" href="./assets/css/dashboard/main.css"/>
+    <link rel="stylesheet" href="./assets/css/dashboard/mobile.css"/>
+    <link rel="stylesheet" href="./assets/css/dashboard/desktop.css"/>
+    
 
 </head>
 <body>
@@ -54,6 +59,9 @@
             {{{body}}}
         </div>
     </main>
+
+    <!-- modal goes here -->
+    <div id="modal-goes-here"></div>
 
      <footer class="footer">
 
@@ -85,21 +93,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- custom js -->
+    {{!-- general js --}}
+    <script src="./assets/javascript/createThumbnail.js"></script>
+    <script src="./assets/javascript/getChips.js"></script>
+    <script src="./assets/javascript/getDropdownValues.js"></script>
+    <script src="./assets/javascript/removeElement.js"></script>
+    <script src="./assets/javascript/removeInitialChips.js"></script>
+
     {{!-- create recipe js --}}
-    <script src="./../../public/assets/javascript/createRecipe.js"></script>
+    <script src="./assets/javascript/create-recipe-form/addIngredient.js"></script>
+    <script src="./assets/javascript/create-recipe-form/addStep.js"></script>
+    <script src="./assets/javascript/create-recipe-form/createDeleteBtn.js"></script>
+    <script src="./assets/javascript/create-recipe-form/getIngredients.js"></script>
+    <script src="./assets/javascript/create-recipe-form/getRecipeFormData.js"></script>
+    <script src="./assets/javascript/create-recipe-form/getSteps.js"></script>
+    <script src="./assets/javascript/create-recipe-form/uploadImage.js"></script>
+    <script src="./assets/javascript/create-recipe-form/publishRecipe.js"></script>
+    <script src="./assets/javascript/create-recipe-form/index.js"></script>
 
     {{!-- modal-logic js --}}
-    <script src="./assets/javascript/modal-logic/addToFavourites.js"></script>
-    <script src="./assets/javascript/modal-logic/renderTime.js"></script>
+    <script src="./assets/javascript/modal-logic/templates/templateMethod.js"></script>
+    <script src="./assets/javascript/modal-logic/templates/templateIngredients.js"></script>
+    <script src="./assets/javascript/modal-logic/templates/templateHead.js"></script>
+    <script src="./assets/javascript/modal-logic/templates/templateDietTags.js"></script>
+    <script src="./assets/javascript/modal-logic/templates/constructModal.js"></script>
+    <script src="./assets/javascript/modal-logic/renderTimeBar.js"></script>
     <script src="./assets/javascript/modal-logic/shopping-list-logic.js"></script>
     <script src="./assets/javascript/modal-logic/openModal.js"></script>
 
     {{!-- dashboard js --}}
-    
-    <script src="./assets/javascript/renderTimeBar.js"></script>
-    <script src="./assets/javascript/search.js"></script>
-    <script src="./assets/javascript/openModal.js"></script>
-    <script src="./assets/javascript/dashboard-logic.js"></script>
+    <script src="./assets/javascript/dashboard/loadRecipes.js"></script>
+    <script src="./assets/javascript/dashboard/index.js"></script>
 
 </body>
 </html>

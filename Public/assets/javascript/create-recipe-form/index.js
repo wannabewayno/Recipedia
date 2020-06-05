@@ -49,7 +49,7 @@ $(document).ready(function() {
     $('.add-step-button').click( addStep );
 
     // removes target ingredient when clicking the bin icon  
-    removeElement('.remove-button','#ingredients','#steps');
+    removeElement('.remove-button','.saved-data','#ingredients','#steps');
 
     // sends form data to post route via publishRecipe
     $('#publish-button').click( publishRecipe );
