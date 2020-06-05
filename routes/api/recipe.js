@@ -23,12 +23,11 @@ module.exports = app => {
       cuisines: req.body.cuisines,
       diets: req.body.diets
     }
-    console.log("here!")
 
     db.Recipe.findAll({
-      // include: [
-      //   db.User
-      // ],
+      include: [
+        db.User
+      ],
       where: queryConditions(queryRequest)
     }).then(function (results) {
       data = formatResults(results);
@@ -56,7 +55,6 @@ module.exports = app => {
       await fridge(conditions, conditionsUnwanted).then(results => {
         newdata = formatResults(results);
       });
-      console.log("51")
       res.json({
         data: newdata
       });
@@ -73,15 +71,13 @@ module.exports = app => {
   //this route simply gets any recipe by the requested id and sends it back to the front end
 
   app.get("/api/recipesById/:id", (req,res) => {
-    console.log(req.params);
     req.body = (req.params);
-    console.log(req.body);
     
     //query request
     db.Recipe.findAll({
-      // include: [
-      //   db.User
-      // ],
+      include: [
+        db.User
+      ],
       where: [{ id: JSON.parse(req.body.id) }]
     }).then(function (results) {
       let data = formatResults(results)
@@ -90,7 +86,6 @@ module.exports = app => {
   });
 
  app.post("/api/recipes", function (req, res) {
-    console.log(req.body);
     //TODO: do database stuff here to add a recipe
     // let wayne know how to change the keys in req.body to help you out here
 

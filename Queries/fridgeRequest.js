@@ -16,9 +16,9 @@ module.exports = queryLoop = async (conditions, conditionsUnwanted) => {
     // declares variable to be used before recursion begins
     let finalResult;
     return await db.Recipe.findAll({
-        // include: [
-        //   db.User
-        // ],
+        include: [
+          db.User
+        ],
         where: queryConditions(queryRequest)
         }).then(async function(data) {
 
