@@ -43,7 +43,8 @@ module.exports = app => {
 
   app.get("/api/fridge/:json", async function (req, res) {
     // should send reqs through in the body.
-    req.body = JSON.stringify(req.params.json);
+    req.body = JSON.parse(req.params.json);
+    console.log(req.body);
     if (req.body.ingredients != null) {
       ingredients = req.body.ingredients;
       
@@ -71,13 +72,13 @@ module.exports = app => {
 
   //this route simply gets any recipe by the requested id and sends it back to the front end
 
-  app.get("/api/recipesById/:json", (req,res) => {
+  app.get("/api/recipesById/:id", (req,res) => {
     console.log(req.params);
-    req.body = req.params.json;
+    req.body = JSON.parse(req.params);
+    console.log(req.body);
     
     //query request
     db.Recipe.findAll({
-      // 
       // include: [
       //   db.User
       // ],
@@ -92,7 +93,22 @@ module.exports = app => {
     console.log(req.body);
     //TODO: do database stuff here to add a recipe
     // let wayne know how to change the keys in req.body to help you out here
-    db.Recipe.create({ data: req.body }).then(newrecipe => {
+
+    db.Recipe.create(
+      { 
+        name: req.body.name,
+        description: req.body.description,
+        prep_time: req.body.prep_time,
+        cook_time: req.body.cook_time,
+        servings: req.body.servings,
+        tags: req.body.tags,
+        cuisine: req.body.cuisine,
+        diets: req.body.diets,
+        ingredients: req.body.ingredients,
+        instructions: req.body.instructions,
+        created_by: 1, // currently only one user
+        // image: "1234.com" 
+      }).then(newrecipe => {
       console.log(object);
       res.json({ data: newrecipe });
     }).catch(error => {

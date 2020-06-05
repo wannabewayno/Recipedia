@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
     },
     
-    }, {});
+    }, {timestamps: false});
   
     MealPlan.associate = function(models) {
       // We're saying that ALL mealplans can be found within this table
