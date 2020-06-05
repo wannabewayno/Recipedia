@@ -24,4 +24,10 @@ const openModal = async recipeInfo => {
 
     //append the modal to the page, cleverly at...
     $('#modal-goes-here').append(modal);
+
+    renderTimeBar(recipeInfo.cookTime,recipeInfo.prepTime)();
+
+    return $(window).resize(function(){
+        renderTimeBar(recipeInfo.cookTime,recipeInfo.prepTime)();
+    });
 }

@@ -119,9 +119,5 @@ const updateTimerIcon = (intersectionAngle,frameLength) => {
     $('#timer-icon-container').css(containerCSS);
 }
 
-$(window).resize(function(){
-    renderTimeBar(60,20)();
-});
-
 
 
