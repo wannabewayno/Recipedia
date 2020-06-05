@@ -9,27 +9,30 @@ const fridge = require("../../Queries/fridgeRequest");
 module.exports = app => {
 
   // Create all our routes and set up logic within those routes where required.
-  app.get("/api/recipes", function (req, res) {
-    console.log(req.body);
+  app.get("/api/recipes/:json", function (req, res) {
+    console.log(req.params.json);
+    req.body = JSON.parse(req.params.json)
+
     // sets parameters
     queryRequest = {
       // author: req.body.author, // need to join the tables first for this to work.
       name: req.body.name,
       ingredients: req.body.ingredients,
-      ingredientsUnwanted: req.body.ingredientsUnwanted,
+      excludeIngredients: req.body.excludeIngredients ,
       tags: req.body.tags,
-      cuisine: req.body.cuisine, // ---------------- not in the database
-      diet: req.body.diet // ---------------- not in the database
+      cuisines: req.body.cuisines,
+      diets: req.body.diets
     }
+    console.log("here!")
 
     db.Recipe.findAll({
-      attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags", "id"],
       // include: [
       //   db.User
       // ],
       where: queryConditions(queryRequest)
     }).then(function (results) {
       data = formatResults(results);
+      console.log(data)
       res.json({
         data: data
       })
@@ -37,14 +40,13 @@ module.exports = app => {
 
   });
 
-  app.get("/api/fridge", async function (req, res) {
-    console.log(req.body);
-    console.log(req.user);
-    console.log(req.params);
-    // should send reqs through in the body.
-    if (req.body.fridge != null) {
-      ingredients = req.body.fridge;
 
+  app.get("/api/fridge/:json", async function (req, res) {
+    // should send reqs through in the body.
+    req.body = JSON.stringify(req.params.json);
+    if (req.body.ingredients != null) {
+      ingredients = req.body.ingredients;
+      
       //declares variables
       let conditions = ingredients;
       let conditionsUnwanted = [];
@@ -53,20 +55,26 @@ module.exports = app => {
       await fridge(conditions, conditionsUnwanted).then(results => {
         data = formatResults(results);
       });
+      console.log("51")
       res.json({
         data: data
       });
     } else {
-      // in case req.body.fridge is null
+      // in case req.body.ingredients is null
       res.json({
-        data: []
+        data: ["21345"]
       })
     };
   });
 
+
+
   //this route simply gets any recipe by the requested id and sends it back to the front end
- app.get("/api/recipesById", (req,res) => {
-    console.log(req.body);
+
+  app.get("/api/recipesById/:json", (req,res) => {
+    console.log(req.params);
+    req.body = req.params.json;
+    
     //query request
     db.Recipe.findAll({
       // 

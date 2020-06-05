@@ -17,11 +17,11 @@ module.exports = function(req) {
     }
 
     // unwanted ingredients
-    if (req.ingredientsUnwanted != null) {
-        for (let i = 0; i < req.ingredientsUnwanted.length; i++) {
+    if (req.excludeIngredients != null) {
+        for (let i = 0; i < req.excludeIngredients.length; i++) {
             conditions.push({
                     // need to use this method due to the way sequelize handles JSON requests 
-                    ingredients: Sequelize.where(Sequelize.fn('', Sequelize.col('ingredients')), ' NOT LIKE', '%' + req.ingredientsUnwanted[i] + '%')
+                    ingredients: Sequelize.where(Sequelize.fn('', Sequelize.col('ingredients')), ' NOT LIKE', '%' + req.excludeIngredients[i] + '%')
             })
         }
     }
@@ -43,17 +43,21 @@ module.exports = function(req) {
     }
 
     // cuisine
-    if (req.cuisine != null) {
-        conditions.push({
-            cuisine: req.cuisine
-        })
+    if (req.cuisines != null) {
+        for (let i = 0; i < req.cuisines.length; i++) {
+            conditions.push({
+                cuisine: { [Op.substring]: req.cuisines[i] }
+            })
+        }
     }
 
     // diet
-    if (req.diet != null) {
-        conditions.push({
-            diet: req.diet
-        })
+    if (req.diets != null) {
+        for (let i = 0; i < req.diets.length; i++) {
+            conditions.push({
+                diets: { [Op.substring]: req.diets[i] }
+            })
+        }
     }
 
     // name
@@ -62,6 +66,6 @@ module.exports = function(req) {
             name: req.name
         })
     }
-    
+
     return conditions;
 };
