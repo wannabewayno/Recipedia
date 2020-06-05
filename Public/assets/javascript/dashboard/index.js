@@ -1,23 +1,23 @@
 $(document).ready(function(){
-// Initializers
-// ==============================================================================
+  // Initializers
+  // ==============================================================================
 
-// upon load, we find all recipeIDs and do a get request for all of them
-loadRecipes()
+  // upon load, we find all recipeIDs and do a get request for all of their recipe information
+  loadRecipes()
 
+  // event listeners
+  // ==============================================================================
 
+  // when you click on a thumbnail opens modal
+  $('.container').on('click','.recipe-card',async function(event){
+      const recipeID = $(this).data('id');
+      const allRecipes = await JSON.parse(localStorage.getItem('searchResults')); //search results are stored in localstorage for quick access
+      const thisRecipe = allRecipes[recipeID]; //This is now the JSON of our recipe.
+      //open the modal and pass it the recipe information
+      openModal(thisRecipe);
+    });
 
-// event listeners
-// ==============================================================================
-// when you click on a thumbnail opens modal
-$('.container').on('click','.recipe-card',async function(event){
-    const recipeID = $(this).data('id');
-    const allRecipes = await JSON.parse(localStorage.getItem('searchResults')); //search results are stored in localstorage for quick access
-    const thisRecipe = allRecipes[recipeID]; //This is now the JSON of our recipe.
-    //open the modal and pass it the recipe information
-    openModal(thisRecipe);
-  });
-
+  removeElement('.remove-button')
 
 
 });
