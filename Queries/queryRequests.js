@@ -1,6 +1,3 @@
-    const Sequelize = require("sequelize");
-    const Op = Sequelize.Op;
-
 module.exports = function(req) {
     let conditions = [];
     let Sequelize = require("sequelize");
@@ -8,11 +5,15 @@ module.exports = function(req) {
         
     // ingredients
     if (req.ingredients != null) {
+        let ingredients = [];
         for (let i = 0; i < req.ingredients.length; i++) {
-            conditions.push({
-                 ingredients: { [Op.substring]: req.ingredients[i] }
+            ingredients.push({
+                ingredients: { [Op.substring]: req.ingredients[i] }
             })
         }
+        conditions.push({
+            [Op.or]: ingredients
+        })
     }
 
     // unwanted ingredients
@@ -48,7 +49,7 @@ module.exports = function(req) {
         })
     }
 
-    // diet ASSUMING IT WILL ONLY ASK FOR ONE DIET CURRENTLY
+    // diet
     if (req.diet != null) {
         conditions.push({
             diet: req.diet
@@ -61,5 +62,6 @@ module.exports = function(req) {
             name: req.name
         })
     }
+    
     return conditions;
 };
