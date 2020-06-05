@@ -10,9 +10,20 @@ module.exports = app => {
 
     // the req.body will look like { field: <column to update>, value: <value to set to> }
     // ? example: { field: first_name, value: wayne }
+    app.get("/api/user", function(req, res){
+
+    })
+
     app.patch("/api/user", function(req, res) {
-        console.log(req.body);
-        res.sendStatus(200);
+        // User.update({ lastName: "Doe" }, {
+        //     where: {
+        //       lastName: null
+        //     }
+        //   }).then(() => {
+        //     console.log("Done");
+        //   });
+        // console.log(req.body);
+        // res.sendStatus(200);
     });
 
 }

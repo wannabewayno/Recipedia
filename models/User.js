@@ -5,14 +5,14 @@ module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
     first_name: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true,
       validate: {
         len: [1]
       }
     },
     last_name: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true,
       validate: {
         len: [1]

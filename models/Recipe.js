@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   const Recipe = sequelize.define("Recipe", {
     name: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
@@ -44,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     cuisine: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true
     },
     diets: {
