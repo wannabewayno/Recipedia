@@ -13,12 +13,30 @@ module.exports = app => {
     queryRequest = {
       // author: req.body.author, // need to join the tables first for this to work.
       name: req.body.name,
-      ingredients: req.body.ingredients,
+      ingredients: ["hi!", "hithere!", "carrot"],
       ingredientsUnwanted: req.body.ingredientsUnwanted,
-      tags: req.body.tags
-      // cuisine: req.body.cuisine ---------------- not in the database
-      // diet: req.body.diet ---------------- not in the database
+      tags: req.body.tags,
+      cuisine: req.body.cuisine, // ---------------- not in the database
+      diet: req.body.diet // ---------------- not in the database
     }
+    
+    db.Recipe.findAll({
+      attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags"],
+      // include: [
+      //   db.User
+      // ],
+      where: queryConditions(queryRequest)
+    }).then(function(data) {
+      res.json({
+        data: data
+      })
+    })
+
+  });
+
+  app.get("/api/fridge", function(req, res) {
+    // should send reqs through in the body.
+    ingredients = req.body.fridge;
     
     db.Recipe.findAll({ 
       attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags"],
@@ -33,7 +51,6 @@ module.exports = app => {
     })
 
   });
-
 };
 
 /* 
