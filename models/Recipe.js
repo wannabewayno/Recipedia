@@ -40,6 +40,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    cook_time: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     cuisine: {
       type: DataTypes.TEXT,
       allowNull: true
