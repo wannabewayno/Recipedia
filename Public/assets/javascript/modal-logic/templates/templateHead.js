@@ -31,7 +31,7 @@ const templateHead = data => {
                 
     <div class="button-box">
 
-        <button class="favourite-btn" data-id="${recipe.id}">
+        <button class="favourite-btn" data-id="${data.id}">
             <i class="tiny material-icons right">favorite_border</i>favourite
         </button>
 

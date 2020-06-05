@@ -11,7 +11,6 @@ loadRecipes()
 // ==============================================================================
 // when you click on a thumbnail opens modal
 $('.container').on('click','.recipe-card',async function(event){
-    console.log("hello-world");
     const recipeID = $(this).data('id');
     const allRecipes = await JSON.parse(localStorage.getItem('searchResults')); //search results are stored in localstorage for quick access
     const thisRecipe = allRecipes[recipeID]; //This is now the JSON of our recipe.

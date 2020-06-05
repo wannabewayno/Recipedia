@@ -15,8 +15,8 @@ const constructModal = modalComponents => {
 
     <div class="recipe-modal z-depth-5">
 
-        <button class='delete-button nude-button'>
-            <i class='tiny material-icons'>close</i>
+        <button class='delete-button nude-button top-right'>
+            <i class='small material-icons'>close</i>
         </button>
 
         <div class="recipe-head row">
