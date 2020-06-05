@@ -1,14 +1,13 @@
-
 .diet-tags, .recipe-content, .recipe-head, .button-box, .title {
     position: relative;
 }
-
 
 .button-box{
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
 }
+
 .button-box > button {
     margin: 0 10px 0 10px;
 }
