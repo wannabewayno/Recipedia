@@ -25,8 +25,28 @@ module.exports = app => {
     //retrieves the saved meals
     // run a sorting function on this for anything that is null/undefined or a palceholder value
     // then send this off for templating with handlbars
-    res.render
-    res.sendFile(path.join(__dirname, "../../Public/dashboard.html"));
+    const data = { 
+      mealPlan:[
+        {
+          dayName:"Monday",
+          type: [
+            { typeName:'Breakfast',title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg" },
+            { typeName:'Lunch', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg" },
+            { typeName:'Dinner', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg" }
+          ]
+        },
+        {
+          dayName:"Tuesday",
+          type: [
+            { typeName:'Breakfast',title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg" },
+            { typeName:'Lunch', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg" },
+            { typeName:'Dinner', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg" }
+          ]
+        }
+      ] 
+  }
+    res.render('DOW',data,{ layout:'mealPlan'})
+    // res.sendFile(path.join(__dirname, "../../Public/dashboard.html"));
   });
 
   //! this is only a placeholder for testing, this will be a modal anchored to dashboard.html

@@ -62,17 +62,4 @@ $(document).ready(function() {
         deleteRecipe(recipeID);
     });
 
-    // <li class="authored-recipe Valign-start">
-    //             <div>
-    //               <span class="label">title</span>
-    //               <span class="data xgap-tiny" data-id="">recipe title</span>
-    //             </div>
-    //             <div>
-    //               <button class="edit-recipe-btn">
-    //                 <i class="material-icons">edit</i>
-    //               </button>
-    //               <button class="remove-recipe-btn">
-    //                 <i class="material-icons">delete</i>
-    //               </button>
-    //             </div>
-    //           </li>
+});

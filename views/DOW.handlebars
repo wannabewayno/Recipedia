@@ -1,10 +1,10 @@
 {{!-- should be an array of days that contains recipeInfo for each day of the week --}}
 {{#each mealPlan}}
-<div class="{{mealPlan.dayName}} dow z-depth-5">
-    <h5 class="dow-title">{{mealPlan.dayName}}</h5> 
+<div class="{{dayName}} dow z-depth-5">
+    <h5 class="dow-title">{{dayName}}</h5> 
     <div class="dow-cards">
         {{!-- each day of the week has a breakfast, lunch and dinner  --}}
-        {{#each mealplan.type}}
+        {{#each type}}
         <div class="{{typeName}} mobile-layout">
             <h6 class="meal-type">{{typeName}}</h6>
             <div class="recipe-card" data-id="{{id}}">

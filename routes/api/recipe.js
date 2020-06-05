@@ -106,7 +106,7 @@ app.post("/api/cats", function(req, res) {
   //       res.status(200).end();
   //     }
   //   });
-  // });
+  //});
 
   app.delete("/api/cats/:id", function(req, res) {
     var condition = "id = " + req.params.id;
