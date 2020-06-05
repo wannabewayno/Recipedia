@@ -63,6 +63,7 @@ module.exports = app => {
   //this route simply gets any recipe by the requested id and sends it back to the front end
 
   app.get("/api/recipesById", (req,res) => {
+    console.log(req.body);
     //query request
     db.Recipe.findAll({
       attributes: ["name", "ingredients", "servings", "instructions", "created_by", "tags", "id"],

@@ -10,9 +10,7 @@ const loadRecipes = async () => {
     });
     console.log(recipeIDs);
     $.get('/api/recipesById', 
-    {
-        data:recipeIDs 
-    })
+    { data:recipeIDs })
     .then(data => {
         console.log('helloWorld');
         const { recipeInfo } = data;
