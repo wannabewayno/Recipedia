@@ -53,16 +53,16 @@ module.exports = app => {
 
       let newdata;
       await fridge(conditions, conditionsUnwanted).then(results => {
-        data = formatResults(results);
+        newdata = formatResults(results);
       });
       console.log("51")
       res.json({
-        data: data
+        data: newdata
       });
     } else {
       // in case req.body.ingredients is null
       res.json({
-        data: ["21345"]
+        data: ["error: no parameters"]
       })
     };
   });
