@@ -1,43 +1,8 @@
-// a list of all function paths this file depends on to run.
-const dependencies = [
-    `create-recipe-form/addIngredient.js`,
-    `create-recipe-form/addStep.js`,
-    `create-recipe-form/createDeleteBtn.js`,
-    `create-recipe-form/getSteps.js`,
-    `create-recipe-form/getIngredients.js`,
-    `create-recipe-form/getRecipeFormData.js`,
-    `create-recipe-form/uploadImage.js`,
-    `create-recipe-form/publishRecipe.js`,
-    //------ files not in this directory ------
-    `getChips.js`,
-    `removeElement.js`,
-    `getDropdownValues.js`
-];
-
 $(document).ready(function() {
     // Initializers
     // ==========================================================================
 
-    //inserts scripts for every new function we create so that we don't have to.
-    dependencies.forEach(dependency => {
-        const script = `<script src="./assets/javascript/${dependency}"></script>`
-        $(script).insertBefore('#index');
-    });
-
-    // activates select drop downs
-     $('select').formSelect();
-
-    // activates charracter count.
-    $('#create-description').characterCounter();
-
-    $('.chips').chips();
-    // Initialize keyword placeholder chips
-    const initialChips = ['Type keyword','hit enter','e.g BBQ']
-    const target = '#create-keywords'
-    $(target).chips({
-        data:initialChips.map(text => {return {tag:text}}),
-        onChipAdd:removeInitialChips(target,initialChips)
-    });
+    formInitializers();
 
     // event listeners
     //====================================================================

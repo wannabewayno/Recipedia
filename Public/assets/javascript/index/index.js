@@ -55,6 +55,12 @@ $(document).ready(function(){
     }
   });
 
+  $('#search-fridge-button').on('click',function(event){
+    const query = getQueries('fridge');
+    search(query,'fridge')
+
+  });
+
   $('#search-results').on('click','.recipe-card',async function(event){
     console.log("hello-world");
     const recipeID = $(this).data('id');
