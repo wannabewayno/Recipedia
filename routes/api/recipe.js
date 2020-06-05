@@ -62,7 +62,7 @@ module.exports = app => {
     } else {
       // in case req.body.ingredients is null
       res.json({
-        data: data
+        data: ["error: no parameters"]
       })
     };
   });
