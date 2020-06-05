@@ -17,8 +17,8 @@ module.exports = app => {
       ingredients: req.body.ingredients,
       excludeIngredients: req.body.excludeIngredients ,
       tags: req.body.tags,
-      cuisines: req.body.cuisines, // ---------------- not in the database
-      diets: req.body.diets // ---------------- not in the database
+      cuisines: req.body.cuisines,
+      diets: req.body.diets
     }
 
     db.Recipe.findAll({
@@ -37,15 +37,9 @@ module.exports = app => {
 
   app.get("/api/fridge", async function (req, res) {
     // should send reqs through in the body.
-<<<<<<< HEAD
     if (req.body.ingredients != null) {
       ingredients = req.body.ingredients;
       
-=======
-    if (req.body.fridge != null) {
-      ingredients = req.body.fridge;
-
->>>>>>> aa530cd998b813035a988fcabc0262ce0af6dec4
       //declares variables
       let conditions = ingredients;
       let conditionsUnwanted = [];
@@ -70,10 +64,7 @@ module.exports = app => {
     console.log(req.body);
     //query request
     db.Recipe.findAll({
-<<<<<<< HEAD
-=======
       // 
->>>>>>> aa530cd998b813035a988fcabc0262ce0af6dec4
       // include: [
       //   db.User
       // ],

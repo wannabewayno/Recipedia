@@ -43,10 +43,10 @@ module.exports = function(req) {
     }
 
     // cuisine
-    if (req.cuisine != null) {
-        for (let i = 0; i < req.cuisine.length; i++) {
+    if (req.cuisines != null) {
+        for (let i = 0; i < req.cuisines.length; i++) {
             conditions.push({
-                cuisine: { [Op.substring]: req.cuisine[i] }
+                cuisine: { [Op.substring]: req.cuisines[i] }
             })
         }
     }
