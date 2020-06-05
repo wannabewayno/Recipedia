@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-  }, {});
+  }, {timestamps: false});
 
   Favourite.associate = function(models) {
     // We're saying that a Favourite should belong to a User

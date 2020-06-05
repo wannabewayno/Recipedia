@@ -52,7 +52,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
     
-  }, {});
+  }, {timestamps: false});
   
   Recipe.associate = function(models) {
     // We're saying that a Favourite should belong to a Recipe
