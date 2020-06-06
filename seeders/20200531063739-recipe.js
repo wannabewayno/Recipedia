@@ -26,16 +26,20 @@ module.exports = {
    return queryInterface.bulkInsert('recipes', [{
     // id: 2,
     name: faker.lorem.words(),
+    description: faker.lorem.words(),
     ingredients: JSON.stringify(ingredients),
     servings: faker.random.number(),
     instructions: JSON.stringify(faker.lorem.paragraphs()),
     created_by: 1,
     tags: "ingredients",
-    createdAt: new Date(),
-    updatedAt: new Date()
+    image: faker.lorem.words(),
+    prep_time: faker.random.number(),
+    cook_time: faker.random.number(),
+    cuisine: faker.lorem.word(),
+    diets: faker.lorem.word()
   }], {});
   },
-
+  
   down: (queryInterface, Sequelize) => {
     /*
       Add reverting commands here.

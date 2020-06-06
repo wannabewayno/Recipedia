@@ -11,8 +11,10 @@ module.exports = app => {
     // the req.body will look like { field: <column to update>, value: <value to set to> }
     // ? example: { field: first_name, value: wayne }
     app.get("/api/user", function(req, res){
+        const userId = req.params.id
+
         db.user.findAll({
-            id: user
+            id: userId
         })
     })
 
