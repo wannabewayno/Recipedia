@@ -11,10 +11,15 @@ module.exports = app => {
     // the req.body will look like { field: <column to update>, value: <value to set to> }
     // ? example: { field: first_name, value: wayne }
     app.get("/api/user", function(req, res){
-
+        db.user.findAll({
+            id: user
+        })
     })
 
     app.patch("/api/user", function(req, res) {
+        db.user.update({
+            data: data
+          }).then(() => {})
         // User.update({ lastName: "Doe" }, {
         //     where: {
         //       lastName: null
@@ -22,8 +27,10 @@ module.exports = app => {
         //   }).then(() => {
         //     console.log("Done");
         //   });
-        // console.log(req.body);
-        // res.sendStatus(200);
+        console.log(req.body);
+        res.sendStatus(200);
     });
 
 }
+
+// https://sequelize.org/v5/manual/instances.html
