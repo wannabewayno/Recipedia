@@ -32,15 +32,15 @@ const templateHead = data => {
     <div class="button-box">
 
         <button class="favourite-btn" data-id="${data.id}">
-            <i class="tiny material-icons right">favorite_border</i>favourite
+            <i class=" material-icons right">favorite_border</i>favourite
         </button>
 
         <button class="shopping-list-btn">
-            <i class="tiny material-icons right">add</i>Shopping List
+            <i class=" material-icons right">add</i>Shopping List
         </button>
 
         <button class="meal-planning-btn">
-            <i class="tiny material-icons right">add</i>Planner
+            <i class=" material-icons right">add</i>Planner
         </button>
     </div>
 

@@ -196,8 +196,8 @@ const buildRecipeForm = () => {
                 </section>
 
                 <div class="row">
-                    <div class="col s12 center-align">
-                        <button id="publish-button" type="button">
+                    <div class="col s12 Valign-center">
+                        <button id="publish-button" type="button" class="hoverable">
                             <i class="medium material-icons right">publish</i>Publish
                         </button>
                     </div>

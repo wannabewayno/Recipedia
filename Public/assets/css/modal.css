@@ -28,6 +28,10 @@
     transition: all 500ms ease-in-out;
 }
 
+.recipe-modal{
+    background-color: white;
+}
+
 .no-scroll {
     overflow-y: hidden;
 }

@@ -15,7 +15,7 @@ const s3 = new AWS.S3/*({
   const uploadPreSignedUrl = s3.getSignedUrl('putObject', {
       Bucket: 'recipedia-image-bucket',
       Key: uuidKey,
-      ACL: 'authenticated-read',
+      ACL: 'public-read',
       // This must match with your ajax contentType parameter
       ContentType: 'binary/octet-stream'
   
@@ -26,7 +26,7 @@ const s3 = new AWS.S3/*({
       Bucket: 'recipedia-image-bucket',
       Key: uuidKey,
       /* set a fixed type, or calculate your mime type from the file extension */
-      ResponseContentType: 'image/jpeg'
+      ResponseContentType: 'image/jpeg',
       /* and all the rest of your parameters to AWS getObect here */
   });
 

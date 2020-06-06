@@ -6,10 +6,11 @@
     <title>Recipedia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/modal.css">
-    <link rel="stylesheet" href="./assets/css/recipe-modal/visual-info.css">
     <link rel="stylesheet" href="./assets/css/recipe-modal/recipe.css">
+    <link rel="stylesheet" href="./assets/css/recipe-modal/visual-info.css">
     <link rel="stylesheet" href="./assets/css/buttons.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
+    <link rel="stylesheet" href="./assets/css/styleHelpers.css">
 
 </head>
 <body>
@@ -17,8 +18,8 @@
 
         <div class="recipe-modal z-depth-5">
     
-            <button class='delete-button nude-button'>
-                <i class='tiny material-icons'>close</i>
+            <button class='close-button nude-button top-right'>
+                <i class='small material-icons'>close</i>
             </button>
     
             <div class="recipe-head row">
@@ -34,12 +35,10 @@
                     </div>
     
                     <div class="time-bar-container">
-                        <div class="mask">
-                            <p>20 | 40</p>
-                        </div>
-                        <p id="cookTime"></p>
-                        <p id="prepTime"></p>
-                        <svg class="timeBar" width="1" height="1">
+                        <p class="mask">20 | 40</p>
+                        <p id="cookTime">40</p>
+                        <p id="prepTime">20</p>
+                        <svg class="timeBar" width="200" height="200">
                             <path id="prepPath" fill="none" stroke="#ff6347" stroke-width="15" />
                             <path id="cookPath" fill="none" stroke="#008000" stroke-width="15" />
                         </svg>
@@ -58,15 +57,15 @@
                     <div class="button-box">
         
                         <button class="favourite-btn">
-                            <i class="tiny material-icons right">favorite_border</i>favourite
+                            <i class=" material-icons right">favorite_border</i>favourite
                         </button>
         
                         <button class="shopping-list-btn">
-                            <i class="tiny material-icons right">add</i>Shopping List
+                            <i class=" material-icons right">add</i>Shopping List
                         </button>
         
                         <button class="meal-planning-btn">
-                            <i class="tiny material-icons right">add</i>Planner
+                            <i class=" material-icons right">add</i>Planner
                         </button>
         
                     </div>
@@ -110,7 +109,9 @@
     
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./assets/javascript/renderTimeBar.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="./assets/javascript/modal-logic/renderTimeBar.js"></script>
 </body>
 </html>
