@@ -23,14 +23,17 @@ const search = async (query,type) => {
 
         // * we now pass the recipeCardInfo to render the recipe cards for the user to look at
         // * when they click on any of these cards, it will pull that recipe from local storage
+        
+        // clear the spinner when we're done
+        clearSpinner(interval);
+
         if (!recipeCardInfo){
             return
         } else {
             renderResults(recipeCardInfo);
         }
        
-        // clear the spinner when we're done
-        clearSpinner(interval);
+        
     })
     
     const renderResults = recipeCardInfo => {
