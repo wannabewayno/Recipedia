@@ -32,17 +32,17 @@ module.exports = app => {
         {
           dayName:"Monday",
           type: [
-            { typeName:'Breakfast',title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:1 },
-            { typeName:'Lunch', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:2 },
-            { typeName:'Dinner', title:'chicken teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:15 }
+            { typeName:'Breakfast',title:'Homemade Fruit Loops' , image:"https://www.kelloggs.com.au/content/dam/Australia/kelloggs_au/images/brands/kelloggs-froot-loops-cereal-bowl-milk.jpg", id:1 },
+            { typeName:'Lunch', title:'Club Sandwich' , image:"https://realfood.tesco.com/media/images/RFO-1400x919-ChickenClubSandwich-0ee77c05-5a77-49ac-a3bd-4d45e3b4dca7-0-1400x919.jpg", id:2 },
+            { typeName:'Dinner', title:'Chicken Teriyaki' , image:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-6.jpg", id:15 }
           ]
         },
         {
           dayName:"Tuesday",
           type: [
-            { typeName:'Breakfast',title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:2304 },
-            { typeName:'Lunch', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:1 },
-            { typeName:'Dinner', title:'borstch' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:90 }
+            { typeName:'Breakfast',title:'Bran Muffins' , image:"https://www.kingarthurflour.com/sites/default/files/styles/featured_image/public/recipe_legacy/12-3-large.jpg?itok=rnm45CpK", id:2304 },
+            { typeName:'Lunch', title:'Tonkotsu Ramen' , image:"https://www.sweetteaandthyme.com/wp-content/uploads/2019/02/Tonkotsu-ramen-2-overhead-720x720.jpg", id:1 },
+            { typeName:'Dinner', title:'Borscht' , image:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Borscht_served.jpg/1280px-Borscht_served.jpg", id:90 }
           ]
         }
       ] 
