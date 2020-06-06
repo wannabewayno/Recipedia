@@ -104,7 +104,6 @@ module.exports = app => {
         created_by: 1, // currently only one user
         // image: "1234.com" 
       }).then(newrecipe => {
-      console.log(object);
       res.json({ data: newrecipe });
     }).catch(error => {
       res.status(422).json({ message: "recipe generation failed" })
