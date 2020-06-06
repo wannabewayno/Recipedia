@@ -51,6 +51,9 @@
     <!-- container -->
     <main class="container layout">
       <!-- ================================= Log in =================================== -->
+      <%if (messages.error) {%>
+        <% messages.error %>
+      <% } %>
       <section class="sign-in">
         <h4>Sign in</h4>
         <form id="sign-in" action="/auth/login" method="POST">

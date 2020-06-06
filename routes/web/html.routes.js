@@ -55,13 +55,13 @@ module.exports = app => {
     
     res.sendFile(path.join(__dirname, "../../Public/create-recipe.html"));
   });
-
+app.set("view engine", "ejs");
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../../Public/login.html"));
+    res.sendFile(path.join(__dirname, "../../Public/login.ejs" ));
   });
 
   // Here we've add our isAuthenticated middleware to this route.

@@ -7,6 +7,8 @@ const exphbs = require("express-handlebars");
 const session = require("express-session");
 const methodOverride = require("method-override");
 
+
+
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 
@@ -31,6 +33,7 @@ app.set("view engine", "handlebars");
 //route for login
 app.use("/auth", require('./routes/auth'));
 app.use(methodOverride("_method"))
+
 
 
 // Routes
