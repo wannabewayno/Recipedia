@@ -9,8 +9,8 @@ const getQueries = type => {
     } else {
 
         searchData.tags = $('#search-query').val().split(' ').map(keyword => keyword.trim().toLowerCase())
-        //searchData.cuisines = getDropdownValues('#cuisine');
-        //searchData.diets = getDropdownValues('#diet');
+        searchData.cuisines = getDropdownValues('#cuisine');
+        searchData.diets = getDropdownValues('#diet');
 
         // removes placeholder chips if the user doesn't remove them;
         removeInitialChips('#exclude-ingredients',['Type ingredient','hit enter'])();

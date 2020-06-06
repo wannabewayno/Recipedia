@@ -1,15 +1,32 @@
+:root {
+    --paprika:hsl(354,56%,54%);
+    --chilli:hsl(356, 79%, 45%);
+    --leaf:hsl(72, 49%, 45%);
+    --beige:hsl(34, 25%, 65%);
+    --jarrah:hsl(19, 61%, 35%);
+}
+
 .diet-tags, .recipe-content, .recipe-head, .button-box, .title {
+    width:100%;
     position: relative;
+}
+
+.diet-tag {
+    text-align: center;
+    padding:0.2rem 1rem;
+    width:fit-content;
+    border-radius: 15px;
+    background-color:var(--chilli);
 }
 
 .button-box{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
 }
 
 .button-box > button {
-    margin: 0 10px 0 10px;
+    margin: 5px;
 }
 
 .recipe-content{
@@ -20,12 +37,12 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-
+   
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
+    
 }
 
 /* Large devices (desktops, 992px and up) */

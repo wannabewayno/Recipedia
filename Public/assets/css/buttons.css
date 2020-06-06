@@ -4,7 +4,11 @@
     --disabled-colour: hsl(72, 0%, 44%);
 }
 
-button, .anchor-btn {
+button, .anchor-btn, .btn {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
     padding:0.5rem;
     font-size: large;
     background-color: var(--button-colour);
@@ -13,6 +17,8 @@ button, .anchor-btn {
     cursor: pointer;
     object-position: center;
 }
+
+button > .large { }
 
 button:hover, button:focus, .anchor-btn:hover, .anchor-btn:focus {
     background-color: var(--hover-colour);

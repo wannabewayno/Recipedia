@@ -6,7 +6,6 @@ module.exports = {
     "database": process.env.MYSQL_DATABASE,
     "host": process.env.MYSQL_HOST,
     "dialect": "mysql",
-    "operatorsAliases": false
   },
   "test": {
     "username": "root",
@@ -14,14 +13,9 @@ module.exports = {
     "database": "recipedia_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": "root",
-    "database": "recipedia_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql",
-    "operatorsAliases": false
   }
 }

@@ -35,11 +35,26 @@ $(document).ready(function() {
 
     // sends form data to post route via publishRecipe
     $('#modal-goes-here').on('click','#publish-button', function() {
-        publishRecipe()
+        // stop the user from spamming the server;
+        $(this).prop('disabled',true);
+
+        // get the reference to the user image file in the input
+        const image = $('#image-file').get()[0].files[0];
+
+        getSignedUrls()
+        .then(Urls => {
+            const { uuidKey, downloadPreSignedUrl, uploadPreSignedUrl } = Urls;
+            uploadImage( uploadPreSignedUrl , image );
+            publishRecipe( uuidKey, downloadPreSignedUrl );
+        })
+        .then(() => {
+            // close the recipe modal
+            $('#modal-container').remove();
+        })
+        .catch(error => console.log(error));
+
     });
     
-    $('#image-file').on('change',uploadImage)
-
 });
 
 
