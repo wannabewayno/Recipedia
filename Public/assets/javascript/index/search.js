@@ -28,7 +28,6 @@ const search = async (query,type) => {
         clearSpinner(interval);
         console.log(recipeCardInfo);
         console.log(recipeInfo);
-        
         if (!recipeCardInfo){
             return
         } else {
@@ -40,6 +39,7 @@ const search = async (query,type) => {
     
     const renderResults = recipeCardInfo => {
         console.log('is this firing');
+        console.log(recipeCardInfo);
         recipeCardInfo.forEach(recipeCardObject => {
             const recipeThumbnail = createThumbnail(recipeCardObject);
             $('#search-results').append(recipeThumbnail)
