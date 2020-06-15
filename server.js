@@ -6,6 +6,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
 const methodOverride = require("method-override");
+const compression = require('compression');
 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
@@ -16,6 +17,7 @@ const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
+app.use(compression)
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("Public"));
